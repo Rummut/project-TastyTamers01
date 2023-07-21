@@ -13,9 +13,8 @@ body {
   color: var(--black);
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.29;
-  letter-spacing: -0.02em;
   padding: 0;
   margin: 0;
 }
@@ -35,6 +34,6 @@ body {
 
 .container {
   width: 100%;
-  padding: 0 16px;
+  padding: 0 100px;
   margin: 0 auto;
 }
