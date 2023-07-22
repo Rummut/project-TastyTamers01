@@ -86,9 +86,4 @@ async function fetchSearchDish(inputSearch) {
 //   }, 300)
 // );
 
-// document.addEventListener(
-//   "scroll",
-//   _.debounce(() => {
-//     console.log("Scroll handler call after 300ms pause");
-//   }, 300)
-// );
+
