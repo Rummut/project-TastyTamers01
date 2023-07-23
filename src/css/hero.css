@@ -44,135 +44,6 @@
   margin-bottom: 28px;
 }
 
-/* /* Слайдер */
-.slider {
-  width: 355px;
-  overflow: hidden;
-}
-
-.slider img {
-  display: block;
-  height: 100%;
-  width: 100%;
-}
-
-.slider-item-cook {
-  width: 80px;
-  height: 280px;
-}
-
-.slider-item-cook img {
-  object-fit: cover;
-  border-radius: 15px;
-}
-
-.slider-item-topic {
-  position: relative;
-
-  width: 200px;
-  height: 280px;
-  background-color: #050505;
-  border-radius: 15px;
-}
-.slider-item-topic img {
-  width: 150px;
-  height: 150px;
-
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 15px;
-}
-
-.slider-item-topic .description {
-  width: 144px;
-  position: absolute;
-  left: 50%;
-  top: 84%;
-  transform: translate(-50%, -50%);
-  color: rgba(248, 248, 248, 0.6);
-  text-align: center;
-  font-size: 10px;
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 14px;
-  text-transform: uppercase;
-}
-
-.slider-item-topic .country {
-  position: absolute;
-  left: 50%;
-  top: 94%;
-  transform: translate(-50%, -50%);
-  color: rgba(248, 248, 248, 0.2);
-  font-size: 8px;
-  font-family: Inter;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 12px;
-}
-
-.slider-item-finally {
-  width: 222px;
-  height: 280px;
-  overflow: hidden;
-  border-radius: 15px;
-}
-
-.slider-item-finally img {
-  background: #050505;
-  width: 529px;
-  height: 529px;
-
-  object-position: -170px -145px;
-
-  object-fit: cover;
-}
-
-/* slick */
-
-.slick-track {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  gap: 8px;
-
-  min-width: 0;
-}
-.slick-slide img {
-  display: block;
-}
-
-.slick-list {
-  overflow: hidden;
-}
-.slick-dots {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-}
-.slick-dots li {
-  list-style: none;
-}
-
-.slick-dots button {
-  width: 12px;
-  height: 12px;
-  border: 1px;
-  background-color: black;
-
-  font-size: 0;
-  border-radius: 50%;
-}
-
-.slick-dots li.slick-active button {
-  background-color: var(--main-color);
-}
-
 @media screen and (min-width: 768px) {
   .hero-container {
     padding-left: 32px;
@@ -197,38 +68,6 @@
     line-height: 24px;
     margin-bottom: 32px;
   }
-
-  .slider {
-    width: 736px;
-  }
-  .slick-track {
-    gap: 16px;
-  }
-
-  .slider-item-cook {
-    width: 137px;
-    height: 442px;
-  }
-  .slider-item-topic,
-  .slider-item-finally {
-    width: 351px;
-    height: 442px;
-  }
-
-  .slider-item-topic img {
-    width: 304px;
-    height: 271px;
-  }
-
-  .slider-item-finally img {
-    background: #050505;
-    width: 663px;
-    height: 663px;
-
-    object-position: -120px -125px;
-
-    object-fit: cover;
-  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -243,17 +82,5 @@
   .hero-desktop {
     display: inline-flex;
     gap: 32px;
-  }
-
-  .slider {
-    width: 702px;
-  }
-
-  .slider {
-    padding-top: 100px;
-  }
-
-  .slider-wrapper {
-    width: 1180px;
   }
 }
