@@ -12,8 +12,8 @@
     />
     <title>TastyTreats</title>
     
-    <script type="module" crossorigin src="/project-TastyTamers01/assets/header-e42d8b49.js"></script>
-    <link rel="stylesheet" href="/project-TastyTamers01/assets/header-5b491636.css">
+    <script type="module" crossorigin src="/project-TastyTamers01/assets/header-48f82757.js"></script>
+    <link rel="stylesheet" href="/project-TastyTamers01/assets/header-c7133ae4.css">
   </head>
   <body>
     <header class="header header-section">
@@ -117,8 +117,23 @@
 
     <main>
       <section class="hero-favorite">
-  <div class="container"></div>
+  <div class="container">
+    <picture>
+      <source media="(min-width:1200px)" srcset="../img_header/img-hero-favorite/card-plate-desktop-1x.jpeg 1x, ../img_header/img-hero-favorite/card-plate-desktop-2x.jpeg 2x">
+      <source media="(min-width:768px)" srcset="../img_header/img-hero-favorite/card-plate-tablet-1x.jpeg 1x, ../img_header/img-hero-favorite/card-plate-tablet-2x.jpeg 2x">
+      <source media="(min-width:375px)" srcset="../img_header/img-hero-favorite/card-plate-mobile-1x.jpeg 1x, ../img_header/img-hero-favorite/card-plate-mobile-2x.jpeg 2x">
+      <img class="hero-favorite-img" src="../img_header/img-hero-favorite/card-plate-mobile-1x.jpeg" alt="favorite dish">
+    </picture>
+  </div>
 </section>
+  <div class="hero-favorite-content container">
+    <svg class="hero-favorite-icon" width="68" height="58">
+      <use href="../img_header/svg/favorite-icon.svg#icon-elements"></use>
+    </svg>
+    <p class="hero-favorite-text">It appears that you haven't added any recipes to your favorites yet. To get started, you can add recipes that you like to your favorites for easier access in the future.</p>
+  </div>
+
+
 
       <section class="category-recipes-favorite">
   <div class="container"></div>
