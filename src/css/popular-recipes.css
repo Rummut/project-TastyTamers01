@@ -1,4 +1,4 @@
-@media screen and (min-width: 375px) {
+
     .container {
        padding: 0 20px;
     }
@@ -10,6 +10,7 @@
         width: 64px;
         height: 64px;
         border-radius: 8px;
+        max-width: none;
     }
     .popular-group-title {
         font-family: Inter;
@@ -27,6 +28,10 @@
         line-height: 18px;
         letter-spacing: 0em;
         text-align: left;
+        width: 136px;
+        height: 18px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .popular-recipes-description {
         font-family: Inter;
@@ -41,8 +46,7 @@
         flex-direction: column;
         width: 252px;
         height: 41px;
-        /* overflow: hidden;
-        text-overflow: ellipsis; */
+        text-overflow: ellipsis;
     }
 
     .popular-recipes-list {
@@ -56,10 +60,9 @@
         cursor: pointer;
         list-style: none;
         display: flex;
+        flex-basis: 50%;
     }
 
-
-}
 
 
 
@@ -90,6 +93,10 @@
         line-height: 18px;
         letter-spacing: 0em;
         text-align: left;
+        width: 120px;
+        height: 18px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .popular-recipes-description {
         font-family: Inter;
@@ -103,7 +110,7 @@
         /* overflow: hidden; */
         width: 120px;
         height: 41px;
-        /* text-overflow: ellipsis; */
+        text-overflow: ellipsis;
     }
     .popular-recipes-list {
         display: flex;
@@ -142,6 +149,10 @@
         line-height: 18px;
         letter-spacing: 0em;
         text-align: left;
+        width: 136px;
+        height: 18px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .popular-recipes-description {
         font-family: Inter;
@@ -153,7 +164,7 @@
         /* overflow: hidden; */
         display: flex;
         flex-direction: column;
-        /* text-overflow: ellipsis; */
+        text-overflow: ellipsis;
         width: 155px;
         height: 41px;
     }
