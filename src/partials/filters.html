@@ -1,8 +1,15 @@
 <section class="filters">
   <div class="container">
     <form class="filter-form">
-      <label for="search" class="filter-label">Search
-        <input class="filter-input" name="searchquery" type="text" id="search" placeholder="Enter Text">
+      <label for="search" class="filter-label"
+        >Search
+        <input
+          class="filter-input"
+          name="searchquery"
+          type="text"
+          id="search"
+          placeholder="Enter Text"
+        />
         <button>
           <svg width="18" height="18"></svg>
         </button>
@@ -12,14 +19,17 @@
       </label>
       <p class="filter-label">Time</p>
       <span class="filter-select">
-        <select class="filter-sel" name="time" id=""></select></span>
+        <select class="filter-sel filter-time" name="time" id=""></select
+      ></span>
 
       <p class="filter-label">Area</p>
       <span class="filter-select">
-        <select class="filter-sel" name="time" id=""></select></span>
+        <select class="filter-sel filter-area" name="time" id=""></select
+      ></span>
       <p class="filter-label">Ingredients</p>
       <span class="filter-select">
-        <select class="filter-sel" name="time" id=""></select></span>
+        <select class="filter-sel filter-ingredients" name="time" id=""></select
+      ></span>
     </form>
     <div class="filter-btn-block">
       <button class="filter-btn-reset">
@@ -30,30 +40,6 @@
 
       <p class="filter-btn-text">Reset the filter</p>
     </div>
-    <ul class="list filter-list">
-      <li class="filter-item">
-        <img class="filter-img" src="" alt="">
-        <button class="filter-btn-like">
-          <svg class="filter-svg-like" width="22" height="22"></svg>
-        </button>
-        <div class="filter-info-block">
-          <h4 class="filter-img-title"></h4>
-          <p class="filter-img-text"></p>
-          <div class="filter-info-reiting">
-            <div class="filter-star-block">
-              <p class="filter-reiting"></p>
-              <svg class="filter-star" width="18" height="18"></svg>
-              <svg class="filter-star" width="18" height="18"></svg>
-              <svg class="filter-star" width="18" height="18"></svg>
-              <svg class="filter-star" width="18" height="18"></svg>
-              <svg class="filter-star" width="18" height="18"></svg>
-            </div>
-            <button class="filter-btn-see">See recipe</button>
-          </div>
-        </div>
-      </li>
-
-
-    </ul>
+    <ul class="list filter-list"></ul>
   </div>
 </section>
