@@ -103,6 +103,7 @@
         /* overflow: hidden; */
         width: 120px;
         height: 41px;
+        /* text-overflow: ellipsis; */
     }
     .popular-recipes-list {
         display: flex;
