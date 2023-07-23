@@ -7,8 +7,6 @@ var Qe=(e,t,n)=>{if(!t.has(e))throw TypeError("Cannot "+n)};var Z=(e,t,n)=>(Qe(e
           src="${n.preview}"
           alt="${n.title}"
           loading="slow"
-          height="64"
-          width="64"
         />
       </div>
       <div class="popular-containet-def">
