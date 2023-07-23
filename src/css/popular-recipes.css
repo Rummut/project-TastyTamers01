@@ -1,4 +1,4 @@
-@media screen and (min-width: 375px) {
+/* @media screen and (min-width: 375px) {
     .popular-recipes-mobile {
         position: absolute;
         width: 1px;
@@ -18,9 +18,9 @@
       margin-top: 80px;
     }
     @media screen and (max-width: 768px) {
-      .popular-recipes {
+      .popular-recipes { */
         /* .main-recipes - padding-bottom 80px */
-        position: absolute;
+        /* position: absolute;
         width: 1px;
         height: 1px;
         margin: -1px;
@@ -144,4 +144,4 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
       }
-}
+} */
