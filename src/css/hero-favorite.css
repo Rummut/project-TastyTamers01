@@ -1,3 +1,8 @@
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 .hero-favorite {
     padding-top: 52px;
     padding-bottom: 40px;
@@ -5,6 +10,8 @@
 
 .hero-favorite-text{
     font-size: 14px;
+    line-height: 1.29;
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -20,6 +27,29 @@
 @media screen and (min-width: 375px) {
 }
 
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+    .container {
+        padding: 0 32px;
+    }
+}
 
-@media screen and (min-width: 1200px) {}
+@media screen and (min-width: 1200px) {
+    .container {
+        padding: 0 100px;
+    }
+    .hero-favorite {
+    padding-top: 40px;
+    padding-bottom: 64px;
+    }
+    .hero-favorite-text{
+    font-size: 16px;
+    line-height: 1.5;
+    width: 481px;
+    margin: 0 auto;
+    }
+    .hero-favorite-icon {
+    margin: 0 auto 32px;
+    width: 97px;
+    height: 83px;
+    }
+}
