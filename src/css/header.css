@@ -128,7 +128,7 @@ body {
 }
 
 .header-menu-container.is-open {
-  display: block;
+  display: none;
 }
 
 .header-mobile-menu {
@@ -189,7 +189,7 @@ body {
   }
 
   .header-menu-container {
-    display: block;
+    display: none;
   }
 
   .header-menu-toggle {
