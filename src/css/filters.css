@@ -1,4 +1,139 @@
-@media screen and (min-width: 375px) {}
+@media screen and (min-width: 375px) {
+    .filter-form {
+        display: flex;
+        flex-wrap: wrap;
+        /* gap: 14px; */
+    }
+
+    .filter-label {
+        color: rgba(5, 5, 5, 0.50);
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 14px;
+        /* margin-bottom: 8px; */
+        display: block;
+    }
+
+    .filter-sel {
+        width: 100%;
+        border: none;
+    }
+
+    .filter-input {
+
+        width: 335px;
+        height: 46px;
+        border-radius: 15px;
+        border: 1px solid rgba(5, 5, 5, 0.20);
+        padding: 14px 122px 14px 18px;
+        align-items: flex-start;
+    }
+
+    .filter-select {
+        display: block;
+        border-radius: 15px;
+        border: 1px solid rgba(5, 5, 5, 0.20);
+        padding: 14px 18px;
+        width: 160px;
+    }
+
+    /* --------------------------- */
+    .filter-btn-block {
+        display: flex;
+    }
+
+    .filter-btn-reset {
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 0;
+    }
+
+    /* ------------------------- */
+    .filter-item {
+        position: relative;
+        width: 335px;
+        height: 335px;
+        border-radius: 8px;
+
+    }
+
+    .filter-img {
+        width: 335px;
+        height: 335px;
+        border-radius: 8px;
+        z-index: -5;
+        background: linear-gradient(1deg, rgba(5, 5, 5, 0.60) 0%, rgba(5, 5, 5, 0.00) 100%);
+    }
+
+    .filter-btn-like {
+        padding: 0;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .filter-info-block {
+        margin-top: auto;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 16px;
+    }
+
+    .filter-img-title {
+        color: #F8F8F8;
+        text-align: left;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 18px;
+        margin-bottom: 8px;
+    }
+
+    .filter-img-text {
+        color: #F8F8F8;
+        text-overflow: ellipsis;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
+        margin-bottom: 16px;
+    }
+
+    .filter-info-reiting {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .filter-star-block {
+        display: flex;
+    }
+
+    .filter-reiting {
+        color: #F8F8F8;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 18px;
+        margin-right: 4px;
+    }
+
+    .filter-btn-see {
+        color: #F8F8F8;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        border-radius: 8px;
+        border: none;
+        background: #9BB537;
+        padding: 8px 14px;
+        margin-left: auto;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
 
 @media screen and (min-width: 768px) {}
 
