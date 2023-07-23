@@ -14,9 +14,67 @@ let inputSearch = '';
 let inputTime = '';
 let inputArea = '';
 let inputIngr = ''
-searchEl.addEventListener('input', debounce(getDish, 300)
 
-)
+searchEl.addEventListener('input', debounce(getDish, 300))
+
+searchElArea.addEventListener('change', (event) => {
+    inputArea = event.currentTarget.value
+    console.log(event)
+    fetchSearchDishArea(inputArea)
+})
+    
+searchElIng.addEventListener('change', (event) => {
+    inputIngr = event.currentTarget.value
+    console.log(event.currentTarget.value)
+    fetchSearchDishIngrid(inputIngr)
+})
+
+fetchArea().then(areas => {
+    areas.map(area => {
+        const option = `<option value = "${area.name}">${area.name}</option>`
+        searchElArea.insertAdjacentHTML("beforeend", option);
+   })
+}).catch(() => {
+    // error.style.display = 'block'
+})
+     
+async function fetchArea() {
+    try {
+const responseArea = await axios ( `https://tasty-treats-backend.p.goit.global/api/areas`)
+        return responseArea.data
+        
+    }
+    catch {
+        
+    }
+    
+    }
+
+fetchIngredients().then(ingredients => {
+    console.log(ingredients)
+    ingredients.map(ingredient => {
+        const option = `<option value = "${ingredient._id}">${ingredient.name}</option>`
+        searchElIng.insertAdjacentHTML("beforeend", option);
+    
+   })
+}).catch(() => {
+    // error.style.display = 'block'
+})
+     
+async function fetchIngredients() {
+    try {
+const responseIngredients = await axios ( `https://tasty-treats-backend.p.goit.global/api/ingredients`)
+        // console.log(responseIngredients.data.name)
+        return responseIngredients.data
+        
+    }
+    catch {
+        
+    }
+    
+    }
+
+
 
 function debounce(fn, wait) {
     let timer;
@@ -27,31 +85,36 @@ function debounce(fn, wait) {
     
 }
 
-// _.debounce(() => 
-    // {
-
-    // } , 300)
-    // )
 
 function getDish(event) {
     
-    // inputSearch += event.data
-    console.log(event.target.value)
+    inputSearch = event.target.value
+    console.log(inputSearch)
     fetchSearchDish(inputSearch).then(()=>{})
 }
 
-searchElArea.addEventListener('change', (event) => {
-    inputArea = event.currentTarget.value
-    fetchSearchDishArea(inputArea)
-    console.log(inputArea)
-})
+
 
 async function fetchSearchDishArea(inputArea) {
     try {
-        
-        
+               console.log(inputArea)
         const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&limit=6&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}`)
-                  
+                 
+        // &category=Beef
+    
+        console.log(response)
+    //   return response.data;
+    }
+  catch {
+        
+    }
+};
+
+async function fetchSearchDishIngrid(inputIngr) {
+    try {
+               console.log(inputIngr)
+        const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&limit=6&time=${inputTime}&area=${inputArea}&ingredient=${inputIngr}`)
+                 
         // &category=Beef
     
         console.log(response)
