@@ -1,14 +1,12 @@
 <header class="header header-section">
   <div class="container header-container">
-    <nav class="header-nav nav">
+    <nav class="header-nav">
       <ul class="header-nav-list list">
         <li class="header-nav-list-item item">
           <a class="header-nav-link home link" href="../index.html">Home</a>
         </li>
         <li class="header-nav-list-item item">
-          <a
-            class="header-nav-link favorites link current"
-            href="../favorites.html"
+          <a class="header-nav-link favorites link" href="../favorites.html"
             >Favorites</a
           >
         </li>
@@ -19,21 +17,19 @@
       >
 
       <div class="header-btn-box">
-        <!-- HEADER SHOPPING -->
         <a
-          href="tel:+380730000000"
+          href="#"
           class="header-shopping-link link"
           rel="noopener noreferrer"
           aria-label="shopping-cart"
-        >
-          <svg class="header-shopping-icon" width="24" height="24">
-            <use href="/src/img_header/icons.svg#icon-shopping-cart-dark"></use>
-          </svg>
-        </a>
+          ><svg class="header-shopping-icon" width="24" height="24">
+            <use
+              href="/src/img_header/icons.svg#icon-shopping-cart-dark"
+            ></use></svg
+        ></a>
 
-        <!-- HEADER BURGER MOBILE -->
         <button
-          class="header-menu-toggle js-open-menu"
+          class="header-burger-menu js-open-menu"
           type="button"
           aria-expanded="false"
           aria-controls="mobile-menu"
@@ -43,16 +39,17 @@
           </svg>
         </button>
 
-        <!-- HEADER TOGGLE SWITCH -->
         <div class="header-theme-switcher main js-switcher">
-          <input type="checkbox" class="switcher-input" id="switch" />
-          <label class="input-label" for="switch">Toggle</label>
+          <input type="checkbox" class="switcher-input" id="switch" /><label
+            class="input-label"
+            for="switch"
+            >Toggle</label
+          >
         </div>
       </div>
     </nav>
   </div>
 
-  <!-- HEADER MOBILE WINDOW -->
   <div class="header-menu-container js-menu-container" id="mobile-menu">
     <button class="header-menu-toggle js-close-menu">
       <svg
@@ -72,20 +69,22 @@
 
     <ul class="header-mobile-menu">
       <li class="nav-item-burger item">
-        <a class="header-nav-link home link" href="./index.html">Home</a>
+        <a class="header-nav-link home link current" href="./index.html"
+          >Home</a
+        >
       </li>
       <li class="nav-item-burger item">
-        <a
-          class="header-nav-link favorites link current"
-          href="../favorites.html"
+        <a class="header-nav-link favorites link" href="../favorites.html"
           >Favorites</a
         >
       </li>
 
-      <!-- HEADER TOGGLE SWITCH BURGER -->
       <li class="header-theme-switcher burger">
-        <input type="checkbox" class="switcher-input" id="mobile-switch" />
-        <label class="input-label" for="mobile-switch">Toggle</label>
+        <input
+          type="checkbox"
+          class="switcher-input"
+          id="mobile-switch"
+        /><label class="input-label" for="mobile-switch">Toggle</label>
       </li>
     </ul>
   </div>
