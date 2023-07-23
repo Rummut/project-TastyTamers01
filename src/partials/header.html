@@ -21,19 +21,19 @@
       <div class="header-btn-box">
         <!-- HEADER SHOPPING -->
         <a
-          href="#"
+          href="tel:+380730000000"
           class="header-shopping-link link"
           rel="noopener noreferrer"
           aria-label="shopping-cart"
-          ><svg class="header-shopping-icon" width="24" height="24">
-            <use
-              href="/src/img_header/icons.svg#icon-shopping-cart-dark"
-            ></use></svg
-        ></a>
+        >
+          <svg class="header-shopping-icon" width="24" height="24">
+            <use href="/src/img_header/icons.svg#icon-shopping-cart-dark"></use>
+          </svg>
+        </a>
 
         <!-- HEADER BURGER MOBILE -->
         <button
-          class="header-burger-menu js-open-menu"
+          class="header-menu-toggle js-open-menu"
           type="button"
           aria-expanded="false"
           aria-controls="mobile-menu"
@@ -45,17 +45,14 @@
 
         <!-- HEADER TOGGLE SWITCH -->
         <div class="header-theme-switcher main js-switcher">
-          <input type="checkbox" class="switcher-input" id="switch" /><label
-            class="input-label"
-            for="switch"
-            >Toggle</label
-          >
+          <input type="checkbox" class="switcher-input" id="switch" />
+          <label class="input-label" for="switch">Toggle</label>
         </div>
       </div>
     </nav>
   </div>
 
-  <!-- HEADER MOBIL WINDOW -->
+  <!-- HEADER MOBILE WINDOW -->
   <div class="header-menu-container js-menu-container" id="mobile-menu">
     <button class="header-menu-toggle js-close-menu">
       <svg
@@ -87,11 +84,8 @@
 
       <!-- HEADER TOGGLE SWITCH BURGER -->
       <li class="header-theme-switcher burger">
-        <input
-          type="checkbox"
-          class="switcher-input"
-          id="mobile-switch"
-        /><label class="input-label" for="mobile-switch">Toggle</label>
+        <input type="checkbox" class="switcher-input" id="mobile-switch" />
+        <label class="input-label" for="mobile-switch">Toggle</label>
       </li>
     </ul>
   </div>

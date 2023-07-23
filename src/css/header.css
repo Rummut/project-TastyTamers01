@@ -1,8 +1,32 @@
+:root {
+  --white: #ffffff;
+  --modal-white: #f1f1f1;
+  --black: #000000;
+  --light-green: #9bc53d;
+}
+
+body {
+  overflow: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
 .header-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-top: 25px;
+}
+
+.header-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .header-logo {
@@ -12,10 +36,11 @@
   font-weight: 600;
   line-height: 18px;
   letter-spacing: -0.64px;
+  text-decoration: none;
 }
 
 .header-logo-color {
-  color: var(--black);
+  color: var(--modal-white);
 }
 
 .header-btn-box {
@@ -35,7 +60,11 @@
   cursor: pointer;
 }
 
-.header-shopping-icon,
+.header-shopping-icon {
+  fill: transparent;
+  stroke: var(--modal-white);
+}
+
 .header-burger-menu-icon {
   width: 32px;
   height: 32px;
@@ -85,10 +114,36 @@
   width: 26px;
 }
 
+.header-menu-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--modal-white);
+  z-index: 1000;
+  display: none;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.header-menu-container.is-open {
+  display: block;
+}
+
+.header-mobile-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .header-menu-toggle {
   min-height: 40px;
   min-width: 40px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   margin: 0;
@@ -100,116 +155,99 @@
   outline: none;
 }
 
-.header-menu-toggle:hover,
-.header-menu-toggle:focus {
-  background-color: rgba(0, 0, 0, 0.1);
-}
+/* Адаптивные стили для мобильных устройств (ширина экрана < 768px) */
+@media screen and (max-width: 767px) {
+  .header-nav-list {
+    display: none;
+  }
 
-.header-menu-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 0;
-  padding-top: 200px;
-  background-color: var(--black);
-  z-index: 999;
-  transform: translateX(-100%);
-  transition: transform 250ms ease-in-out;
-}
+  .header-theme-switcher.main {
+    display: none;
+  }
 
-.header-menu-container.is-open {
-  transform: translateX(0);
-}
+  .header-burger-menu {
+    display: flex;
+  }
 
-.block {
-  overflow: hidden;
-}
-
-.header-menu-container.header-menu-toggle {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  color: var(--white);
-}
-
-.header-mobile-menu {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.header-mobile-menu.header-nav-link {
-  display: block;
-  padding: 0 50px 16px 50px;
-  color: var(--black);
-  text-decoration: none;
-  text-align: center;
-}
-
-.header-theme-switcher.burger {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-}
-
-/* Адаптивная вёрстка для разных размеров экрана */
-
-/* Мобильные устройства (минимальная ширина экрана 375px и выше) */
-@media screen and (min-width: 375px) {
   .header-nav {
-    padding-top: 20px;
+    padding-top: 15px;
+    justify-content: space-between;
   }
-  .header-logo {
-    font-size: 18px;
-    line-height: 20px;
-    letter-spacing: -0.72px;
+
+  /* Add this to show the mobile menu when it's expanded */
+  .header-menu-container.is-open {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(
+      --black
+    ); /* You can customize the background color here */
+    z-index: 99;
+  }
+
+  .header-menu-container {
+    display: block;
+  }
+
+  .header-menu-toggle {
+    /* Add some styles to show the burger icon */
+    display: block;
+    position: relative;
+    z-index: 100;
   }
 }
 
-/* Планшеты (минимальная ширина экрана 768px и выше) */
+/* Адаптивные стили для планшетов и ноутбуков (ширина экрана >= 768px) */
 @media screen and (min-width: 768px) {
   .header-nav {
     padding-top: 30px;
   }
+
   .header-burger-menu {
     display: none;
   }
+
   .header-theme-switcher {
     height: 20px;
   }
+
   .header-btn-box {
-    display: flex;
-    align-items: center;
     gap: 14px;
   }
+
   .header-nav-list {
-    display: flex;
-    align-items: center;
-    gap: 16;
+    gap: 20px;
   }
+
   .header-nav-link {
-    color: var(--black);
     font-size: 12px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 500;
+    text-decoration: none;
+    color: var(--black);
   }
+
   .header-nav-link.current {
     color: var(--light-green);
   }
+
   .header-logo {
     font-size: 18px;
     line-height: 20px;
     letter-spacing: -0.72px;
+    text-decoration: none;
   }
 }
 
-/* Десктопные устройства (минимальная ширина экрана 1200px и выше) */
+/* Адаптивные стили для больших экранов (ширина экрана >= 1200px) */
 @media screen and (min-width: 1200px) {
   .header-nav {
     padding-top: 42px;
   }
+
   .header-btn-box {
     gap: 18px;
   }
