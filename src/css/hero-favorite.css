@@ -1,9 +1,9 @@
-.container {
+    .container {
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.hero-favorite {
+    .hero-favorite {
     padding-top: 52px;
     padding-bottom: 40px;
 }
@@ -24,12 +24,25 @@
     flex-direction: column;
 }
 
-@media screen and (min-width: 375px) {
-}
+@media screen and (min-width: 375px) {}
 
 @media screen and (min-width: 768px) {
     .container {
         padding: 0 32px;
+    }
+    .hero-favorite {
+    padding-top: 50px;
+    }
+    .hero-favorite-text{
+    font-size: 16px;
+    line-height: 1.5;
+    width: 481px;
+    margin: 0 auto;
+    }
+    .hero-favorite-icon {
+    margin: 0 auto 32px;
+    width: 97px;
+    height: 83px;
     }
 }
 
