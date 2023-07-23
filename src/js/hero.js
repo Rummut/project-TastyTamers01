@@ -21,8 +21,10 @@ const createSlides = masterClassData => {
   masterClassData.forEach(masterClass => {
     const slide = document.createElement('div');
     slide.classList.add('swiper-slide');
+
     // Тут ви можете додати контент для кожного слайда, наприклад, назву майстер-класу
     slide.textContent = masterClass.title;
+
     swiperWrapper.appendChild(slide);
   });
 };
