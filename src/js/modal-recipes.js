@@ -6,6 +6,7 @@
     };
   
     refs.openModalBtn.addEventListener("click", toggleModal);
+    console.log(refs.openModalBtn)
     refs.closeModalBtn.addEventListener("click", toggleModal);
   
     function toggleModal() {

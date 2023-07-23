@@ -118,7 +118,7 @@ function createGallary(answers) {
               <svg class="filter-star" width="18" height="18"></svg>
               <svg class="filter-star" width="18" height="18"></svg>
             </div>
-            <button type="button" class="filter-btn-see data-modal-open">See recipe</button>
+            <button type="button" class="filter-btn-see" data-modal-open>See recipe</button>
           </div>
         </div>
       </li>`
