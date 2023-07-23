@@ -1,15 +1,13 @@
 import axios from "axios";
-const searchEl = document.querySelector(".input-form")
-const searchElTime = document.querySelector(".stail-tex-form")
-const searchElArea = document.querySelector(".area-select")
-const searchElIng = document.querySelector(".ingredients-select")
+const searchEl = document.querySelector(".filter-input")
+const searchElTime = document.querySelector(".filter-time")
+const searchElArea = document.querySelector(".filter-area")
+const searchElIng = document.querySelector(".filter-ingredients")
+const galary = document.querySelector(".filter-list")
 
 
 const BASEURL = `https://tasty-treats-backend.p.goit.global/api/recipes`
-// console.log(searchEl)
-// console.log(searchElTime)
-// console.log(searchElArea)
-// console.log(searchElIng)
+
 let inputSearch = '';
 let inputTime = '';
 let inputArea = '';
@@ -19,14 +17,13 @@ searchEl.addEventListener('input', debounce(getDish, 300))
 
 searchElArea.addEventListener('change', (event) => {
     inputArea = event.currentTarget.value
-    console.log(event)
-    fetchSearchDishArea(inputArea)
+    fetchSearchDishArea(inputArea).then((data) => {createGallary(data)})
 })
     
 searchElIng.addEventListener('change', (event) => {
     inputIngr = event.currentTarget.value
     console.log(event.currentTarget.value)
-    fetchSearchDishIngrid(inputIngr)
+    fetchSearchDishIngrid(inputIngr).then((data) => {createGallary(data)})
 })
 
 fetchArea().then(areas => {
@@ -35,7 +32,7 @@ fetchArea().then(areas => {
         searchElArea.insertAdjacentHTML("beforeend", option);
    })
 }).catch(() => {
-    // error.style.display = 'block'
+   
 })
      
 async function fetchArea() {
@@ -47,7 +44,6 @@ const responseArea = await axios ( `https://tasty-treats-backend.p.goit.global/a
     catch {
         
     }
-    
     }
 
 fetchIngredients().then(ingredients => {
@@ -58,26 +54,22 @@ fetchIngredients().then(ingredients => {
     
    })
 }).catch(() => {
-    // error.style.display = 'block'
+    
 })
      
 async function fetchIngredients() {
     try {
 const responseIngredients = await axios ( `https://tasty-treats-backend.p.goit.global/api/ingredients`)
-        // console.log(responseIngredients.data.name)
-        return responseIngredients.data
-        
-    }
+            return responseIngredients.data
+            }
     catch {
         
     }
     
     }
 
-
-
 function debounce(fn, wait) {
-    let timer;
+       let timer;
     return function (...args) {
         if (timer) clearTimeout(timer);
         timer = setTimeout(() => fn(...args), wait);
@@ -85,25 +77,68 @@ function debounce(fn, wait) {
     
 }
 
-
 function getDish(event) {
     
     inputSearch = event.target.value
-    console.log(inputSearch)
-    fetchSearchDish(inputSearch).then(()=>{})
+    
+    fetchSearchDish(inputSearch).then((data) => {
+        
+        if (data.length !== 0) {
+            createGallary(data)
+        } else {
+            
+        }
+              
+    }).catch(() => {
+        console.log(123)
+    })
 }
 
+function createGallary(answers) {
+   galary.innerHTML = ""
+    const galarys = answers.map(answer => {
+    
+        const image = answer.thumb
+        const title = answer.title
+        const rating = answer.rating
+        const description = answer.description
+        const ratingStar = Math.round(answer.rating)
+        galary.insertAdjacentHTML("beforeend",
+            `<li class="filter-item">
+        <img class="filter-img" src="${image}" alt="${title}" />
+        <button class="filter-btn-like">
+          <svg class="filter-svg-like" width="22" height="22"></svg>
+        </button>
+        <div class="filter-info-block">
+          <h4 class="filter-img-title">${title}</h4>
+          <p class="filter-img-text">${description}</p>
+          <div class="filter-info-reiting">
+            <div class="filter-star-block">
+              <p class="filter-reiting">${rating}</p>
+              <svg class="filter-star" width="18" height="18"></svg>*${ratingStar}
+              <svg class="filter-star" width="18" height="18"></svg>
+              <svg class="filter-star" width="18" height="18"></svg>
+              <svg class="filter-star" width="18" height="18"></svg>
+              <svg class="filter-star" width="18" height="18"></svg>
+            </div>
+            <button class="filter-btn-see data-modal-open">See recipe</button>
+          </div>
+        </div>
+      </li>`
 
+        )
+      })
+}
 
 async function fetchSearchDishArea(inputArea) {
     try {
                console.log(inputArea)
-        const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&limit=6&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}`)
+        const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&limit=15&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}`)
                  
         // &category=Beef
     
-        console.log(response)
-    //   return response.data;
+        
+      return  response.data.results;
     }
   catch {
         
@@ -113,12 +148,12 @@ async function fetchSearchDishArea(inputArea) {
 async function fetchSearchDishIngrid(inputIngr) {
     try {
                console.log(inputIngr)
-        const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&limit=6&time=${inputTime}&area=${inputArea}&ingredient=${inputIngr}`)
+        const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&limit=15&time=${inputTime}&area=${inputArea}&ingredient=${inputIngr}`)
                  
         // &category=Beef
     
-        console.log(response)
-    //   return response.data;
+        
+      return  response.data.results;
     }
   catch {
         
@@ -127,13 +162,12 @@ async function fetchSearchDishIngrid(inputIngr) {
 async function fetchSearchDish(inputSearch) {
     try {
         
-        
-        const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&limit=6&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}`)
+        const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&limit=15&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}`)
                   
         // &category=Beef
     
-        console.log(response)
-    //   return response.data;
+       
+      return response.data.results;
     }
   catch {
         
@@ -142,11 +176,5 @@ async function fetchSearchDish(inputSearch) {
 
 
 
-// document.addEventListener(
-//   "scroll",
-//   _.debounce(() => {
-//     console.log("Scroll handler call after 300ms pause");
-//   }, 300)
-// );
 
 
