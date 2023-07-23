@@ -56,7 +56,7 @@ fetchIngredients().then(ingredients => {
         searchElIng.insertAdjacentHTML("beforeend", option);
     
    })
-}).catch(() => {
+  }).catch(() => {
     
 })
      
