@@ -1,9 +1,12 @@
 import axios from "axios";
+const form = document.querySelector(".filter-form")
 const searchEl = document.querySelector(".filter-input")
 const searchElTime = document.querySelector(".filter-time")
 const searchElArea = document.querySelector(".filter-area")
 const searchElIng = document.querySelector(".filter-ingredients")
 const galary = document.querySelector(".filter-list")
+const btnResetFilter = document.querySelector(".filter-btn-reset")
+console.log(btnResetFilter)
 
 
 const BASEURL = `https://tasty-treats-backend.p.goit.global/api/recipes`
@@ -11,7 +14,7 @@ const BASEURL = `https://tasty-treats-backend.p.goit.global/api/recipes`
 let inputSearch = '';
 let inputTime = '';
 let inputArea = '';
-let inputIngr = ''
+let inputIngr = '';
 
 searchEl.addEventListener('input', debounce(getDish, 300))
 
@@ -24,6 +27,14 @@ searchElIng.addEventListener('change', (event) => {
     inputIngr = event.currentTarget.value
     console.log(event.currentTarget.value)
     fetchSearchDishIngrid(inputIngr).then((data) => {createGallary(data)})
+})
+btnResetFilter.addEventListener('click', (event) => {
+    inputSearch = '';
+    inputTime = '';
+    inputArea = '';
+    inputIngr = '';
+  form.reset();
+
 })
 
 fetchArea().then(areas => {
@@ -79,7 +90,8 @@ function debounce(fn, wait) {
 
 function getDish(event) {
     
-    inputSearch = event.target.value
+    inputSearch = event.target.value.trim()
+    console.log(inputSearch)
     
     fetchSearchDish(inputSearch).then((data) => {
         
@@ -121,7 +133,7 @@ function createGallary(answers) {
               <svg class="filter-star" width="18" height="18"></svg>
               <svg class="filter-star" width="18" height="18"></svg>
             </div>
-            <button class="filter-btn-see data-modal-open">See recipe</button>
+            <button type="button" class="filter-btn-see data-modal-open">See recipe</button>
           </div>
         </div>
       </li>`
