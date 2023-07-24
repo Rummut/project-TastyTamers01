@@ -27,11 +27,11 @@ var Qe=(e,t,n)=>{if(!t.has(e))throw TypeError("Cannot "+n)};var ee=(e,t,n)=>(Qe(
           <div class="filter-info-reiting">
             <div class="filter-star-block mark-${i}">
               <p class="filter-reiting">${s}</p>
-              <svg class="filter-star star star-1" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
-              <svg class="filter-star star star-2" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
-              <svg class="filter-star star star-3" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
-              <svg class="filter-star star star-4" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
-              <svg class="filter-star star star-5" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-1" width="18" height="18"><use href="./img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-2" width="18" height="18"><use href="./img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-3" width="18" height="18"><use href="./img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-4" width="18" height="18"><use href="./img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-5" width="18" height="18"><use href="./img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
             </div>
             <button type="button" class="filter-btn-see" data-modal-open>See recipe</button>
           </div>
