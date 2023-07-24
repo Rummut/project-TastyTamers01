@@ -18,7 +18,7 @@ async function fetchPopular() {
           loading="slow"
         />
       </div>
-      <div class="popular-containet-def">
+      <div class="popular-container-def">
         <h3 class="popular-recipes-title">${el.title}</h3>
         <p class="popular-recipes-description">${el.description}</p>
       </div>
