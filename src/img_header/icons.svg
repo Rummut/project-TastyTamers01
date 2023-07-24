@@ -86,6 +86,9 @@
                 d="M11.52 6.4h16.64c3.535 0 6.4 2.865 6.4 6.4s-2.865 6.4-6.4 6.4H11.52c-3.535 0-6.4-2.865-6.4-6.4s2.865-6.4 6.4-6.4z"
                 style="fill:var(--color5, #cecdcd)" />
         </symbol>
+         <symbol id="icon-close" viewBox="0 0 32 32">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3.556" d="M24 8 8 24M8 8l16 16"/>
+    </symbol>
 
     </defs>
 </svg>

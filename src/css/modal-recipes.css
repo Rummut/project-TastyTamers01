@@ -44,30 +44,16 @@
     justify-content: center;
     width: 24px;
     height: 24px;
-
-    /* background: #e7e9fc; */
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    transition: background-color var(--light-green);
     transition-duration: 250ms;
     transition-timing-function: var(--cubic);
-}
-.modal-close_btn:hover,
-.modal-close_btn:focus {
-    background: var(--light-green);
-    color: var(--black);
-}
-.modal-close_btn:hover .modal-close-btn-icon,
-.modal-close_btn:focus .modal-close-btn-icon {
-    fill: currentColor;
 }
 .modal-close-btn-icon {
     
-    /* fill: #4d5ae5; */
+    stroke: black;
     transition-duration: 250ms;
     transition-timing-function: var(--cubic);
 }
-.form-modal-btn {
+.recipe-modal-btn {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 24px;
@@ -84,8 +70,8 @@
 	transition-duration: 250ms;
 	transition-timing-function: var(--cubic);
 }
-.form-modal-btn:hover,
-.form-modal-btn:focus {
+.recipe-modal-btn:hover,
+.recipe-modal-btn:focus {
 	color: var(--black);
 }
 @media screen and (min-width: 375px) {
@@ -100,5 +86,5 @@
 }
 
 @media screen and (min-width: 1200px) {
-    
+   
 }
