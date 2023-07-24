@@ -1,8 +1,8 @@
 .category-container {
     max-height: 402px;
     margin-bottom: 40px;
-}
-.all-category-button {
+  }
+  .all-category-button {
     width: 176px;
     height: 50px;
     border: 1px solid var(--gray-border-w);
@@ -16,25 +16,25 @@
     cursor: pointer;
     padding: 14px 10px;
     transition: var(--trns-general);
-}
-.all-category-button:hover, .all-category-button:focus {
+  }
+  .all-category-button:hover, .all-category-button:focus {
     background-color: var(--green);
     color: var(--white-w);
     border: 1px solid var(--green);
-}
-.all-category-button.active {
+  }
+  .all-category-button.active {
     border: 1px solid var(--green);
     background-color: var(--green);
     color: var(--white-w);
-}
-.category-list {
+  }
+  .category-list {
     height: 198px;
     display: flex;
     flex-direction: column;
     gap: 18px;
     overflow-y: scroll;
-}
-.category-btn {
+  }
+  .category-btn {
     border: none;
     background-color: transparent;
     color: var(--gray-ul-w);
@@ -44,53 +44,47 @@
     cursor: pointer;
     padding: 0;
     transition: var(--trns-general);
-}
-@media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 768px) {
     .category-btn {
-        font-size: 16px;
-   }
-}
-.category-btn:hover {
+      font-size: 16px;
+    }
+  }
+  .category-btn:hover {
     color: var(--green);
-}
-.category-btn.active {
+  }
+  .category-btn.active {
     color: var(--green);
-}
-.onFocus {
+  }
+  .onFocus {
     color: var(--green);
     background-color: var(--green);
-}
-@media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 768px) {
     .category-container {
-        max-height: 496px;
-        max-width: 176px;
-        margin-bottom: 0;
-   }
+      max-height: 496px;
+      max-width: 176px;
+      margin-bottom: 0;
+    }
     .all-category-button {
-        margin-bottom: 30px;
-   }
+      margin-bottom: 30px;
+    }
     .category-list {
-        width: 176px;
-        height: 416px;
-        gap: 24px;
-   }
-}
-@media screen and (min-width: 1280px) {
+      width: 176px;
+      height: 416px;
+      gap: 24px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
     .category-container {
-        max-height: 540px;
-        max-width: 174px;
-   }
+      max-height: 540px;
+      max-width: 174px;
+    }
     .all-category-button {
-        width: 174px;
-   }
+      width: 174px;
+    }
     .category-list {
-        width: 235px;
-   }
-}
-
-
-/* @media screen and (min-width: 375px) {}
-
-@media screen and (min-width: 768px) {}
-
-@media screen and (min-width: 1200px) {} */
+      width: 235px;
+    }
+  }
+  
