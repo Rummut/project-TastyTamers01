@@ -1,5 +1,10 @@
 import axios from 'axios';
 import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 const fetchMasterClasses = async () => {
   try {
@@ -19,15 +24,12 @@ const fetchMasterClasses = async () => {
 
 const renderMasterClasses = masterClasses => {
   const masterClassListElement = document.getElementById('masterClassList');
-  masterClassListElement.innerHTML = ''; // Очищаємо вміст перед додаванням нових слайдів
-
+  masterClassListElement.innerHTML = '';
   masterClasses.forEach(masterClass => {
     if (masterClass.imageUrl && masterClass.title && masterClass.description) {
       const slideItem = document.createElement('div');
       slideItem.classList.add('swiper-slide');
 
-      // Тут ви можете створити HTML-структуру для кожного майстер-класу
-      // Наприклад:
       slideItem.innerHTML = `
         <div class="slider-item">
           <img src="${masterClass.imageUrl}" alt="${masterClass.title}">
@@ -46,9 +48,7 @@ const initSlider = async () => {
     const masterClasses = await fetchMasterClasses();
     renderMasterClasses(masterClasses);
 
-    new Swiper('.swiper-container', {
-      // Налаштування Swiper.js (за бажанням)
-      // Наприклад, якщо вам потрібні пагінація та навігація:
+    const swiper = new Swiper('.swiper-container', {
       pagination: {
         el: '.swiper-pagination',
       },
@@ -62,8 +62,4 @@ const initSlider = async () => {
   }
 };
 
-// Виклик функції для ініціалізації слайдера
 initSlider();
-// document.addEventListener('DOMContentLoaded', () => {
-//   initSlider();
-// });
