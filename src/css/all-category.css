@@ -46,8 +46,8 @@ button.isUse {
 .button-Allcategories {
   cursor: pointer;
   margin-bottom: 48px;
-  /* background-color: var(--primary-white-color);
-  color: #05050580; */
+  background-color: var(--primary-white-color);
+  color: #05050580;
   color: inherit;
   background-color: inherit;
   border-color: inherit;
@@ -58,7 +58,7 @@ button.isUse {
   border-radius: 15px;
   border-width: 1px;
   border-style: solid;
-  /* border: 1px solid #05050580; */
+  border: 1px solid #05050580;
 }
 
 @media screen and (max-width: 767px) {
