@@ -62,6 +62,15 @@ fetchIngredients()
     });
   })
   .catch(() => {});
+        const option = `<option value = "${ingredient._id}">${ingredient.name}</option>`
+        searchElIng.insertAdjacentHTML("beforeend", option);
+    
+   })
+  }).catch(() => {
+    
+})
+     
+
 
 function debounce(fn, wait) {
   let timer;
@@ -104,7 +113,7 @@ function createGallary(answers) {
       `<li class="filter-item">
         <img class="filter-img" src="${image}" alt="${title}" />
         <button class="filter-btn-like">
-          <svg class="filter-svg-like" width="22" height="22"></svg>
+          <svg class="filter-svg-like" width="22" height="22"><use href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
         </button>
         <div class="filter-info-block">
           <h4 class="filter-img-title">${title}</h4>
@@ -112,11 +121,11 @@ function createGallary(answers) {
           <div class="filter-info-reiting">
             <div class="filter-star-block">
               <p class="filter-reiting">${rating}</p>
-              <svg class="filter-star" width="18" height="18"></svg>*${ratingStar}
-              <svg class="filter-star" width="18" height="18"></svg>
-              <svg class="filter-star" width="18" height="18"></svg>
-              <svg class="filter-star" width="18" height="18"></svg>
-              <svg class="filter-star" width="18" height="18"></svg>
+              <svg class="filter-star" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>*${ratingStar}
+              <svg class="filter-star" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
+              <svg class="filter-star" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
+              <svg class="filter-star" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
+              <svg class="filter-star" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
             </div>
             <button type="button" class="filter-btn-see" data-modal-open>See recipe</button>
           </div>

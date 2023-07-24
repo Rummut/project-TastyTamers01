@@ -7,6 +7,7 @@
   border-radius: 8px;
   max-width: none;
 }
+
 .popular-group-title {
   text-transform: uppercase;
   font-size: 18px;
@@ -15,6 +16,7 @@
   text-align: left;
   margin-bottom: 20px;
 }
+
 .popular-recipes-title {
   font-weight: 600;
   text-align: left;
@@ -25,6 +27,7 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
+
 .popular-recipes-description {
   color: rgba(5, 5, 5, 0.8);
   font-size: 12px;
