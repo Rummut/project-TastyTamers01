@@ -60,15 +60,10 @@
     }
 }
 
-<<<<<<< HEAD
-@media screen and (min-width: 1280px) {
-=======
-@media screen and (min-width: 1280px) {
-
->>>>>>> main
+@media screen and (min-width: 1280px){
     .hero-favorite {
-    padding-top: 40px;
-    padding-bottom: 64px;
+        padding-top: 40px;
+        padding-bottom: 64px;
     }
     .hero-favorite-text{
     font-size: 16px;
