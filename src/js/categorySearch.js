@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = '10251245-89f446d0cb8b565d1d225cbbb';
+const API_KEY = '';
 const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api/recipes';
 
 function resizePage() {

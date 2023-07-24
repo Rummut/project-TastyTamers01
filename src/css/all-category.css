@@ -2,6 +2,7 @@
   height: 198px;
   overflow: hidden;
 }
+
 .container-allcategories {
   margin-bottom: 40px;
   width: 326px;
@@ -15,29 +16,31 @@
   column-gap: 18px;
   width: 100%;
   padding: 0;
-  /* color: #05050580; */
+  color: #05050580;
   color: inherit;
   border: none;
-  /* background-color: white; */
+  background-color: white;
   background-color: inherit;
   cursor: pointer;
   text-align: start;
 }
+
 .button-category:not(:first-child) {
   padding-top: 9px;
 }
+
 .button-category:not(:last-child) {
   padding-bottom: 9px;
 }
 
 button.isUse {
-  color: var(--accent-color);
+  color: var(--light-green);
 }
 
 .button-Allcategories:hover {
-  background-color: var(--accent-color);
-  color: var(--primary-white-color);
-  border-color: var(--accent-color);
+  background-color: var(--light-green);
+  color: var(--modal-white);
+  border-color: var(--light-green);
 }
 
 .button-Allcategories {
@@ -87,10 +90,10 @@ button.isUse {
 }
 
 .button-Allcategories.isUse {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
+  color: var(--light-green);
+  border-color: var(--light-green);
 }
 
 .button-Allcategories.isUse:hover {
-  color: var(--primary-white-color);
+  color: var(--modal-white);
 }
