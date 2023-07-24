@@ -3,12 +3,12 @@
     <nav class="header-nav nav">
       <ul class="header-nav-list list">
         <li class="header-nav-list-item item">
-          <a class="header-nav-link home link current" href="./index.html"
+          <a class="header-nav-link home link current" href="../index.html"
             >Home</a
           >
         </li>
         <li class="header-nav-list-item item">
-          <a class="header-nav-link favorites link" href="./favorites.html"
+          <a class="header-nav-link favorites link" href="../favorites.html"
             >Favorites</a
           >
         </li>
@@ -27,7 +27,7 @@
           aria-label="shopping-cart"
         >
           <svg class="header-shopping-icon" width="24" height="24">
-            <use href="./img_header/icons.svg#icon-shopping-cart-dark"></use>
+            <use href="../img_header/icons.svg#icon-shopping-cart-dark"></use>
           </svg>
         </a>
 
@@ -37,6 +37,7 @@
           type="button"
           aria-expanded="false"
           aria-controls="mobile-menu"
+          aria-label="Toggle menu"
         >
           <svg class="header-burger-menu-icon" width="32" height="32">
             <use href="../img_header/icons.svg#icon-menu-dark"></use>
@@ -54,7 +55,31 @@
 
   <!-- HEADER MOBILE WINDOW -->
   <div class="header-menu-container js-menu-container" id="mobile-menu">
-    <button class="header-menu-toggle js-close-menu">
+    <li class="header-theme-switcher burger">
+      <input type="checkbox" class="switcher-input" id="mobile-switch" />
+      <label class="input-label" for="mobile-switch">Toggle</label>
+    </li>
+
+    <ul class="header-mobile-menu">
+      <li class="nav-item-burger item">
+        <a class="header-nav-link home link current" href="../index.html"
+          >Home</a
+        >
+      </li>
+      <li class="nav-item-burger item">
+        <a class="header-nav-link favorites link" href="../favorites.html"
+          >Favorites</a
+        >
+      </li>
+
+      <!-- HEADER TOGGLE SWITCH BURGER -->
+    </ul>
+
+    <button
+      class="header-menu-toggle js-close-menu"
+      aria-expanded="false"
+      aria-label="Close menu"
+    >
       <svg
         fill="currentColor"
         viewBox="0 0 20 20"
@@ -69,24 +94,5 @@
         ></path>
       </svg>
     </button>
-
-    <ul class="header-mobile-menu">
-      <li class="nav-item-burger item">
-        <a class="header-nav-link home link current" href="./index.html"
-          >Home</a
-        >
-      </li>
-      <li class="nav-item-burger item">
-        <a class="header-nav-link favorites link" href="./favorites.html"
-          >Favorites</a
-        >
-      </li>
-
-      <!-- HEADER TOGGLE SWITCH BURGER -->
-      <li class="header-theme-switcher burger">
-        <input type="checkbox" class="switcher-input" id="mobile-switch" />
-        <label class="input-label" for="mobile-switch">Toggle</label>
-      </li>
-    </ul>
   </div>
 </header>

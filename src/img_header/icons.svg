@@ -86,7 +86,19 @@
                 d="M11.52 6.4h16.64c3.535 0 6.4 2.865 6.4 6.4s-2.865 6.4-6.4 6.4H11.52c-3.535 0-6.4-2.865-6.4-6.4s2.865-6.4 6.4-6.4z"
                 style="fill:var(--color5, #cecdcd)" />
         </symbol>
+
          <symbol id="icon-close" viewBox="0 0 32 32">
+
+         <symbol id="icon-youtube" viewBox="0 0 32 32">
+      <path fill="none"
+        stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.6842"
+        d="M30.053 8.56c-0.158-0.633-0.481-1.213-0.935-1.681s-1.024-0.808-1.652-0.986c-2.293-0.56-11.467-0.56-11.467-0.56s-9.173 0-11.467 0.613c-0.628 0.178-1.197 0.518-1.652 0.986s-0.777 1.048-0.935 1.681c-0.42 2.327-0.625 4.688-0.613 7.053-0.015 2.383 0.19 4.762 0.613 7.107 0.175 0.613 0.504 1.171 0.958 1.619s1.014 0.772 1.629 0.941c2.293 0.613 11.467 0.613 11.467 0.613s9.173 0 11.467-0.613c0.628-0.178 1.197-0.518 1.652-0.986s0.777-1.048 0.935-1.681c0.416-2.31 0.622-4.653 0.613-7 0.015-2.383-0.19-4.762-0.613-7.107z"></path>
+      <path fill="none"
+        stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.6842"
+        d="M13 20.027l7.667-4.36-7.667-4.36v8.72z"></path>
+    </symbol>
+     <symbol id="icon-close" viewBox="0 0 32 32">
+
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3.556" d="M24 8 8 24M8 8l16 16"/>
     </symbol>
 
