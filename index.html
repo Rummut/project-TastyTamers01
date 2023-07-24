@@ -12,8 +12,8 @@
     />
     <title>TastyTreats</title>
     
-    <script type="module" crossorigin src="/project-TastyTamers01/assets/modal-recipes-3a1e7678.js"></script>
-    <link rel="stylesheet" href="/project-TastyTamers01/assets/modal-recipes-ce21ad28.css">
+    <script type="module" crossorigin src="/project-TastyTamers01/assets/modal-recipes-9cd42de6.js"></script>
+    <link rel="stylesheet" href="/project-TastyTamers01/assets/modal-recipes-6ebf214d.css">
   </head>
   <body>
     <header class="header header-section">
@@ -135,49 +135,72 @@
       <section class="filters">
   <div class="container">
     <form class="filter-form">
-      <label for="search" class="filter-label"
-        >Search
-        <input
-          class="filter-input"
-          name="searchquery"
-          type="text"
-          id="search"
-          placeholder="Enter Text"
-        />
-        <button>
-          <svg width="18" height="18"></svg>
-        </button>
-        <button>
-          <svg width="18" height="18"></svg>
-        </button>
+      <label class="filter-form-block">
+        <h5 class="filter-label">Search</h5>
+        <span class="filter-input-block">
+          <input class="filter-input" name="searchquery" type="text" placeholder="Enter Text" />
+          <svg class="filter-input-svg" width="18" height="18">
+            <use href=""></use>
+          </svg>
+          <button class="filter-input-btn">
+            <svg class="filter-input-svg-close" width="18" height="18">
+              <use href="/project-TastyTamers01/assets/icons-49dbec3f.svg#icon-x-small-dark"></use>
+            </svg>
+          </button>
+        </span>
       </label>
-      <p class="filter-label">Time</p>
-      <span class="filter-select">
-        <select class="filter-sel filter-time" name="time" id=""></select
-      ></span>
-
-      <p class="filter-label">Area</p>
-      <span class="filter-select">
-        <select class="filter-sel filter-area" name="time" id=""></select
-      ></span>
-      <p class="filter-label">Ingredients</p>
-      <span class="filter-select">
-        <select class="filter-sel filter-ingredients" name="time" id=""></select
-      ></span>
+      <div class="filter-form-block">
+        <h5 class="filter-label">Time</h5>
+        <select class="filter-sel filter-time" name="time" id="">
+          <option value="0">0 min</option>
+          <option value="5">5 min</option>
+          <option value="10">10 min</option>
+          <option value="15">15 min</option>
+          <option value="20">20 min</option>
+          <option value="25">25 min</option>
+          <option value="30">30 min</option>
+          <option value="35">35 min</option>
+          <option value="40">40 min</option>
+          <option value="45">45 min</option>
+          <option value="50">50 min</option>
+          <option value="55">55 min</option>
+          <option value="60">60 min</option>
+          <option value="65">65 min</option>
+          <option value="70">70 min</option>
+          <option value="75">75 min</option>
+          <option value="80">80 min</option>
+          <option value="85">85 min</option>
+          <option value="90">90 min</option>
+          <option value="95">95 min</option>
+          <option value="100">100 min</option>
+          <option value="105">105 min</option>
+          <option value="110">110 min</option>
+          <option value="115">115 min</option>
+          <option value="120">120 min</option>
+        </select>
+      </div>
+      <div class="filter-form-block">
+        <h2 class="filter-label">Area</h2>
+        <select class="filter-sel filter-area" name="time" id="">
+        </select>
+      </div>
+      <div class="filter-form-block">
+        <h2 class="filter-label">Ingredients</h2>
+        <select class="filter-sel filter-ingredients" name="time" id="">
+        </select>
+      </div>
     </form>
     <div class="filter-btn-block">
       <button class="filter-btn-reset">
         <svg class="filter-btn-svg" width="16" height="16">
-          <use></use>
+          <use href="/project-TastyTamers01/assets/icons-49dbec3f.svg#icon-x-small-dark"></use>
         </svg>
       </button>
-
       <p class="filter-btn-text">Reset the filter</p>
     </div>
     <ul class="list filter-list"></ul>
   </div>
 </section>
-
       <section class="card-dish">
   <div class="container"></div>
 </section>
