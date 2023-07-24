@@ -19,7 +19,7 @@ var Qe=(e,t,n)=>{if(!t.has(e))throw TypeError("Cannot "+n)};var ee=(e,t,n)=>(Qe(
         </div>`)}).catch(()=>{})}function ge(e){ue.innerHTML="",e.map(t=>{const n=t.thumb,r=t.title,s=t.rating,o=t.description,i=Math.round(t.rating);ue.insertAdjacentHTML("beforeend",`<li class="filter-item">
         <img class="filter-img" src="${n}" alt="${r}" />
         <button class="filter-btn-like">
-          <svg class="filter-svg-like" width="22" height="22"><use href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
+          <svg class="filter-svg-like" width="22" height="22"><use href="/img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
         </button>
         <div class="filter-info-block">
           <h4 class="filter-img-title">${r}</h4>
@@ -27,11 +27,11 @@ var Qe=(e,t,n)=>{if(!t.has(e))throw TypeError("Cannot "+n)};var ee=(e,t,n)=>(Qe(
           <div class="filter-info-reiting">
             <div class="filter-star-block mark-${i}">
               <p class="filter-reiting">${s}</p>
-              <svg class="filter-star star star-1" width="18" height="18"><use href="./img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
-              <svg class="filter-star star star-2" width="18" height="18"><use href="./img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
-              <svg class="filter-star star star-3" width="18" height="18"><use href="./img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
-              <svg class="filter-star star star-4" width="18" height="18"><use href="./img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
-              <svg class="filter-star star star-5" width="18" height="18"><use href="./img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-1" width="18" height="18"><use href="/img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-2" width="18" height="18"><use href="/img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-3" width="18" height="18"><use href="/img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-4" width="18" height="18"><use href="/img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-5" width="18" height="18"><use href="/img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
             </div>
             <button type="button" class="filter-btn-see" data-modal-open>See recipe</button>
           </div>
