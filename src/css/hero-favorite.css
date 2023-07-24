@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-
 .hero-favorite {
-=======
-    .hero-favorite {
->>>>>>> main
     padding-top: 52px;
     padding-bottom: 40px;
 }
@@ -48,8 +43,6 @@
     transition: var(--basic-transition);
 }
 
-@media screen and (min-width: 375px) {}
-
 @media screen and (min-width: 768px) {
     .hero-favorite {
     padding-top: 50px;
@@ -67,7 +60,7 @@
     }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
     .hero-favorite {
     padding-top: 40px;
     padding-bottom: 64px;
