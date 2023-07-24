@@ -39,7 +39,8 @@
     }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
+
     .hero-favorite {
     padding-top: 40px;
     padding-bottom: 64px;

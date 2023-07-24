@@ -9,6 +9,7 @@ body {
   overflow: auto;
 }
 
+
 /* Header Styles */
 .header-nav {
   display: flex;
@@ -234,8 +235,8 @@ body {
   }
 }
 
-/* Адаптивные стили для больших экранов (ширина экрана >= 1200px) */
-@media screen and (min-width: 1200px) {
+/* Адаптивные стили для больших экранов (ширина экрана >= 1280px) */
+@media screen and (min-width: 1280px) {
   .header-nav {
     padding-top: 42px;
   }
