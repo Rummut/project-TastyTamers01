@@ -12,8 +12,8 @@
     />
     <title>TastyTreats</title>
     
-    <script type="module" crossorigin src="/project-TastyTamers01/assets/modal-recipes-0631e07a.js"></script>
-    <link rel="stylesheet" href="/project-TastyTamers01/assets/modal-recipes-6811d6e0.css">
+    <script type="module" crossorigin src="/project-TastyTamers01/assets/modal-recipes-13e15b1d.js"></script>
+    <link rel="stylesheet" href="/project-TastyTamers01/assets/modal-recipes-08ea997e.css">
   </head>
   <body>
     <header class="header header-section">
@@ -143,7 +143,7 @@
           </svg>
           <button class="filter-input-btn">
             <svg class="filter-input-svg-close" width="18" height="18">
-              <use href="/project-TastyTamers01/assets/icons-49dbec3f.svg#icon-x-small-dark"></use>
+              <use href="/project-TastyTamers01/assets/icons-76d16145.svg#icon-x-small-dark"></use>
             </svg>
           </button>
         </span>
@@ -192,7 +192,7 @@
     <div class="filter-btn-block">
       <button class="filter-btn-reset">
         <svg class="filter-btn-svg" width="16" height="16">
-          <use href="/project-TastyTamers01/assets/icons-49dbec3f.svg#icon-x-small-dark"></use>
+          <use href="/project-TastyTamers01/assets/icons-76d16145.svg#icon-x-small-dark"></use>
         </svg>
       </button>
       <p class="filter-btn-text">Reset the filter</p>
@@ -209,18 +209,87 @@
 
     <div class="modal-rating"></div>
 
-    <div class="backdrop is-hidden" data-modal>
-  <div class="modal">
-    <button type="button" class="modal-close_btn" data-modal-close>
-      <svg class="modal-close-btn-icon" width="8" height="8">
-        <use href="../img_header/svg/x-small-dark.svg"></use>
-      </svg>
-    </button>
-    <div></div>
-    <h2>BANANA PANCAKES</h2>
+    
+<button type="button" data-modal-open>recipe</button>
 
-    <button class="form-modal-btn" type="button">Add to favorite</button>
-  </div>
+<div class="modal-wraper is-hidden" data-modal>
+    <div class="backdrop"></div>
+    <div id="modal" class="modal">
+        <button type="button" class="modal-close_btn" data-modal-close>
+          <svg class="modal-close-btn-icon" width="24" height="24">
+              <use href="../img_header/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+      
+        <!-- початок -->
+        
+        <div class="wrap-recipe">
+          <div class="modal-recipes-info">
+              <div id="video">
+                  
+              </div>
+              <h2 class="recipes-title "></h2>
+          </div>
+          <div class="box-recipe">
+            <ul class="recipe-tags tags-mobile ">
+               
+               
+            </ul>
+            <div class="wrap-rating">
+                <div class="rating-number text-grey">5</div>
+                <div class="rating__body">
+                    <div class="rating__active" style="width: 21.8%;"></div>
+                    <div class="rating__items">
+                      <input type="radio" class="rating__item" name="rating" value="1">
+                      <input type="radio" class="rating__item" name="rating" value="2">
+                      <input type="radio" class="rating__item" name="rating" value="3">
+                      <input type="radio" class="rating__item" name="rating" value="4">
+                      <input type="radio" class="rating__item" name="rating" value="5">
+                    </div>
+                  </div>
+            </div>
+            <p class="time text-grey"></p>
+        </div>
+          <ul class="recipe-ingriidients">
+              <li class="recipe-ingriidient">
+                  <p>bananna</p>
+                  <p class="text-grey">1 large</p>
+              </li>
+              <li class="recipe-ingriidient">
+                  <p>bananna</p>
+                  <p class="text-grey">1 large</p>
+              </li>
+              <li class="recipe-ingriidient">
+                  <p>bananna</p>
+                  <p class="text-grey">1 large</p>
+              </li>
+          </ul>
+          <ul  class="recipe-tags tags-desktop">
+             
+          </ul>
+          
+          <p class="cooking-recipes">Mash the ripe banana in a medium mixing bowl.
+              Add the egg and whisk together until well combined.
+              Add the flour, baking powder, cinnamon (if using), and salt, and stir until just combined.
+              Heat a non-stick skillet or griddle over medium heat and add the vegetable oil or melted butter.
+              Scoop the batter onto the skillet or griddle using a 1/4 cup measure, and cook for 2-3 minutes on each side, or until the pancakes are golden brown and cooked through.
+              Serve warm with your favorite toppings such as maple syrup, sliced bananas, or whipped cream.</p>
+          <div class="buttons-add">
+            <button type="button" id="btn-add" class="btn-add recipe-modal-btn ">
+              Add to favorite
+            </button>
+            <!-- <button
+              type="button"
+              id="btn-remove"
+              class="btn btn-outline-remove recipe-modal-btn hidden js-removeFromFavorite-btn"
+            >
+              Remove from favorite
+            </button> -->
+            <!-- <button type="button" class="btn-add">Give a rating</button> -->
+          </div>
+        </div>
+        <!-- кінець -->
+      </div>
 </div>
 
 
