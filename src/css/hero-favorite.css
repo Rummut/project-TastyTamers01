@@ -1,11 +1,10 @@
-    .container {
-    margin: 0 auto;
-    padding: 0 20px;
-}
 
-    .hero-favorite {
+.hero-favorite {
     padding-top: 52px;
     padding-bottom: 40px;
+}
+.hero-favorite-img {
+    margin: 0 auto;
 }
 
 .hero-favorite-text{
@@ -23,6 +22,26 @@
 .hero-favorite-content {
     display: flex;
     flex-direction: column;
+}
+
+.hero-favorite-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.hero-fav-categ-btn {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.29;
+    border-radius: 15px;
+    border: 1px solid rgba(5,5,5,.2);
+    background-color: white;
+    color: #cecdcd;
+    padding: 14px 18px;
+    transition: var(--basic-transition);
 }
 
 @media screen and (min-width: 375px) {}
