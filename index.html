@@ -12,8 +12,8 @@
     />
     <title>TastyTreats</title>
     
-    <script type="module" crossorigin src="/project-TastyTamers01/assets/modal-recipes-f8a14c7c.js"></script>
-    <link rel="stylesheet" href="/project-TastyTamers01/assets/modal-recipes-5e1ca712.css">
+    <script type="module" crossorigin src="/project-TastyTamers01/assets/modal-recipes-1cf0fa97.js"></script>
+    <link rel="stylesheet" href="/project-TastyTamers01/assets/modal-recipes-a9be8fc5.css">
   </head>
   <body>
     <header class="header header-section">
@@ -21,12 +21,12 @@
     <nav class="header-nav nav">
       <ul class="header-nav-list list">
         <li class="header-nav-list-item item">
-          <a class="header-nav-link home link current" href="./index.html"
+          <a class="header-nav-link home link current" href="../index.html"
             >Home</a
           >
         </li>
         <li class="header-nav-list-item item">
-          <a class="header-nav-link favorites link" href="./favorites.html"
+          <a class="header-nav-link favorites link" href="../favorites.html"
             >Favorites</a
           >
         </li>
@@ -45,6 +45,7 @@
           aria-label="shopping-cart"
         >
           <svg class="header-shopping-icon" width="24" height="24">
+            <!-- Replace this URL with your correct SVG icon URL -->
             <use href="/project-TastyTamers01/assets/icons-49dbec3f.svg#icon-shopping-cart-dark"></use>
           </svg>
         </a>
@@ -55,8 +56,10 @@
           type="button"
           aria-expanded="false"
           aria-controls="mobile-menu"
+          aria-label="Toggle menu"
         >
           <svg class="header-burger-menu-icon" width="32" height="32">
+            <!-- Replace this URL with your correct SVG icon URL -->
             <use href="../img_header/icons.svg#icon-menu-dark"></use>
           </svg>
         </button>
@@ -72,7 +75,11 @@
 
   <!-- HEADER MOBILE WINDOW -->
   <div class="header-menu-container js-menu-container" id="mobile-menu">
-    <button class="header-menu-toggle js-close-menu">
+    <button
+      class="header-menu-toggle js-close-menu"
+      aria-expanded="false"
+      aria-label="Close menu"
+    >
       <svg
         fill="currentColor"
         viewBox="0 0 20 20"
@@ -90,12 +97,12 @@
 
     <ul class="header-mobile-menu">
       <li class="nav-item-burger item">
-        <a class="header-nav-link home link current" href="./index.html"
+        <a class="header-nav-link home link current" href="../index.html"
           >Home</a
         >
       </li>
       <li class="nav-item-burger item">
-        <a class="header-nav-link favorites link" href="./favorites.html"
+        <a class="header-nav-link favorites link" href="../favorites.html"
           >Favorites</a
         >
       </li>
@@ -175,7 +182,6 @@
   <div class="container"></div>
 </section>
 
-    
     </main>
     <div class="modal-order"></div>
 
