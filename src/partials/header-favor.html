@@ -54,7 +54,31 @@
 
   <!-- HEADER MOBILE WINDOW -->
   <div class="header-menu-container js-menu-container" id="mobile-menu">
-    <button class="header-menu-toggle js-close-menu">
+    <li class="header-theme-switcher burger">
+      <input type="checkbox" class="switcher-input" id="mobile-switch" />
+      <label class="input-label" for="mobile-switch">Toggle</label>
+    </li>
+
+    <ul class="header-mobile-menu">
+      <li class="nav-item-burger item">
+        <a class="header-nav-link home link current" href="../index.html"
+          >Home</a
+        >
+      </li>
+      <li class="nav-item-burger item">
+        <a class="header-nav-link favorites link" href="../favorites.html"
+          >Favorites</a
+        >
+      </li>
+
+      <!-- HEADER TOGGLE SWITCH BURGER -->
+    </ul>
+
+    <button
+      class="header-menu-toggle js-close-menu"
+      aria-expanded="false"
+      aria-label="Close menu"
+    >
       <svg
         fill="currentColor"
         viewBox="0 0 20 20"
@@ -69,24 +93,5 @@
         ></path>
       </svg>
     </button>
-
-    <ul class="header-mobile-menu">
-      <li class="nav-item-burger item">
-        <a class="header-nav-link home link" href="../index.html">Home</a>
-      </li>
-      <li class="nav-item-burger item">
-        <a
-          class="header-nav-link favorites link current"
-          href="../favorites.html"
-          >Favorites</a
-        >
-      </li>
-
-      <!-- HEADER TOGGLE SWITCH BURGER -->
-      <li class="header-theme-switcher burger">
-        <input type="checkbox" class="switcher-input" id="mobile-switch" />
-        <label class="input-label" for="mobile-switch">Toggle</label>
-      </li>
-    </ul>
   </div>
 </header>
