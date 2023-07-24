@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 
 .hero-favorite {
+=======
+    .hero-favorite {
+>>>>>>> main
     padding-top: 52px;
     padding-bottom: 40px;
 }
@@ -47,9 +51,6 @@
 @media screen and (min-width: 375px) {}
 
 @media screen and (min-width: 768px) {
-    .container {
-        padding: 0 32px;
-    }
     .hero-favorite {
     padding-top: 50px;
     }
@@ -67,9 +68,6 @@
 }
 
 @media screen and (min-width: 1200px) {
-    .container {
-        padding: 0 100px;
-    }
     .hero-favorite {
     padding-top: 40px;
     padding-bottom: 64px;
