@@ -1,10 +1,10 @@
-
 .modal-wraper {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    overflow: auto;
 }
 .backdrop {
     position: fixed;
@@ -48,54 +48,35 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 24px;
-    height: 24px;
-    transition-duration: 250ms;
-    transition-timing-function: var(--cubic);
-}
-
     border: none;
     background-color: #ffffff;
     
     
 }
 
-
 .modal-close-btn-icon {
-    
+  
     stroke: black;
     transition-duration: 250ms;
     
 }
 .recipe-modal-btn {
-
-	margin-left: auto;
-	margin-right: auto;
-
-
-	margin-top: 24px;
-	display: block;
-	width: 169px;
-	height: 56px;
-	padding: 16px 32px;
-	color: #ffffff;
-	background: var(--light-green);
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-	border-radius: 15px;
-	border: none;
-	transition-duration: 250ms;
-	transition-timing-function: var(--cubic);
+ margin-top: 24px;
+ display: block;
+ width: 169px;
+ height: 56px;
+ padding: 16px 32px;
+ color: #ffffff;
+ background: var(--light-green);
+ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+ border-radius: 15px;
+ border: none;
+ transition-duration: 250ms;
+ transition-timing-function: var(--cubic);
 }
-
-.recipe-modal-btn:hover,
-.recipe-modal-btn:focus {
-	color: var(--black);
-
 .modal-recipes-info{
     display: flex;
     flex-direction: column;
-
 }
 .iframe-modal{
     width: 100%;
@@ -122,7 +103,7 @@
 .rating__body:before {
     content: "★★★★★";
     color: #0505051A;
-    font-size: 16px;
+    font-size: 18px;
     display: block;
 }
 .rating__active {
@@ -229,12 +210,6 @@ margin-bottom: 40px;
     }
 }
 
-
-@media screen and (min-width: 1200px) {
-   
-}
-
 @media screen and (min-width: 1280px) {
     
-} 
-
+}
