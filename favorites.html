@@ -12,8 +12,8 @@
     />
     <title>TastyTreats</title>
     
-    <script type="module" crossorigin src="/project-TastyTamers01/assets/modal-recipes-ac396ae7.js"></script>
-    <link rel="stylesheet" href="/project-TastyTamers01/assets/modal-recipes-6ebf214d.css">
+    <script type="module" crossorigin src="/project-TastyTamers01/assets/modal-recipes-0631e07a.js"></script>
+    <link rel="stylesheet" href="/project-TastyTamers01/assets/modal-recipes-6811d6e0.css">
   </head>
   <body>
     <header class="header header-section">
@@ -72,7 +72,31 @@
 
   <!-- HEADER MOBILE WINDOW -->
   <div class="header-menu-container js-menu-container" id="mobile-menu">
-    <button class="header-menu-toggle js-close-menu">
+    <li class="header-theme-switcher burger">
+      <input type="checkbox" class="switcher-input" id="mobile-switch" />
+      <label class="input-label" for="mobile-switch">Toggle</label>
+    </li>
+
+    <ul class="header-mobile-menu">
+      <li class="nav-item-burger item">
+        <a class="header-nav-link home link current" href="../index.html"
+          >Home</a
+        >
+      </li>
+      <li class="nav-item-burger item">
+        <a class="header-nav-link favorites link" href="../favorites.html"
+          >Favorites</a
+        >
+      </li>
+
+      <!-- HEADER TOGGLE SWITCH BURGER -->
+    </ul>
+
+    <button
+      class="header-menu-toggle js-close-menu"
+      aria-expanded="false"
+      aria-label="Close menu"
+    >
       <svg
         fill="currentColor"
         viewBox="0 0 20 20"
@@ -87,25 +111,6 @@
         ></path>
       </svg>
     </button>
-
-    <ul class="header-mobile-menu">
-      <li class="nav-item-burger item">
-        <a class="header-nav-link home link" href="../index.html">Home</a>
-      </li>
-      <li class="nav-item-burger item">
-        <a
-          class="header-nav-link favorites link current"
-          href="../favorites.html"
-          >Favorites</a
-        >
-      </li>
-
-      <!-- HEADER TOGGLE SWITCH BURGER -->
-      <li class="header-theme-switcher burger">
-        <input type="checkbox" class="switcher-input" id="mobile-switch" />
-        <label class="input-label" for="mobile-switch">Toggle</label>
-      </li>
-    </ul>
   </div>
 </header>
 
@@ -134,7 +139,12 @@
 </section>
 
     </main>
-
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
     
   </body>
 </html>

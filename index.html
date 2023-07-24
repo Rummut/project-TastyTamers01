@@ -12,8 +12,8 @@
     />
     <title>TastyTreats</title>
     
-    <script type="module" crossorigin src="/project-TastyTamers01/assets/modal-recipes-ac396ae7.js"></script>
-    <link rel="stylesheet" href="/project-TastyTamers01/assets/modal-recipes-6ebf214d.css">
+    <script type="module" crossorigin src="/project-TastyTamers01/assets/modal-recipes-0631e07a.js"></script>
+    <link rel="stylesheet" href="/project-TastyTamers01/assets/modal-recipes-6811d6e0.css">
   </head>
   <body>
     <header class="header header-section">
@@ -45,8 +45,7 @@
           aria-label="shopping-cart"
         >
           <svg class="header-shopping-icon" width="24" height="24">
-            <!-- Replace this URL with your correct SVG icon URL -->
-            <use href="/project-TastyTamers01/assets/icons-49dbec3f.svg#icon-shopping-cart-dark"></use>
+            <use href="../img_header/icons.svg#icon-shopping-cart-dark"></use>
           </svg>
         </a>
 
@@ -59,7 +58,6 @@
           aria-label="Toggle menu"
         >
           <svg class="header-burger-menu-icon" width="32" height="32">
-            <!-- Replace this URL with your correct SVG icon URL -->
             <use href="../img_header/icons.svg#icon-menu-dark"></use>
           </svg>
         </button>
@@ -75,6 +73,26 @@
 
   <!-- HEADER MOBILE WINDOW -->
   <div class="header-menu-container js-menu-container" id="mobile-menu">
+    <li class="header-theme-switcher burger">
+      <input type="checkbox" class="switcher-input" id="mobile-switch" />
+      <label class="input-label" for="mobile-switch">Toggle</label>
+    </li>
+
+    <ul class="header-mobile-menu">
+      <li class="nav-item-burger item">
+        <a class="header-nav-link home link current" href="../index.html"
+          >Home</a
+        >
+      </li>
+      <li class="nav-item-burger item">
+        <a class="header-nav-link favorites link" href="../favorites.html"
+          >Favorites</a
+        >
+      </li>
+
+      <!-- HEADER TOGGLE SWITCH BURGER -->
+    </ul>
+
     <button
       class="header-menu-toggle js-close-menu"
       aria-expanded="false"
@@ -94,25 +112,6 @@
         ></path>
       </svg>
     </button>
-
-    <ul class="header-mobile-menu">
-      <li class="nav-item-burger item">
-        <a class="header-nav-link home link current" href="../index.html"
-          >Home</a
-        >
-      </li>
-      <li class="nav-item-burger item">
-        <a class="header-nav-link favorites link" href="../favorites.html"
-          >Favorites</a
-        >
-      </li>
-
-      <!-- HEADER TOGGLE SWITCH BURGER -->
-      <li class="header-theme-switcher burger">
-        <input type="checkbox" class="switcher-input" id="mobile-switch" />
-        <label class="input-label" for="mobile-switch">Toggle</label>
-      </li>
-    </ul>
   </div>
 </header>
 
@@ -231,6 +230,12 @@
       integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
     ></script>
     
   </body>
