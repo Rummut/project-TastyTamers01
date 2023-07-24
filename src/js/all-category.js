@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_KEY = '37206496-4ba23d7a61facc457fce3b97c';
-const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api/recipes';
+const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api/categories';
 
 function resizePage() {
   const screenWidth = window.innerWidth;
@@ -41,3 +41,53 @@ export async function searchOnCategory(searchQuery, page) {
   }
 }
 
+
+
+// =======================
+// const refs = {
+//   categoryList: document.querySelector('.category-list'),
+//   categoryContainer: document.querySelector('.category-container'),
+//   allCategoryButton: document.querySelector('.all-category-button'),
+// };
+
+// refs.categoryContainer.addEventListener('click', onBtnCLick);
+
+// let lastClickedBtn = null;
+
+
+// function onBtnCLick(event) {
+//   const Btn = event.target;
+
+//   if (Btn.nodeName !== 'BUTTON') {
+//     return;
+//   }
+
+//   if (lastClickedBtn) {
+//     lastClickedBtn.classList.remove('active');
+//   }
+
+//   if (Btn === refs.allCategoryButton) {
+//     removeActiveClassFromAllButtons();
+//   } else {
+//     refs.allCategoryButton.classList.remove('active');
+//   }
+
+//   Btn.classList.add('active');
+//   lastClickedBtn = Btn;
+// };
+
+
+// function removeActiveClassFromAllButtons() {
+//   const buttons = refs.categoryList.querySelectorAll('button');
+
+//   buttons.forEach(button => {
+//     button.classList.remove('active');
+//   });
+// };
+
+
+// refs.categoryList.addEventListener('click', event => {
+//   if (!event.target.classList.contains('category-btn')) {
+//     event.stopPropagation();
+//   }
+// });
