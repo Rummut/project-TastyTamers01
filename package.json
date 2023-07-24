@@ -19,6 +19,7 @@
     "body-scroll-lock": "^4.0.0-beta.0",
     "lodash": "^4.17.21",
     "modern-normalize": "^2.0.0",
+    "smooth-scrollbar": "^8.8.4",
     "tui-pagination": "^3.4.1",
     "vite-plugin-full-reload": "^1.0.5",
     "vite-plugin-html-inject": "^1.0.1"
