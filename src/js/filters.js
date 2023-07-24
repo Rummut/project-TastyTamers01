@@ -7,6 +7,10 @@ const searchElArea = document.querySelector(".filter-area")
 const searchElIng = document.querySelector(".filter-ingredients")
 const galary = document.querySelector(".filter-list")
 const btnResetFilter = document.querySelector(".filter-btn-reset")
+// const starRating = document.querySelector(".wraper")
+// console.log(starRating)
+// const stars = document.querySelectorAll(".star")
+// console.log(stars)
 
 
 
@@ -110,13 +114,13 @@ function createGallary(answers) {
           <h4 class="filter-img-title">${title}</h4>
           <p class="filter-img-text">${description}</p>
           <div class="filter-info-reiting">
-            <div class="filter-star-block">
+            <div class="filter-star-block mark-${ratingStar}">
               <p class="filter-reiting">${rating}</p>
-              <svg class="filter-star" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>*${ratingStar}
-              <svg class="filter-star" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
-              <svg class="filter-star" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
-              <svg class="filter-star" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
-              <svg class="filter-star" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-1" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-2" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-3" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-4" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-5" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
             </div>
             <button type="button" class="filter-btn-see" data-modal-open>See recipe</button>
           </div>
@@ -124,6 +128,8 @@ function createGallary(answers) {
       </li>`
 
         )
+        const stars = document.querySelectorAll(".star")
+console.log(stars)
       })
 }
 
