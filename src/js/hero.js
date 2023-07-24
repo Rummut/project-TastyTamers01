@@ -1,44 +1,135 @@
 import axios from 'axios';
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import Swiper, { Pagination, Navigation, Autoplay } from 'swiper';
+import 'swiper/swiper-bundle.min.css';
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+Swiper.use([Pagination, Navigation, Autoplay]);
 
-const swiper = document.querySelector('.swiper-container');
-console.log(swiper);
+const swiper = new Swiper('.swiper-container', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  autoplay: {
+    delay: 3000,
+  },
+  loop: true,
+});
 
 fetchMasterClasses().then(answers => {
-  console.log(answers);
-  const serchElement = answers.map(answer => {
+  answers.forEach(answer => {
     const image = answer.cook.imgUrl;
     const imgDish = answer.topic.imgUrl;
     const area = answer.topic.area;
     const name = answer.topic.name;
-    swiper.insertAdjacentHTML(
-      'beforeend',
-      ` <div class="slider-item">
-//           <img class="slider-cook" src="${image}" alt="mastershef">
- <img class="slider-dish" src="${imgDish}" alt="dish">
-//           <h3 class="slider-name">${name}</h3>
-//           <p class="slider-area">${area}</p>
-//         </div>`
+    swiper.appendSlide(
+      `<div class="slider-item">
+        <img class="slider-cook" src="${image}" alt="mastershef">
+        <img class="slider-dish" src="${imgDish}" alt="dish">
+        <h3 class="slider-name">${name}</h3>
+        <p class="slider-area">${area}</p>
+      </div>`
     );
-    // console.log(image);
-    // console.log(imgDish);
-    // console.log(area);
-    // console.log(name);
   });
 });
 
 async function fetchMasterClasses() {
-  const responce = await axios(
+  const response = await axios(
     `https://tasty-treats-backend.p.goit.global/api/events`
   );
-  console.log(responce.data);
-  return responce.data;
+  return response.data;
 }
+
+// import axios from 'axios';
+// import Swiper from 'swiper';
+
+// const swiper = document.querySelector('.swiper-container');
+// console.log(swiper);
+
+// fetchMasterClasses().then(answers => {
+//   answers.forEach(answer => {
+//     const image = answer.cook.imgUrl;
+//     const imgDish = answer.topic.imgUrl;
+//     const area = answer.topic.area;
+//     const name = answer.topic.name;
+//     swiper.insertAdjacentHTML(
+//       'beforeend',
+//       `<div class="slider-item">
+//         <img class="slider-cook" src="${image}" alt="mastershef">
+//         <img class="slider-dish" src="${imgDish}" alt="dish">
+//         <h3 class="slider-name">${name}</h3>
+//         <p class="slider-area">${area}</p>
+//       </div>`
+//     );
+//   });
+// });
+
+// async function fetchMasterClasses() {
+//   const response = await axios(
+//     `https://tasty-treats-backend.p.goit.global/api/events`
+//   );
+//   console.log(response.data);
+//   return response.data;
+// }
+
+// const mySwiper = new Swiper('.swiper-container', {
+//   slidesPerView: 1,
+//   spaceBetween: 20,
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//   },
+//   pagination: {
+//     el: '.swiper-pagination',
+//     clickable: true,
+//   },
+//   autoplay: {
+//     delay: 3000,
+//   },
+//   loop: true,
+// });
+
+// Swiper.use([Navigation, Pagination]);
+
+// const mySwiper = new Swiper('.swiper-container', {
+//   slidesPerView: 1,
+//   spaceBetween: 20,
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//   },
+//   pagination: {
+//     el: '.swiper-pagination',
+//     clickable: true,
+//   },
+// });
+// fetchMasterClasses().then(answers => {
+//   console.log(answers);
+//   const serchElement = answers.map(answer => {
+//     const image = answer.cook.imgUrl;
+//     const imgDish = answer.topic.imgUrl;
+//     const area = answer.topic.area;
+//     const name = answer.topic.name;
+//     swiper.insertAdjacentHTML(
+//       'beforeend',
+//       ` <div class="slider-item">
+// //           <img class="slider-cook" src="${image}" alt="mastershef">
+//  <img class="slider-dish" src="${imgDish}" alt="dish">
+// //           <h3 class="slider-name">${name}</h3>
+// //           <p class="slider-area">${area}</p>
+// //         </div>`
+//     );
+//     // console.log(image);
+//     // console.log(imgDish);
+//     // console.log(area);
+//     // console.log(name);
+//   });
+// });
 
 // const fetchMasterClasses = async () => {
 //   try {
