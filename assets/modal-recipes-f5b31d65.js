@@ -9,7 +9,7 @@ var Qe=(e,t,n)=>{if(!t.has(e))throw TypeError("Cannot "+n)};var Z=(e,t,n)=>(Qe(e
           loading="slow"
         />
       </div>
-      <div class="popular-containet-def">
+      <div class="popular-container-def">
         <h3 class="popular-recipes-title">${n.title}</h3>
         <p class="popular-recipes-description">${n.description}</p>
       </div>
