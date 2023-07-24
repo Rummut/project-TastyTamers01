@@ -60,7 +60,12 @@
     }
 }
 
+<<<<<<< HEAD
 @media screen and (min-width: 1280px) {
+=======
+@media screen and (min-width: 1200px) {
+
+>>>>>>> main
     .hero-favorite {
     padding-top: 40px;
     padding-bottom: 64px;
