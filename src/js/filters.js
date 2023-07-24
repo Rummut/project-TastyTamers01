@@ -118,8 +118,7 @@ function createGallary(answers) {
       </li>`
 
         )
-        const stars = document.querySelectorAll(".star")
-
+     
       })
 }
 
