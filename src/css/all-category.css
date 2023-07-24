@@ -16,10 +16,10 @@
   column-gap: 18px;
   width: 100%;
   padding: 0;
-  color: #05050580;
+  /* color: #05050580; */
   color: inherit;
   border: none;
-  background-color: white;
+  /* background-color: white; */
   background-color: inherit;
   cursor: pointer;
   text-align: start;
@@ -97,3 +97,4 @@ button.isUse {
 .button-Allcategories.isUse:hover {
   color: var(--modal-white);
 }
+
