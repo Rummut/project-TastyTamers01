@@ -62,15 +62,6 @@ fetchIngredients()
     });
   })
   .catch(() => {});
-        const option = `<option value = "${ingredient._id}">${ingredient.name}</option>`
-        searchElIng.insertAdjacentHTML("beforeend", option);
-    
-   })
-  }).catch(() => {
-    
-})
-     
-
 
 function debounce(fn, wait) {
   let timer;
