@@ -1,4 +1,5 @@
 .container {
+    max-width: 335px;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -7,6 +8,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
+    margin-bottom: 14px;
+    ;
 }
 
 .filter-form-block {
@@ -27,11 +30,16 @@
 }
 
 .filter-input {
-    width: 335px;
+    width: 100%;
+    max-width: 335px;
     border-radius: 15px;
     border: 1px solid rgba(5, 5, 5, 0.20);
-    padding: 14px 18px;
+    padding: 14px 40px;
     align-items: flex-start;
+}
+
+.filter-input:focus {
+    outline: none;
 }
 
 .filter-input-svg {
@@ -48,21 +56,40 @@
     right: 14px;
     top: 50%;
     transform: translateY(-50%);
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 0;
+    background-color: transparent;
+    border: none;
 }
 
-.filter-select {
+.filter-input-svg-close {
+    fill: #050505;
+}
+
+/* .filter-select {
     display: block;
     border-radius: 15px;
     border: 1px solid rgba(5, 5, 5, 0.20);
     padding: 14px 18px;
 
+} */
+/* select option {
+    height: 50px;
+    background-color: #ffffff;
+    color: rgba(5, 5, 5, 0.30);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    border-radius: 14px;
+    box-shadow: 0px 4px 36px 0px rgba(0, 0, 0, 0.02);
+    margin-bottom: 8px;
+} */
+.filter-sel option:hover {
+    color: #050505;
 }
 
 .filter-sel {
     color: rgba(5, 5, 5, 0.50);
-    padding: 14px 18px;
+    padding: 13px 18px;
     border-radius: 15px;
     border: 1px solid rgba(5, 5, 5, 0.20);
     font-size: 14px;
@@ -76,15 +103,31 @@
     outline: none;
 }
 
+.filter-time,
+.filter-area {
+    width: 160px;
+}
 
 /* --------------------------- */
 .filter-btn-block {
     display: flex;
+    margin-right: auto;
+    margin-bottom: 20px;
 }
 
 .filter-btn-reset {
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: transparent;
+    border: none;
     padding: 0;
+    margin-right: 4px;
+}
+
+.filter-btn-text {
+    color: rgba(5, 5, 5, 0.50);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
 }
 
 /* ------------------------- */
@@ -93,15 +136,18 @@
     width: 335px;
     height: 335px;
     border-radius: 8px;
-
 }
 
 .filter-img {
     width: 335px;
     height: 335px;
     border-radius: 8px;
-    z-index: -5;
-    background: linear-gradient(1deg, rgba(5, 5, 5, 0.60) 0%, rgba(5, 5, 5, 0.00) 100%);
+    /* z-index: -5; */
+    background-image: linear-gradient(1deg, rgba(5, 5, 5, 0.60) 0%, rgba(5, 5, 5, 0.00) 100%);
+}
+
+.filter-item:not(:last-child) {
+    margin-bottom: 24px;
 }
 
 .filter-btn-like {
