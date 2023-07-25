@@ -32,8 +32,7 @@ var navItems = document.querySelectorAll('.header-nav-link');
 
 // Проходимся по элементам списка и добавляем класс "current" тому элементу, у которого href соответствует текущему пути
 navItems.forEach(function (item) {
-  console.log(item.getAttribute('href'));
-  if (item.getAttribute('href').replace('..', '') === currentPath) {
+  if (item.getAttribute('href').replace('.', '') === currentPath) {
     item.classList.add('current');
   } else {
     item.classList.remove('current');
