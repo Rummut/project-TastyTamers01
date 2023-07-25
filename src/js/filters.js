@@ -174,6 +174,6 @@ buttonModal.addEventListener('click', event => {
   }
   console.log(event.target)
     })
-// console.log(buttonModal)
+
 
 export { inputSearch, inputTime, inputArea, inputIngr };
