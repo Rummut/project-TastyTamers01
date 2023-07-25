@@ -92,22 +92,3 @@ button.isUse {
 .button-Allcategories.isUse:hover {
   color: var(--modal-white);
 }
-
-::-webkit-scrollbar {
-  width: 6px;
-
-}
-/* Track */
-::-webkit-scrollbar-track {
-   background: rgba(5, 5, 5, 0.1);
-}
-/* Handle */
-::-webkit-scrollbar-thumb {
-  border-radius: 12px;
-  background: rgba(5, 5, 5, 0.1);
-
-}
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}

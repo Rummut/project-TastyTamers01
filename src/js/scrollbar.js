@@ -1,11 +1,11 @@
 import SmoothScrollbar from 'smooth-scrollbar';
 import { fetchCategories } from '../js/API-request/all-category';
-import {
-  recipeContainer,
-  searchImagesAndDisplay,
-  setSearchQueryName,
-} from '../js/search';
-import { searchOnCategory } from '../js/categorySearch';
+// import {
+//   recipeContainer,
+//   searchImagesAndDisplay,
+//   setSearchQueryName,
+// } from '../js/search';
+// import { searchOnCategory } from '../js/categorySearch';
 
 function createCategoryButton(category, onClick) {
   const button = document.createElement('button');
@@ -18,17 +18,14 @@ function createCategoryButton(category, onClick) {
 async function createCategoriesBlock() {
   const categoriesContainer = document.getElementById('categoriesContainer');
   const scrollContent = categoriesContainer.querySelector('.scroll-content');
-
-  // Очищення контейнера перед додаванням категорій
+  // Clear conteiner
   scrollContent.innerHTML = '';
-
-  // Отримання переліку категорій з бекенду
+  // Get category list from backend
   const categories = await fetchCategories();
-
-  // Збереження посилань на кнопки категорій
+  // Saving links to category buttons
   const categoryButtons = [];
 
-  // Створення кнопок категорій та додавання їх до контейнера
+  // Creating category buttons and adding them to the container
   categories.forEach(category => {
     const button = createCategoryButton(category.name, () => {
       setSearchQueryName(category.name);
@@ -48,30 +45,28 @@ async function createCategoriesBlock() {
     scrollContent.appendChild(button);
   });
 
-  // Ініціалізація scrollbar'у
-
+  // Scrollbar initialization
   const scrollbar = SmoothScrollbar.init(categoriesContainer, {
     alwaysShowTracks: true,
   });
 }
 
-// Створення блоку з переліком категорій
+// Creating a block with a list of categories
 const categoriesContainer = document.getElementById('categoriesContainer');
 const scrollContent = document.createElement('div');
 scrollContent.className = 'scroll-content';
 categoriesContainer.appendChild(scrollContent);
 
-// // Додавання функціоналу кнопці "All categories"
+// // Adding functionality to the button "All categories"
 const allCategoriesButton = document.getElementById('allCategoriesButton');
 allCategoriesButton.addEventListener('click', onClickAllCategoriesButton);
 export function onClickAllCategoriesButton ({target}) {
-  // Виконати запит на бекенд для отримання рецептів всіх категорій
+  // Make a request to the backend to receive recipes of all categories
   setActiveClass(target);
   setSearchQueryName();
   recipeContainer.innerHTML = '';
   searchImagesAndDisplay(1, searchOnCategory);
-
-  // Зняти стилізацію з усіх кнопок категорій
+  // Remove styling from all category buttons
   const categoryButtons = Array.from(
     document.querySelectorAll('.scroll-content button')
   );
@@ -80,12 +75,10 @@ export function onClickAllCategoriesButton ({target}) {
   });
 };
 
-
-// Створення блоку з переліком категорій
+// Creating a block with a list of categories
 createCategoriesBlock();
 
-// Export Foo
-
+// Export Func
 export function setActiveClass(btn = allCategoriesButton) {
   const prevBtns = document.querySelectorAll('.isUse');
   prevBtns.forEach(el => el.classList.remove('isUse'));
