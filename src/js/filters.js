@@ -5,6 +5,7 @@ import {
   fetchSearchDishArea,
   fetchSearchDishIngrid,
   fetchSearchDish,
+  fetchSearchDishTime
 } from './API-request/filter- request';
 import star from '../img_header/svg/heart-star.svg'
 
@@ -15,6 +16,8 @@ const searchElArea = document.querySelector('.filter-area');
 const searchElIng = document.querySelector('.filter-ingredients');
 const galary = document.querySelector('.filter-list');
 const btnResetFilter = document.querySelector('.filter-btn-reset');
+const btnSearchClear = document.querySelector('.filter-input-btn');
+
 
 const BASEURL = `https://tasty-treats-backend.p.goit.global/api/recipes`;
 
@@ -39,6 +42,22 @@ searchElIng.addEventListener('change', event => {
     createGallary(data);
   });
 });
+
+searchElTime.addEventListener('change', event => {
+  inputTime = Number(event.target.value)
+  
+  fetchSearchDishTime(inputTime).then(data => {
+     createGallary(data);
+   })
+    
+ })
+ btnSearchClear.addEventListener('click', (event) =>{
+  event.preventDefault();
+ searchEl.value = '';
+  btnSearchClear.style.display = "none"
+  
+   }) 
+
 btnResetFilter.addEventListener('click', event => {
   inputSearch = '';
   inputTime = '';
@@ -75,6 +94,7 @@ function debounce(fn, wait) {
 
 function getDish(event) {
   inputSearch = event.target.value.trim();
+  btnSearchClear.style.display = "flex"
 
   fetchSearchDish(inputSearch)
     .then(data => {
@@ -96,20 +116,19 @@ function getDish(event) {
 function createGallary(answers) {
   galary.innerHTML = '';
   const galarys = answers.map(answer => {
-    console.log(answer)
+    
     const image = answer.thumb;
     const title = answer.title;
     const rating = answer.rating;
     const description = answer.description;
     const btnId = answer._id
-    
     const ratingStar = Math.round(answer.rating);
     galary.insertAdjacentHTML(
       'beforeend',
       `<li class="filter-item">
         <img class="filter-img" src="${image}" alt="${title}" />
         <button class="filter-btn-like">
-          <svg class="filter-svg-like" width="22" height="22"><use href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
+          <svg class="filter-svg-like" value="favorite" width="22" height="22"><use href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
         </button>
         <div class="filter-info-block">
           <h4 class="filter-img-title">${title}</h4>
@@ -126,17 +145,19 @@ function createGallary(answers) {
             <button type="button" id="${btnId}" class="filter-btn-see" data-modal-open>See recipe</button>
           </div>
         </div>
-      </li>`
-
-          
-//         )
-// //     const buttonModal  = document.querySelector(".filter-btn-see")
-// // console.log(buttonModal)
-//       })
-
+      </li>`   
     );
   });
 
 }
+
+
+// const buttonModal = document.querySelector(".filter-listener")
+// buttonModal.addEventListener('click', event => {
+//   console.log(event.target.id
+//   )
+//     })
+// console.log(buttonModal)
+     
 
 export { inputSearch, inputTime, inputArea, inputIngr };

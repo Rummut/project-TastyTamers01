@@ -17,6 +17,13 @@ const ratingRef = document.querySelector('.rating-number')
 
 let responseRecipe = null;
 
+// const buttonModal = document.querySelector(".filter-listener")
+// buttonModal.addEventListener('click', event => {
+//   console.log(event.target.id
+//   )
+//     })
+// console.log(buttonModal)
+     
 
 async function fetchModalRecipe(id){  
   try{
