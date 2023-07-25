@@ -14,7 +14,6 @@ const searchElArea = document.querySelector('.filter-area');
 const searchElIng = document.querySelector('.filter-ingredients');
 const galary = document.querySelector('.filter-list');
 const btnResetFilter = document.querySelector('.filter-btn-reset');
-const page = pagination.getCurrentPage();
 
 const BASEURL = `https://tasty-treats-backend.p.goit.global/api/recipes`;
 
