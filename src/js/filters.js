@@ -9,6 +9,7 @@ import {
 } from './API-request/filter- request';
 import star from '../img_header/svg/heart-star.svg'
 import { pagination } from './pagination';
+import {openModal} from './modal-recipes';
 
 const form = document.querySelector('.filter-form');
 const searchEl = document.querySelector('.filter-input');
@@ -133,7 +134,7 @@ function createGallary(answers) {
       `<li class="filter-item">
         <img class="filter-img" src="${image}" alt="${title}" />
         <button class="filter-btn-like">
-          <svg class="filter-svg-like" value="favorite" width="22" height="22"><use href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
+          <svg class="filter-svg-like" value="favorite" width="22" height="22"><use  href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
         </button>
         <div class="filter-info-block">
           <h4 class="filter-img-title">${title}</h4>
@@ -157,12 +158,22 @@ function createGallary(answers) {
 }
 
 
-// const buttonModal = document.querySelector(".filter-listener")
+const buttonModal = document.querySelector(".filter-listener")
 // buttonModal.addEventListener('click', event => {
 //   console.log(event.target.id
 //   )
 //     })
+
 // console.log(buttonModal)
-     
+
+
+buttonModal.addEventListener('click', event => {
+  if (event.target.id) {
+    openModal(event.target.id)
+    console.log(123)
+  }
+  console.log(event.target)
+    })
+// console.log(buttonModal)
 
 export { inputSearch, inputTime, inputArea, inputIngr };

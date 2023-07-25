@@ -167,3 +167,4 @@ async function openModal(id) {
 function closeModal() {
   refs.modal.classList.add("is-hidden");
 }
+export {openModal, refs};
