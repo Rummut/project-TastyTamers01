@@ -1,3 +1,4 @@
+/* ================Conteiner================== */
 .category-container {
   height: 198px;
   overflow: hidden;
@@ -8,6 +9,7 @@
   margin-bottom: 40px;
 }
 
+/* ================Button================== */
 .button-category {
   color: inherit;
   border: none;
@@ -57,6 +59,15 @@ button.isUse {
   border-color: inherit;
 }
 
+.button-Allcategories.isUse {
+  color: rgba(5, 5, 5, 0.5);
+}
+
+.button-Allcategories.isUse:hover {
+  color: var(--modal-white);
+}
+
+/* ================Media================== */
 @media screen and (max-width: 767px) {
   .container-allcategories {
     margin: 0 auto 40px auto;
@@ -85,10 +96,3 @@ button.isUse {
   }
 }
 
-.button-Allcategories.isUse {
-  color: rgba(5, 5, 5, 0.5);
-}
-
-.button-Allcategories.isUse:hover {
-  color: var(--modal-white);
-}

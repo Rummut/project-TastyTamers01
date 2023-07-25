@@ -7,7 +7,7 @@ export async function fetchCategories() {
     );
     return response.data;
   } catch (error) {
-    console.error('Помилка під час отримання категорій:', error);
+    console.error('Error:', error);
     return [];
   }
 }
