@@ -19,7 +19,7 @@
   /* color: #05050580; */
   color: inherit;
   border: none;
-  /* background-color: white; */
+  background-color: white;
   background-color: inherit;
   cursor: pointer;
   text-align: start;
@@ -37,13 +37,13 @@ button.isUse {
   color: var(--light-green);
 }
 
-.button-Allcategories:hover {
+.button-allcategories:hover {
   background-color: var(--light-green);
   color: var(--modal-white);
   border-color: var(--light-green);
 }
 
-.button-Allcategories {
+.button-allcategories {
   cursor: pointer;
   margin-bottom: 48px;
   background-color: var(--primary-white-color);
@@ -71,7 +71,7 @@ button.isUse {
   .categories-container {
     height: 416px;
   }
-  .button-Allcategories {
+  .button-allcategories {
     margin-bottom: 30px;
   }
   .container-allcategories {
@@ -89,12 +89,12 @@ button.isUse {
   }
 }
 
-.button-Allcategories.isUse {
+.button-allcategories.isUse {
   color: var(--light-green);
   border-color: var(--light-green);
 }
 
-.button-Allcategories.isUse:hover {
+.button-allcategories.isUse:hover {
   color: var(--modal-white);
 }
 
