@@ -23,3 +23,19 @@ window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
   openMenuBtn.setAttribute('aria-expanded', false);
   bodyScrollLock.enableBodyScroll(document.body);
 });
+
+// Получаем текущий путь страницы (URL без домена)
+var currentPath = window.location.pathname;
+console.log(currentPath);
+// Находим все элементы списка навигации
+var navItems = document.querySelectorAll('.header-nav-link');
+
+// Проходимся по элементам списка и добавляем класс "current" тому элементу, у которого href соответствует текущему пути
+navItems.forEach(function (item) {
+  console.log(item.getAttribute('href'));
+  if (item.getAttribute('href').replace('..', '') === currentPath) {
+    item.classList.add('current');
+  } else {
+    item.classList.remove('current');
+  }
+});
