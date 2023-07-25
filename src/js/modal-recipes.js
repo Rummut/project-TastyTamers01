@@ -1,4 +1,6 @@
-import axios from "axios";
+
+import axios from 'axios';
+
 
 const BASE_URL = `https://tasty-treats-backend.p.goit.global/api/recipes/`
 
@@ -8,6 +10,10 @@ const tagsMob = document.querySelector('.tags-mobile')
 const tagsDesktop = document.querySelector('.tags-desktop')
 const timeRef = document.querySelector('.time')
 const addFavorite = document.querySelector('#btn-add')
+const ingridientsRef = document.querySelector('.recipe-ingriidients')
+const cookingRecipes = document.querySelector('.cooking-recipes')
+const ratingRef = document.querySelector('.rating-number')
+
 
 let responseRecipe = null;
 
@@ -27,16 +33,36 @@ async function fetchModalRecipe(id){
 }
 // video
 
-function insertVideo(data){
-  const url = data.youtube.split('/');
 
-  videoRef.innerHTML = `<iframe 
-  class="iframe-modal" 
-  src="https://www.youtube.com/embed/${url[url.length - 1]}" 
-  frameborder="0" 
-  allowfullscreen>
-</iframe>`
+function getKeyYouTybe(url) {
+  let indexLast = url.split('').length;
+
+  let key = url.split('').splice(32, indexLast).join('');
+  return key;
 }
+
+function insertVideo(data) {
+  const markUp = `
+   <iframe
+                width="100%"
+                height="290"
+                src="https://www.youtube.com/embed/${getKeyYouTybe(
+                  data.youtube
+                )}?origin=https://Ben-cod.github.io"
+
+title = "YouTube video player"
+frameborder = "0"
+allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen
+  ></iframe >
+`;
+  videoRef.innerHTML = markUp;
+}
+
+
+
+
+
 
   function insertTitle(data){
    titleRef.innerHTML = data.title
@@ -50,9 +76,31 @@ function insertTags(data){
   tagsDesktop.innerHTML = murkupTags;
 }
 
+
 function insertTime(data){
   timeRef.innerHTML = `${data.time} min`
 }
+
+
+function insertIngridients(data){
+  const murkupIngridients = data.ingredients.map(ingredient => {
+    return `<li class="recipe-ingriidient">
+    <p>${ingredient.name}</p>
+    <p class="text-grey">${ingredient.measure}</p>
+</li>`
+  } );
+  ingridientsRef.innerHTML = murkupIngridients
+}
+
+function insertRating(data){
+  ratingRef.innerHTML = data.rating
+}
+
+
+function insertCookingRecipe(data){
+  cookingRecipes.innerHTML = data.instructions
+}
+
 
 
 function addToFavorite(){
@@ -65,6 +113,7 @@ function addToFavorite(){
   const inFavorite = favorites.filter(e => {
     if(e.id === responseRecipe.id){
       return e;
+
     }
   })
 
@@ -97,12 +146,15 @@ addFavorite.addEventListener('click', addToFavorite)
 
 async function openModal(id) {
   refs.modal.classList.remove("is-hidden");
-   responseRecipe = await fetchModalRecipe('6462a8f74c3d0ddd28897fb9');
+   responseRecipe = await fetchModalRecipe('6462a8f74c3d0ddd28898040');
    console.log(responseRecipe);
   insertVideo(responseRecipe);
   insertTitle(responseRecipe)
   insertTags(responseRecipe)
   insertTime(responseRecipe)
+  insertIngridients(responseRecipe)
+  insertCookingRecipe(responseRecipe)
+  insertRating(responseRecipe)
 }
 
 function closeModal() {

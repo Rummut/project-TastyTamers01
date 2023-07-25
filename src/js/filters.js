@@ -1,12 +1,22 @@
-import axios from "axios";
-import {fetchArea, fetchIngredients, fetchSearchDishArea, fetchSearchDishIngrid, fetchSearchDish} from './API-request/filter- request'
-const form = document.querySelector(".filter-form")
-const searchEl = document.querySelector(".filter-input")
-const searchElTime = document.querySelector(".filter-time")
-const searchElArea = document.querySelector(".filter-area")
-const searchElIng = document.querySelector(".filter-ingredients")
-const galary = document.querySelector(".filter-list")
-const btnResetFilter = document.querySelector(".filter-btn-reset")
+import axios from 'axios';
+import {
+  fetchArea,
+  fetchIngredients,
+  fetchSearchDishArea,
+  fetchSearchDishIngrid,
+  fetchSearchDish,
+} from './API-request/filter- request';
+import star from '../img_header/svg/heart-star.svg'
+import { pagination } from './pagination';
+
+const form = document.querySelector('.filter-form');
+const searchEl = document.querySelector('.filter-input');
+const searchElTime = document.querySelector('.filter-time');
+const searchElArea = document.querySelector('.filter-area');
+const searchElIng = document.querySelector('.filter-ingredients');
+const galary = document.querySelector('.filter-list');
+const btnResetFilter = document.querySelector('.filter-btn-reset');
+const page = pagination.getCurrentPage()
 
 const BASEURL = `https://tasty-treats-backend.p.goit.global/api/recipes`;
 
@@ -106,20 +116,18 @@ function createGallary(answers) {
           <div class="filter-info-reiting">
             <div class="filter-star-block mark-${ratingStar}">
               <p class="filter-reiting">${rating}</p>
-              <svg class="filter-star star star-1" width="18" height="18"><use href="./img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
-              <svg class="filter-star star star-2" width="18" height="18"><use href="./img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
-              <svg class="filter-star star star-3" width="18" height="18"><use href="./img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
-              <svg class="filter-star star star-4" width="18" height="18"><use href="./img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
-              <svg class="filter-star star star-5" width="18" height="18"><use href="./img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-1" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-2" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-3" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-4" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-5" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
             </div>
             <button type="button" class="filter-btn-see" data-modal-open>See recipe</button>
           </div>
         </div>
       </li>`
-
-        )
-     
-      })
+    );
+  });
 }
 
 export { inputSearch, inputTime, inputArea, inputIngr };
