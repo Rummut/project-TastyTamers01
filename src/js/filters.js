@@ -88,10 +88,13 @@ function getDish(event) {
 function createGallary(answers) {
   galary.innerHTML = '';
   const galarys = answers.map(answer => {
+    console.log(answer)
     const image = answer.thumb;
     const title = answer.title;
     const rating = answer.rating;
     const description = answer.description;
+    const btnId = answer._id
+    
     const ratingStar = Math.round(answer.rating);
     galary.insertAdjacentHTML(
       'beforeend',
@@ -112,13 +115,14 @@ function createGallary(answers) {
               <svg class="filter-star star star-4" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
               <svg class="filter-star star star-5" width="18" height="18"><use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use></svg>
             </div>
-            <button type="button" class="filter-btn-see" data-modal-open>See recipe</button>
+            <button type="button" id="${btnId}" class="filter-btn-see" data-modal-open>See recipe</button>
           </div>
         </div>
       </li>`
-
+          
         )
-     
+//     const buttonModal  = document.querySelector(".filter-btn-see")
+// console.log(buttonModal)
       })
 }
 
