@@ -1,12 +1,20 @@
-import axios from "axios";
-import {fetchArea, fetchIngredients, fetchSearchDishArea, fetchSearchDishIngrid, fetchSearchDish} from './API-request/filter- request'
-const form = document.querySelector(".filter-form")
-const searchEl = document.querySelector(".filter-input")
-const searchElTime = document.querySelector(".filter-time")
-const searchElArea = document.querySelector(".filter-area")
-const searchElIng = document.querySelector(".filter-ingredients")
-const galary = document.querySelector(".filter-list")
-const btnResetFilter = document.querySelector(".filter-btn-reset")
+import axios from 'axios';
+import {
+  fetchArea,
+  fetchIngredients,
+  fetchSearchDishArea,
+  fetchSearchDishIngrid,
+  fetchSearchDish,
+} from './API-request/filter- request';
+
+const form = document.querySelector('.filter-form');
+const searchEl = document.querySelector('.filter-input');
+const searchElTime = document.querySelector('.filter-time');
+const searchElArea = document.querySelector('.filter-area');
+const searchElIng = document.querySelector('.filter-ingredients');
+const galary = document.querySelector('.filter-list');
+const btnResetFilter = document.querySelector('.filter-btn-reset');
+const page = pagination.getCurrentPage();
 
 const BASEURL = `https://tasty-treats-backend.p.goit.global/api/recipes`;
 
@@ -116,10 +124,8 @@ function createGallary(answers) {
           </div>
         </div>
       </li>`
-
-        )
-     
-      })
+    );
+  });
 }
 
 export { inputSearch, inputTime, inputArea, inputIngr };
