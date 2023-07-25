@@ -8,7 +8,7 @@ import {
   fetchSearchDishTime
 } from './API-request/filter- request';
 import star from '../img_header/svg/heart-star.svg'
-import { pagination } from './pagination';
+// import { pagination } from './pagination';
 import {openModal} from './modal-recipes';
 
 const form = document.querySelector('.filter-form');
@@ -22,7 +22,7 @@ const btnResetFilter = document.querySelector('.filter-btn-reset');
 const btnSearchClear = document.querySelector('.filter-input-btn');
 
 
-const page = pagination.getCurrentPage()
+// const page = pagination.getCurrentPage()
 
 
 const BASEURL = `https://tasty-treats-backend.p.goit.global/api/recipes`;
@@ -174,6 +174,6 @@ buttonModal.addEventListener('click', event => {
   }
   console.log(event.target)
     })
-// console.log(buttonModal)
+
 
 export { inputSearch, inputTime, inputArea, inputIngr };
