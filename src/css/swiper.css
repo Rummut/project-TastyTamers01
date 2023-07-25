@@ -1,0 +1,206 @@
+.body {
+  margin-right: 0;
+  margin: 0;
+}
+
+.swiper-container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 375px;
+  margin-top: 58px;
+  padding-left: 20px;
+}
+
+.swiper {
+  min-width: 320px;
+  height: auto;
+}
+
+.swiper-wrapper {
+  min-width: 0;
+}
+
+.swiper-slide {
+  overflow: hidden;
+  display: flex !important;
+  min-width: 0;
+}
+
+.swiper-img {
+  margin-right: 8px;
+}
+
+.swiper-slide-img {
+  width: 157px;
+}
+
+.swiper-master-cook-card {
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  width: 80px;
+  height: 280px;
+  border-radius: 15px;
+  background: var(--black);
+}
+.cook-card {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-cook-center-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 200px;
+  height: 280px;
+  border-radius: 15px;
+  border: 1px solid rgba(155, 181, 55, 0.3);
+  background: var(--black);
+  background-image: url(../img_header/swiper/Ellipse\ 7268.png);
+  background-position: center;
+  background-size: contain;
+}
+
+.master-class {
+  margin-top: 20px;
+  padding-left: 28px;
+  padding-right: 28px;
+  color: rgba(248, 248, 248, 0.6);
+  text-align: center;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.master-class-coutry {
+  margin-top: 4px;
+  color: rgba(248, 248, 248, 0.2);
+  text-align: center;
+  font-size: 8px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.swiper-cook-big-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 185px;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 15px;
+  background: var(--black);
+}
+
+.big-slide-salat-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.big-slide-img {
+  width: 663px;
+  max-width: none;
+  padding-left: 95px;
+  padding-top: 30px;
+}
+
+.pagination-container {
+  margin-right: auto;
+  margin-left: auto;
+  width: auto;
+  height: auto;
+  padding-top: 8px;
+}
+
+.pagination-container {
+  padding-top: 0;
+}
+
+.swiper-pagination {
+  position: relative;
+  padding-top: 20px;
+}
+.swiper-pagination-bullet {
+  background: var(--black);
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background: var(--light-green);
+}
+
+.dark-mode .swiper-pagination-bullet {
+  background: var(--white);
+}
+.dark-mode .swiper-pagination-bullet-active {
+  background: var(--light-green);
+}
+
+@media screen and (min-width: 768px) {
+  .swiper {
+    max-width: 768px;
+  }
+
+  .swiper-container {
+    max-width: 768px;
+    margin-top: 64px;
+  }
+
+  .swiper-img {
+    margin-right: 16px;
+  }
+
+  .swiper-master-cook-card {
+    width: 137px;
+    height: 442px;
+  }
+
+  .swiper-slide-img-center-card {
+    width: 262px;
+    height: 262px;
+  }
+
+  .swiper-cook-center-card {
+    width: 351px;
+    height: 442px;
+  }
+
+  .food-center-card {
+    padding-top: 56px;
+    width: 262px;
+  }
+
+  .master-class {
+    margin-top: 32px;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .master-class-coutry {
+    margin-top: 8px;
+    font-size: 12px;
+  }
+
+  .swiper-cook-big-card {
+    width: 351px;
+    height: 442px;
+  }
+
+  .pancakes-img {
+    width: 838px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .swiper-container {
+    margin-top: 0;
+  }
+}
