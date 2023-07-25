@@ -1,7 +1,8 @@
 import './js/all-category.js';
 import './js/all-category-favorite.js';
 import './js/popular.js';
-import './js/hero.js';
+import './js/swiper.js';
+import './js/swiper-api.js';
 import './js/filters.js';
 import './js/header.js';
 import './js/modal-order.js';
