@@ -1,4 +1,4 @@
-import axios from "axios";
+ import axios from "axios";
 import {inputSearch, inputTime, inputArea, inputIngr} from "../filters"
 
 const BASEURL = `https://tasty-treats-backend.p.goit.global/api/recipes`
@@ -35,7 +35,23 @@ async function fetchSearchDishArea(inputArea) {
                 
             }
 }
-        
+     
+async function fetchSearchDishTime(inputTime) {
+            try {
+                       
+                const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&limit=15&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}`)
+                         
+                // &category=Beef
+            
+                
+              return  response.data.results;
+            }
+          catch {
+                
+            }
+}
+  
+
 async function fetchSearchDishIngrid(inputIngr) {
             try {
                       
@@ -64,4 +80,4 @@ async function fetchSearchDish(inputSearch) {
             }
 }
 
-export {fetchArea, fetchIngredients, fetchSearchDishArea, fetchSearchDishIngrid, fetchSearchDish};
+export {fetchArea, fetchIngredients, fetchSearchDishArea, fetchSearchDishIngrid, fetchSearchDish, fetchSearchDishTime};
