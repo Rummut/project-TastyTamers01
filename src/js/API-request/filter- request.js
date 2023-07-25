@@ -1,4 +1,4 @@
-import axios from "axios";
+ import axios from "axios";
 import {inputSearch, inputTime, inputArea, inputIngr} from "../filters"
 
 const BASEURL = `https://tasty-treats-backend.p.goit.global/api/recipes`

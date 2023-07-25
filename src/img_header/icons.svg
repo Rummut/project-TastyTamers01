@@ -86,6 +86,9 @@
                 d="M11.52 6.4h16.64c3.535 0 6.4 2.865 6.4 6.4s-2.865 6.4-6.4 6.4H11.52c-3.535 0-6.4-2.865-6.4-6.4s2.865-6.4 6.4-6.4z"
                 style="fill:var(--color5, #cecdcd)" />
         </symbol>
+
+         <symbol id="icon-close" viewBox="0 0 32 32">
+
          <symbol id="icon-youtube" viewBox="0 0 32 32">
       <path fill="none"
         stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.6842"
@@ -95,6 +98,7 @@
         d="M13 20.027l7.667-4.36-7.667-4.36v8.72z"></path>
     </symbol>
      <symbol id="icon-close" viewBox="0 0 32 32">
+
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3.556" d="M24 8 8 24M8 8l16 16"/>
     </symbol>
 
