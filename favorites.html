@@ -12,8 +12,8 @@
     />
     <title>Favorites</title>
     
-    <script type="module" crossorigin src="/project-TastyTamers01/assets/header-a123d4f1.js"></script>
-    <link rel="stylesheet" href="/project-TastyTamers01/assets/header-d0cf8360.css">
+    <script type="module" crossorigin src="/project-TastyTamers01/assets/header-90bc2717.js"></script>
+    <link rel="stylesheet" href="/project-TastyTamers01/assets/header-8a0ebcac.css">
   </head>
   <body>
     <header class="header header-section">
@@ -21,18 +21,18 @@
     <nav class="header-nav nav">
       <ul class="header-nav-list list">
         <li class="header-nav-list-item item">
-          <a class="header-nav-link home link" href="../index.html">Home</a>
+          <a class="header-nav-link home link current" href="./index.html"
+            >Home</a
+          >
         </li>
         <li class="header-nav-list-item item">
-          <a
-            class="header-nav-link favorites link current"
-            href="../favorites.html"
+          <a class="header-nav-link favorites link" href="./favorites.html"
             >Favorites</a
           >
         </li>
       </ul>
 
-      <a class="header-logo link" href="../index.html"
+      <a class="header-logo link" href="./index.html"
         >tasty<span class="header-logo-color">treats.</span></a
       >
 
@@ -45,7 +45,7 @@
           aria-label="shopping-cart"
         >
           <svg class="header-shopping-icon" width="24" height="24">
-            <use href="../img_header/icons.svg#icon-shopping-cart-dark"></use>
+            <use href="/project-TastyTamers01/assets/icons-bac5abc1.svg#icon-shopping-cart-dark"></use>
           </svg>
         </a>
 
@@ -55,9 +55,10 @@
           type="button"
           aria-expanded="false"
           aria-controls="mobile-menu"
+          aria-label="Toggle menu"
         >
           <svg class="header-burger-menu-icon" width="32" height="32">
-            <use href="../img_header/icons.svg#icon-menu-dark"></use>
+            <use href="/project-TastyTamers01/assets/icons-bac5abc1.svg#icon-menu-dark"></use>
           </svg>
         </button>
 
@@ -79,40 +80,42 @@
 
     <ul class="header-mobile-menu">
       <li class="nav-item-burger item">
-        <a class="header-nav-link home link current" href="../index.html"
+        <a class="header-nav-link home link current" href="./index.html"
           >Home</a
         >
       </li>
       <li class="nav-item-burger item">
-        <a class="header-nav-link favorites link" href="../favorites.html"
+        <a class="header-nav-link favorites link" href="./favorites.html"
           >Favorites</a
         >
       </li>
 
       <!-- HEADER TOGGLE SWITCH BURGER -->
     </ul>
-
-    <button
-      class="header-menu-toggle js-close-menu"
-      aria-expanded="false"
-      aria-label="Close menu"
-    >
-      <svg
-        fill="currentColor"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-        width="32"
-        height="32"
+    <div class="burger-close-btn">
+      <button
+        class="header-menu-toggle js-close-menu"
+        aria-expanded="false"
+        aria-label="Close menu"
       >
-        <path
-          fill-rule="evenodd"
-          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-          clip-rule="evenodd"
-        ></path>
-      </svg>
-    </button>
+        <svg
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </button>
+    </div>
   </div>
 </header>
+<script></script>
 
     <main>
       <section class="hero-favorite">
