@@ -9,7 +9,6 @@ body {
   overflow: auto;
 }
 
-
 /* Header Styles */
 .header-nav {
   display: flex;
@@ -35,7 +34,7 @@ body {
 }
 
 .header-logo-color {
-  color: var(--modal-white);
+  color: var(--black);
 }
 
 .header-btn-box {
@@ -57,13 +56,13 @@ body {
 
 .header-shopping-icon {
   fill: transparent;
-  stroke: var(--modal-white);
+  stroke: var(--black);
 }
 
 .header-burger-menu-icon {
   width: 32px;
   height: 32px;
-  stroke: var(--modal-white);
+  stroke: var(--black);
 }
 
 .switcher-input[type='checkbox'] {
@@ -131,16 +130,20 @@ body {
   padding: 0;
   margin: 0;
   display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   gap: 10px;
+  color: #ffffff;
 }
 
 .header-menu-toggle {
   min-height: 40px;
   min-width: 40px;
   display: none;
-  align-items: center;
-  justify-content: center;
   margin: 0;
   padding: 0;
   background-color: transparent;
@@ -150,10 +153,17 @@ body {
   outline: none;
 }
 
-/* Адаптивные стили для мобильных устройств (ширина экрана < 768px) */
 @media screen and (max-width: 767px) {
   .header-nav-list {
     display: none;
+  }
+  .header-theme-switcher {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    list-style-type: none;
+    display: flex;
+    padding: 10px;
   }
 
   .header-theme-switcher.main {
@@ -169,7 +179,6 @@ body {
     justify-content: space-between;
   }
 
-  /* Add this to show the mobile menu when it's expanded */
   .header-menu-container.is-open {
     display: block;
     position: absolute;
@@ -177,8 +186,13 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--black);
-    z-index: 99;
+    background-color: var(--light-green);
+    display: grid;
+    grid-template-columns: 10fr 8fr;
+  }
+
+  .open-button-burger {
+    display: none;
   }
 
   .header-menu-container {
@@ -186,14 +200,15 @@ body {
   }
 
   .header-menu-toggle {
-    /* Add some styles to show the burger icon */
-    display: block;
-    position: relative;
+    display: flex;
+    align-items: top;
+    justify-content: right;
+    padding: 10px;
     z-index: 100;
+    color: #ffffff;
   }
 }
 
-/* Адаптивные стили для планшетов и ноутбуков (ширина экрана >= 768px) */
 @media screen and (min-width: 768px) {
   .header-nav {
     padding-top: 30px;
@@ -205,6 +220,8 @@ body {
 
   .header-theme-switcher {
     height: 20px;
+    display: flex;
+    align-items: bottom;
   }
 
   .header-btn-box {
@@ -235,8 +252,7 @@ body {
   }
 }
 
-/* Адаптивные стили для больших экранов (ширина экрана >= 1200px) */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .header-nav {
     padding-top: 42px;
   }

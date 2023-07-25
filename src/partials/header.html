@@ -27,7 +27,6 @@
           aria-label="shopping-cart"
         >
           <svg class="header-shopping-icon" width="24" height="24">
-            <!-- Replace this URL with your correct SVG icon URL -->
             <use href="./img_header/icons.svg#icon-shopping-cart-dark"></use>
           </svg>
         </a>
@@ -41,8 +40,7 @@
           aria-label="Toggle menu"
         >
           <svg class="header-burger-menu-icon" width="32" height="32">
-            <!-- Replace this URL with your correct SVG icon URL -->
-            <use href="../img_header/icons.svg#icon-menu-dark"></use>
+            <use href="./img_header/icons.svg#icon-menu-dark"></use>
           </svg>
         </button>
 
@@ -57,6 +55,26 @@
 
   <!-- HEADER MOBILE WINDOW -->
   <div class="header-menu-container js-menu-container" id="mobile-menu">
+    <li class="header-theme-switcher burger">
+      <input type="checkbox" class="switcher-input" id="mobile-switch" />
+      <label class="input-label" for="mobile-switch">Toggle</label>
+    </li>
+
+    <ul class="header-mobile-menu">
+      <li class="nav-item-burger item">
+        <a class="header-nav-link home link current" href="../index.html"
+          >Home</a
+        >
+      </li>
+      <li class="nav-item-burger item">
+        <a class="header-nav-link favorites link" href="../favorites.html"
+          >Favorites</a
+        >
+      </li>
+
+      <!-- HEADER TOGGLE SWITCH BURGER -->
+    </ul>
+
     <button
       class="header-menu-toggle js-close-menu"
       aria-expanded="false"
@@ -76,24 +94,5 @@
         ></path>
       </svg>
     </button>
-
-    <ul class="header-mobile-menu">
-      <li class="nav-item-burger item">
-        <a class="header-nav-link home link current" href="../index.html"
-          >Home</a
-        >
-      </li>
-      <li class="nav-item-burger item">
-        <a class="header-nav-link favorites link" href="../favorites.html"
-          >Favorites</a
-        >
-      </li>
-
-      <!-- HEADER TOGGLE SWITCH BURGER -->
-      <li class="header-theme-switcher burger">
-        <input type="checkbox" class="switcher-input" id="mobile-switch" />
-        <label class="input-label" for="mobile-switch">Toggle</label>
-      </li>
-    </ul>
   </div>
 </header>
