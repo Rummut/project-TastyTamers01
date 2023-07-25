@@ -11,6 +11,7 @@
 }
 
 .filter-label {
+  display: block;
   margin-bottom: 8px;
   color: rgba(5, 5, 5, 0.5);
   font-size: 12px;
@@ -28,7 +29,14 @@
   border: 1px solid rgba(5, 5, 5, 0.2);
   padding: 13px 40px;
   align-items: flex-start;
-  color: rgba(5, 5, 5, 0.5);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.28;
+  color: #050505;
+}
+
+.filter-input::placeholder {
+  color: rgba(5, 5, 5, 0.50);
   font-size: 14px;
   font-weight: 500;
   line-height: 1.28;
@@ -42,23 +50,28 @@
   position: absolute;
   top: 50%;
   left: 18px;
-  stroke: rgba(5, 5, 5, 0.50);
+  fill: rgba(5, 5, 5, 0.50);
   transform: translateY(-50%);
-  transition: stroke var(--basic-transition);
+  transition: fill var(--basic-transition);
+}
+
+.filter-input-svg:hover,
+.filter-input-svg:focus {
+  fill: var(--light-green);
+}
+
+.filter-input:focus+.filter-input-svg,
+.filter-input:hover+.filter-input-svg {
+  fill: var(--light-green);
 }
 
 .filter-input-btn {
   display: none;
-  /* display: flex; */
-  justify-content: center;
-  align-items: center;
   position: absolute;
   right: 14px;
   top: 50%;
   transform: translateY(-50%);
-  background-color: transparent;
-  border: none;
-  padding: 0;
+  cursor: pointer;
 }
 
 .filter-input-svg-close {
@@ -74,6 +87,18 @@
   font-weight: 500;
   line-height: 1.28;
   max-width: 188px;
+  cursor: pointer;
+}
+
+.filter-sel option {
+  color: rgba(5, 5, 5, 0.30);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.filter-sel option:hover {
+  color: black;
 }
 
 .filter-sel:focus {
@@ -322,7 +347,7 @@
 }
 
 .star {
-  opacity: 0.5;
+  opacity: 0.3;
   stroke: var(--white);
 }
 
