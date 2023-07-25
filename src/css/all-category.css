@@ -1,28 +1,26 @@
-.categories-container {
+.category-container {
   height: 198px;
   overflow: hidden;
 }
 
 .container-allcategories {
-  margin-bottom: 40px;
   width: 326px;
+  margin-bottom: 40px;
 }
 
 .button-category {
+  color: inherit;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  text-align: start;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.3;
   display: block;
   column-gap: 18px;
   width: 100%;
-  padding: 0;
-  /* color: #05050580; */
-  color: inherit;
-  border: none;
-  background-color: white;
-  background-color: inherit;
-  cursor: pointer;
-  text-align: start;
+  padding: 0;  
 }
 
 .button-category:not(:first-child) {
@@ -37,20 +35,13 @@ button.isUse {
   color: var(--light-green);
 }
 
-.button-allcategories:hover {
+.button-Allcategories:hover {
   background-color: var(--light-green);
   color: var(--modal-white);
   border-color: var(--light-green);
 }
 
-.button-allcategories {
-  cursor: pointer;
-  margin-bottom: 48px;
-  background-color: var(--primary-white-color);
-  color: #05050580;
-  color: inherit;
-  background-color: inherit;
-  border-color: inherit;
+.button-Allcategories {
   font-size: 18px;
   font-family: Inter;
   font-weight: 500;
@@ -59,6 +50,11 @@ button.isUse {
   border-width: 1px;
   border-style: solid;
   border: 1px solid #05050580;
+  cursor: pointer;
+  margin-bottom: 48px;
+  color: inherit;
+  background-color: inherit;
+  border-color: inherit;
 }
 
 @media screen and (max-width: 767px) {
@@ -71,13 +67,13 @@ button.isUse {
   .categories-container {
     height: 416px;
   }
-  .button-allcategories {
+  .button-Allcategories {
     margin-bottom: 30px;
   }
   .container-allcategories {
-    margin-top: 26px;
-    margin-bottom: 64px;
     width: 176px;
+    margin-top: 26px;
+    margin-bottom: 64px;   
   }
 }
 @media screen and (min-width: 1280px) {
@@ -89,12 +85,29 @@ button.isUse {
   }
 }
 
-.button-allcategories.isUse {
-  color: var(--light-green);
-  border-color: var(--light-green);
+.button-Allcategories.isUse {
+  color: rgba(5, 5, 5, 0.5);
 }
 
-.button-allcategories.isUse:hover {
+.button-Allcategories.isUse:hover {
   color: var(--modal-white);
 }
 
+::-webkit-scrollbar {
+  width: 6px;
+
+}
+/* Track */
+::-webkit-scrollbar-track {
+   background: rgba(5, 5, 5, 0.1);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  background: rgba(5, 5, 5, 0.1);
+
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

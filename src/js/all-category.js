@@ -1,29 +1,13 @@
 // import axios from 'axios';
 
-// const categoriesList = document.querySelector('.categories-list');
-
-// const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api/categories';
-
-// export async function getCategories() {
+// export async function fetchCategories() {
 //   try {
-//     const response = await axios.get(BASE_URL);
-//     const markUp = createMarkUp(response.data);
-//     if (categoriesList) {
-//       categoriesList.innerHTML = markUp;
-//     }
+//     const response = await axios.get(
+//       'https://tasty-treats-backend.p.goit.global/api/categories'
+//     );
+//     return response.data;
 //   } catch (error) {
-//     console.error(error);
+//     console.error('Помилка під час отримання категорій:', error);
+//     return [];
 //   }
-// }
-
-// getCategories();
-
-// function createMarkUp(data) {
-//   return data
-//     .map(
-//       ({ name }) => `<li class="category-item">
-//               <p class="category-name">${name}</p>
-//             </li>`
-//     )
-//     .join('');
 // }

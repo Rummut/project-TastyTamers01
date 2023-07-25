@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = '';
-const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api/categories';
+const BASE_URL = 'https://tasty-treats-backend.p.goit.global/api/recipes';
 
 function resizePage() {
   const screenWidth = window.innerWidth;

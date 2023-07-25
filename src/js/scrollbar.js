@@ -1,10 +1,10 @@
 import SmoothScrollbar from 'smooth-scrollbar';
 import { fetchCategories } from '../js/API-request/all-category';
-// import {
-//   recipeContainer,
-//   searchImagesAndDisplay,
-//   setSearchQueryName,
-// } from '../renders/search';
+import {
+  recipeContainer,
+  searchImagesAndDisplay,
+  setSearchQueryName,
+} from '../js/search';
 import { searchOnCategory } from '../js/categorySearch';
 
 function createCategoryButton(category, onClick) {
@@ -61,9 +61,10 @@ const scrollContent = document.createElement('div');
 scrollContent.className = 'scroll-content';
 categoriesContainer.appendChild(scrollContent);
 
-// Додавання функціоналу кнопці "All categories"
+// // Додавання функціоналу кнопці "All categories"
 const allCategoriesButton = document.getElementById('allCategoriesButton');
-allCategoriesButton.addEventListener('click', ({ target }) => {
+allCategoriesButton.addEventListener('click', onClickAllCategoriesButton);
+export function onClickAllCategoriesButton ({target}) {
   // Виконати запит на бекенд для отримання рецептів всіх категорій
   setActiveClass(target);
   setSearchQueryName();
@@ -77,7 +78,8 @@ allCategoriesButton.addEventListener('click', ({ target }) => {
   categoryButtons.forEach(button => {
     button.classList.remove('isUse');
   });
-});
+};
+
 
 // Створення блоку з переліком категорій
 createCategoriesBlock();
