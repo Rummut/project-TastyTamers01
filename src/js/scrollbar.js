@@ -1,11 +1,5 @@
 import SmoothScrollbar from 'smooth-scrollbar';
 import { fetchCategories } from '../js/API-request/all-category';
-// import {
-//   recipeContainer,
-//   searchImagesAndDisplay,
-//   setSearchQueryName,
-// } from '../js/search';
-// import { searchOnCategory } from '../js/categorySearch';
 
 function createCategoryButton(category, onClick) {
   const button = document.createElement('button');
