@@ -1,7 +1,8 @@
 
-import  from '../filters';
+//import  from '../filters';
 
 const renderCardsList = document.querySelector('.hero-fav-render-cards');
+console.log(renderCardsList);
 const favoriteBtnList = document.querySelector('.hero-favorite-categories');
 const heroFavoriteContent = document.querySelector('.hero-favorite-content');
 
