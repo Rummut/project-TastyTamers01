@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/project-TastyTamers01/tab-icon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <title>TastyTreats</title>
-    
-    <script type="module" crossorigin src="/project-TastyTamers01/assets/index-5efee709.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-TastyTamers01/assets/header-6477211c.js">
-    <link rel="stylesheet" href="/project-TastyTamers01/assets/header-8a0ebcac.css">
-    <link rel="stylesheet" href="/project-TastyTamers01/assets/index-a0b14d8a.css">
-  </head>
-  <body>
-    <header class="header header-section">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/project-TastyTamers01/tab-icon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <title>TastyTreats</title>
+  
+  <script type="module" crossorigin src="/project-TastyTamers01/assets/index-690081cb.js"></script>
+  <link rel="modulepreload" crossorigin href="/project-TastyTamers01/assets/header-a6dae077.js">
+  <link rel="stylesheet" href="/project-TastyTamers01/assets/header-9a0424e2.css">
+  <link rel="stylesheet" href="/project-TastyTamers01/assets/index-c5cc4c4e.css">
+</head>
+
+<body>
+  <header class="header header-section">
   <div class="container header-container">
     <nav class="header-nav nav">
       <ul class="header-nav-list list">
@@ -119,14 +118,79 @@
 </header>
 <script></script>
 
-    <main>
-      <section class="hero">
-  <div class="container"></div>
-</section>
+  <main>
+    <section class="hero-section">
+  <div class="hero">
+    <div class="hero-left container">
+      <h1 class="hero-heading">
+        Learn to Cook
+        <span class="hero-heading-span">Tasty Treats' </span>Customizable
+        Masterclass
+      </h1>
+      <p class="hero-description">
+        TastyTreats - Customize Your Meal with Ingredient Options and
+        Step-by-Step Video Guides.
+      </p>
+      <button id="hero-order-btn" class="hero-order-btn" type="button">
+        Order now
+      </button>
+    </div>
 
-      <div class="container-section-common">
-        <div class="container-all-category-popular">
-          <section
+
+    <div class="swiper-container">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="swiper-img">
+              <div class="swiper-master-cook-card first-cook"></div>
+            </div>
+
+            <div class="swiper-img">
+              <div class="swiper-cook-center-card first-cook-center-card"></div>
+            </div>
+
+            <div class="swiper-img">
+              <div class="swiper-cook-big-card first-cook-last-card"></div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="swiper-img">
+              <div class="swiper-master-cook-card second-cook"></div>
+            </div>
+
+            <div class="swiper-img">
+              <div class="swiper-cook-center-card second-cook-center-card"></div>
+            </div>
+
+            <div class="swiper-img">
+              <div class="swiper-cook-big-card second-cook-last-card"></div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="swiper-img">
+              <div class="swiper-master-cook-card third-cook"></div>
+            </div>
+
+            <div class="swiper-img">
+              <div class="swiper-cook-center-card third-cook-center-card"></div>
+            </div>
+
+            <div class="swiper-img">
+              <div class="swiper-cook-big-card third-cook-last-card"></div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
+</section>
+    <div class="container-section-common">
+      <div class="container-all-category-popular">
+        <section
   class="container-allcategories light-theme-add"
   id="all-categories-box"
 >
@@ -143,15 +207,15 @@
   </div>
 </section>
 
-          <section class="popular-recipes main-recipes popular-recipes-mobile">
+        <section class="popular-recipes main-recipes popular-recipes-mobile">
   <div class="container">
     <h2 class="popular-group-title">Popular recipes</h2>
     <ul class="popular-recipes-list popular-recipes-mobile"></ul>
   </div>
 </section>
 
-        </div>
-        <section class="filters">
+      </div>
+      <section class="filters">
   <div class="container">
     <form class="filter-form">
       <label class="filter-form-block filter-dop-block">
@@ -228,17 +292,13 @@
   </div>
 </section>
 
-        <div class="pagination-wrapper">
-  <div id="tui-pagination-container" class="tui-pagination"></div>
-</div>
+    </div>
+  </main>
+  <div class="modal-order"></div>
 
-      </div>
-    </main>
-    <div class="modal-order"></div>
+  <div class="modal-rating"></div>
 
-    <div class="modal-rating"></div>
-
-    
+  
 <button data-modal-open></button>
 <div class="modal-wraper is-hidden" data-modal>
   <div class="backdrop"></div>
@@ -305,19 +365,10 @@
     </div>
 </div>
 
-    <script
-      async
-      src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
-      integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      defer
-      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
-      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
-      crossorigin="anonymous"
-    ></script>
-    
-  </body>
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+    integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+</body>
+
 </html>
