@@ -32,6 +32,24 @@ let inputTime = '';
 let inputArea = '';
 let inputIngr = '';
 
+
+
+
+getAllDish().then((answers) => {
+     createGallary(answers);
+  })
+
+
+async function getAllDish() {
+            try {
+               const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&limit=15&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}`)
+                             return response.data.results;
+            }
+          catch {
+                
+            }
+}
+
 searchEl.addEventListener('input', debounce(getDish, 300));
 
 searchElArea.addEventListener('change', event => {
@@ -109,10 +127,14 @@ function getDish(event) {
       } else {
         galary.insertAdjacentHTML(
           'beforeend',
-          `<div class="filter-answer-block"> 
-            <img class="filter-answer-img" src="" alt=""> 
-            <h3 class="filter-answer-text">Sorry! We didn't find anything.</h3> 
-        </div>`
+          `<div class="hero-favorite-content container">
+  <svg class="hero-favorite-icon" width="68" height="58">
+    <use href="../img_header/svg/favorite-icon.svg#icon-elements"></use>
+  </svg>
+  <p class="hero-favorite-text">
+    Sorry! We didn't find anything.
+  </p>
+</div>`
         );
       }
     })
