@@ -7,6 +7,7 @@ import {
   fetchSearchDish,
 } from './API-request/filter- request';
 import star from '../img_header/svg/heart-star.svg'
+import { pagination } from './pagination';
 
 const form = document.querySelector('.filter-form');
 const searchEl = document.querySelector('.filter-input');
@@ -15,6 +16,7 @@ const searchElArea = document.querySelector('.filter-area');
 const searchElIng = document.querySelector('.filter-ingredients');
 const galary = document.querySelector('.filter-list');
 const btnResetFilter = document.querySelector('.filter-btn-reset');
+const page = pagination.getCurrentPage()
 
 const BASEURL = `https://tasty-treats-backend.p.goit.global/api/recipes`;
 
