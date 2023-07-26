@@ -152,7 +152,7 @@ function createGallary(answers) {
       `<li class="filter-item">
         <img class="filter-img" src="${image}" alt="${title}" />
         <button  class="filter-btn-like">
-          <svg class="filter-svg-like"  width="22" height="22"><use id="${btnId}" href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
+          <svg class="filter-svg-like" width="22" height="22"><use id="${btnId}" href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
         </button>
         <div class="filter-info-block">
           <h4 class="filter-img-title">${title}</h4>
@@ -185,52 +185,53 @@ const buttonModal = document.querySelector(".filter-listener")
 
 // console.log(buttonModal)
 
-let favorits = [];
+
 buttonModal.addEventListener('click', event => {
-  if (event.target.value) {
+     if (event.target.value) {
     openModal(event.target.value)
     }
     //  event.target.fiil = "red"
-  const idEl = event.target.id
-  fetchLocalStorage(idEl).then((data) => {
-    addFavorite(data)
-  })
-  console.log(event.target.id)
+     const idEl = event.target.id
+      fetchLocalStorage(idEl).then((data) => {
+       addFavorite(data)
+     })
+       
  
-    })
+})
 async function fetchLocalStorage(idEl) {
   const rezult = await axios((`${BASEURL}/${idEl}`))
-  console.log(rezult.data)
+  
   return rezult.data;
 }
-function addFavorite(data) {
 
-  localStorage.setItem('favor', JSON.stringify(data))
-  // const favorites = JSON.parse(localStorage.getItem("favorite"));
-  // if(!favorites) {
-  //   const arr = []
-  //   arr.push(responseRecipe);
-  //   return localStorage.setItem('favorite', JSON.stringify(arr));
-  // }
-  // const inFavorite = favorites.filter(e => {
-  //   if(e.id === responseRecipe.id){
-  //     return e;
+// buttonModal.style.fill = "darkorange";
 
-  //   }
-  // })
+function addFavorite(data){
+  const favorites = JSON.parse(localStorage.getItem("favorite")) || [];
+  const inFavorites = favorites.filter(e => {
+    
+    if (e._id === data._id) {
+      
+      return e;
+    }
+  })
+     if (inFavorites.length === 0) {
+    const newFavorites = [...favorites]
+    
+    newFavorites.push(data);
+   
+       
+    return localStorage.setItem('favorite', JSON.stringify(newFavorites));
+     }
+    const filteredFavorite = favorites.filter(e => {
+    if (e._id !== data._id) {
+      return e;
+    }
+   })
 
-  // console.log(inFavorite);
-
-  // if(inFavorite.length === 0) {
-  //   const newFavorites = [...favorites];
-  //   newFavorites.push(responseRecipe);
-  //   return localStorage.setItem('favorite', JSON.stringify(newFavorites))
-  // }
-
-  // return console.log('Вже є такий рецепт');
+  
+  return localStorage.setItem('favorite', JSON.stringify(filteredFavorite));
 }
-
-
 
 
 
