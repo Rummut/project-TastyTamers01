@@ -7,7 +7,7 @@
   };
 
   refs.openOrderModalBtn.addEventListener('click', toggleModal);
-  refs.closeOrderModalBtn.addEventListener('click', toggleModal);
+  // refs.closeOrderModalBtn.addEventListener('click', toggleModal);
 
   function toggleModal() {
     document.body.classList.toggle('modal-open');
