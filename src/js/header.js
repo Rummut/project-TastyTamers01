@@ -23,3 +23,14 @@ window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
   openMenuBtn.setAttribute('aria-expanded', false);
   bodyScrollLock.enableBodyScroll(document.body);
 });
+
+var currentPath = window.location.pathname;
+var navItems = document.querySelectorAll('.header-nav-link');
+
+navItems.forEach(function (item) {
+  if (item.getAttribute('href').replace('.', '') === currentPath) {
+    item.classList.add('current');
+  } else {
+    item.classList.remove('current');
+  }
+});

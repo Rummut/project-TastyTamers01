@@ -180,32 +180,37 @@ body {
   }
 
   .header-menu-container.is-open {
-    display: block;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--light-green);
+    background-color: rgb(155, 181, 55);
     display: grid;
     grid-template-columns: 10fr 8fr;
+  }
+
+  .nav-item-burger {
+    .current {
+      color: black !important;
+    }
   }
 
   .open-button-burger {
     display: none;
   }
 
-  .header-menu-container {
-    display: none;
-  }
-
   .header-menu-toggle {
     display: flex;
-    align-items: top;
     justify-content: right;
     padding: 10px;
     z-index: 100;
     color: #ffffff;
+    max-height: 50px;
+  }
+  .burger-close-btn {
+    display: flex;
+    justify-content: flex-end;
   }
 }
 
@@ -240,8 +245,10 @@ body {
     color: var(--black);
   }
 
-  .header-nav-link.current {
-    color: var(--light-green);
+  .header-nav-list-item {
+    .current {
+      color: var(--light-green);
+    }
   }
 
   .header-logo {
