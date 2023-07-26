@@ -145,7 +145,6 @@
     gap: 32px;
   }
   .popular-recipes-item {
-    gap: 16px;
     cursor: pointer;
     display: flex;
   }
