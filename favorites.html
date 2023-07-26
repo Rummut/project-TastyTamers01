@@ -12,8 +12,8 @@
     />
     <title>Favorites</title>
     
-    <script type="module" crossorigin src="/project-TastyTamers01/assets/header-6a235fe9.js"></script>
-    <link rel="stylesheet" href="/project-TastyTamers01/assets/header-4ab04d7b.css">
+    <script type="module" crossorigin src="/project-TastyTamers01/assets/header-43bf73fc.js"></script>
+    <link rel="stylesheet" href="/project-TastyTamers01/assets/header-4dd1c87c.css">
   </head>
   <body>
     <header class="header header-section">
@@ -121,45 +121,34 @@
       <section class="hero-favorite">
   <div class="container">
     <picture>
-      <source
-        media="(min-width:1200px)"
-        srcset="
-          ../img_header/img-hero-favorite/card-plate-desktop-1x.jpeg 1x,
-          ../img_header/img-hero-favorite/card-plate-desktop-2x.jpeg 2x
-        "
-      />
-      <source
-        media="(min-width:768px)"
-        srcset="
-          ../img_header/img-hero-favorite/card-plate-tablet-1x.jpeg 1x,
-          ../img_header/img-hero-favorite/card-plate-tablet-2x.jpeg 2x
-        "
-      />
-      <source
-        media="(min-width:375px)"
-        srcset="
-          ../img_header/img-hero-favorite/card-plate-mobile-1x.jpeg 1x,
-          ../img_header/img-hero-favorite/card-plate-mobile-2x.jpeg 2x
-        "
-      />
-      <img
-        class="hero-favorite-img"
-        src="../img_header/img-hero-favorite/card-plate-mobile-1x.jpeg"
-        alt="favorite dish"
-      />
+      <source media="(min-width:1280px)" srcset="/project-TastyTamers01/assets/card-plate-desktop-1x-b077b625.jpeg 1x, /project-TastyTamers01/assets/card-plate-desktop-2x-256359c8.jpeg 2x">
+      <source media="(min-width:768px)" srcset="/project-TastyTamers01/assets/card-plate-tablet-1x-58f0e937.jpeg 1x, /project-TastyTamers01/assets/card-plate-tablet-2x-d41fab98.jpeg 2x">
+      <source srcset="/project-TastyTamers01/assets/card-plate-mobile-1x-6d9a9c0a.jpeg 1x, /project-TastyTamers01/assets/card-plate-mobile-2x-7fe7012c.jpeg 2x">
+      <img class="hero-favorite-img" src="/project-TastyTamers01/assets/card-plate-mobile-1x-6d9a9c0a.jpeg" alt="favorite dish">
     </picture>
   </div>
 </section>
-<div class="hero-favorite-content container">
-  <svg class="hero-favorite-icon" width="68" height="58">
-    <use href="../img_header/svg/favorite-icon.svg#icon-elements"></use>
-  </svg>
-  <p class="hero-favorite-text">
-    It appears that you haven't added any recipes to your favorites yet. To get
-    started, you can add recipes that you like to your favorites for easier
-    access in the future.
-  </p>
-</div>
+  <div class="hero-favorite-cards">
+    <div class="container">
+      <div class="hero-favorite-btn">
+        <ul class="hero-favorite-categories">
+          <li class="hero-fav-categ-list">
+            <button class="hero-fav-categ-btn">All categories</button>
+          </li>
+          <li class="hero-fav-categ-list">
+            <button class="hero-fav-categ-btn">Beef</button>
+          </li>
+        </ul>
+      </div>
+      <ul class="hero-fav-render-cards"></ul>
+    </div>
+  </div>
+  <div class="hero-favorite-content container">
+    <svg class="hero-favorite-icon" width="68" height="58">
+      <use href="/project-TastyTamers01/assets/favorite-icon-5e79c2c1.svg#icon-elements"></use>
+    </svg>
+    <p class="hero-favorite-text">It appears that you haven't added any recipes to your favorites yet. To get started, you can add recipes that you like to your favorites for easier access in the future.</p>
+  </div>
 
       <section class="category-recipes-favorite">
   <div class="container"></div>
