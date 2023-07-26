@@ -1,16 +1,18 @@
 
-//import  from '../filters';
+import {eventListFavorite} from '../modal-recipes';
 
-const renderCardsList = document.querySelector('.hero-fav-render-cards');
-console.log(renderCardsList);
-const favoriteBtnList = document.querySelector('.hero-favorite-categories');
-const heroFavoriteContent = document.querySelector('.hero-favorite-content');
+document.addEventListener('DOMContentLoaded', function () {
+  const renderCardsList = document.querySelector('.hero-fav-render-cards');
+  console.log(renderCardsList);
+  const favoriteBtnList = document.querySelector('.hero-favorite-categories');
+  const heroFavoriteContent = document.querySelector('.hero-favorite-content');
 
-if(renderCardsList.children.length === 0) {
+  if (renderCardsList.children.length === 0) {
     heroFavoriteContent.style.display = 'none';
-} else {
+  } else {
     heroFavoriteContent.style.display = 'block';
-}
+  }
+});
 renderCards();
 
 function renderCards () {
