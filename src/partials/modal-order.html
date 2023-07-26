@@ -1,1 +1,68 @@
-<div class="modal-order"></div>
+<div class="modal-order-wrapper">
+  <div class="backdrop-order is-hidden" data-modal>
+    <div class="modal-order">
+      <button type="button" class="modal-close_btn" data-modal-close>
+        <svg class="modal-close-btn-icon" width="20" height="20">
+          <use href="./img_header/icons.svg#icon-close"></use>
+        </svg>
+      </button>
+      <p class="modal-title">Order now</p> 
+      </p>
+      <form class="modal-form form">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-input"
+            placeholder="Name"
+            name="fullname"
+            required
+            pattern="[a-zA-Zа-яА-Я]+"
+            maxlength="20"
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            type="email"
+            id="email"
+            class="form-input"
+            placeholder="Enter your email"
+            name="email"
+            required
+          />
+        </div>
+
+        <!-- <div class="input-wrap"> -->
+        <div class="form-group">
+          <input
+            type="tel"
+            class="form-input flag"
+            placeholder="Phone number"
+            name="phone"
+            pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}"
+            required
+            title="333-22-22"
+          />
+
+          <div class="input-insert">
+            <div class="form-flag">
+              <svg class="modal-icon" width="24" height="18">
+                <use href="./img/sprite.svg#frame-opt"></use>
+              </svg>
+              <span>+380</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <textarea
+            name="Enter text"
+            class="form-textarea"
+            placeholder="Enter text"
+          ></textarea>
+        </div>
+        <button type="submit" class="form-btn btn">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
