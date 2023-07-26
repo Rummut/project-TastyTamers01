@@ -156,7 +156,7 @@ function createGallary(answers) {
       `<li class="filter-item">
         <img class="filter-img" src="${image}" alt="${title}" />
         <button class="filter-btn-like">
-          <svg class="filter-svg-like" value="favorite" width="22" height="22"><use  href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
+          <svg class="filter-svg-like"  value="favorite" width="22" height="22"><use id="${btnId}" href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
         </button>
         <div class="filter-info-block">
           <h4 class="filter-img-title">${title}</h4>
@@ -194,8 +194,38 @@ buttonModal.addEventListener('click', event => {
     openModal(event.target.id)
     console.log(123)
   }
-  console.log(event.target)
+  console.log(event.target.id)
+  // addToFavorite(event.target.id)
     })
+
+// function addToFavorite(){
+//   const favorites = JSON.parse(localStorage.getItem("favorite"));
+//   if(!favorites) {
+//     const arr = []
+//     arr.push(responseRecipe);
+//     return localStorage.setItem('favorite', JSON.stringify(arr));
+//   }
+//   const inFavorite = favorites.filter(e => {
+//     if(e.id === responseRecipe.id){
+//       return e;
+
+//     }
+//   })
+
+//   console.log(inFavorite);
+
+//   if(inFavorite.length === 0) {
+//     const newFavorites = [...favorites];
+//     newFavorites.push(responseRecipe);
+//     return localStorage.setItem('favorite', JSON.stringify(newFavorites))
+//   }
+
+//   return console.log('Вже є такий рецепт');
+// }
+
+
+
 
 
 export { inputSearch, inputTime, inputArea, inputIngr };
+  
