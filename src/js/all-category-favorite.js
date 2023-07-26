@@ -1,22 +1,21 @@
 
-import {eventListFavorite} from '../modal-recipes';
-
-document.addEventListener('DOMContentLoaded', function () {
   const renderCardsList = document.querySelector('.hero-fav-render-cards');
-  console.log(renderCardsList);
   const favoriteBtnList = document.querySelector('.hero-favorite-categories');
   const heroFavoriteContent = document.querySelector('.hero-favorite-content');
 
-  if (renderCardsList.children.length === 0) {
+  /* if (renderCardsList.children.length === 0) {
     heroFavoriteContent.style.display = 'none';
   } else {
     heroFavoriteContent.style.display = 'block';
-  }
-});
-renderCards();
+  } */
 
-function renderCards () {
-    renderCardsList.insertAdjacentHTML (
+
+function renderCards(cardData) {
+
+  const {image, title, description, rating, star} = cardData;
+
+    renderCardsList.render
+    insertAdjacentHTML (
         'beforeend',
         `<li class="filter-item">
         <img class="filter-img" src="${image}" alt="${title}" />
@@ -41,3 +40,20 @@ function renderCards () {
       </li>`
     )
 } 
+
+
+/* const cardDataJSON = JSON.stringify({
+  image: '',
+  title: '',
+  description: '',
+  rating: '',
+  star: '',
+});
+
+
+localStorage.setItem('cardData', cardDataJSON);
+
+const cardData = JSON.parse(localStorage.getItem('cardData'));
+
+render
+renderCards(cardData); */
