@@ -11,7 +11,7 @@
   height: 100%;
   overflow: scroll;
 
-  z-index: 100;
+  z-index: 999;
 }
 .backdrop-order {
   position: fixed;
