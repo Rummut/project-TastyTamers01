@@ -197,6 +197,40 @@ export { inputSearch, inputTime, inputArea, inputIngr };
 
   
   
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 const btnUp = {
   el: document.querySelector('.scroll-up'),
   show() {
