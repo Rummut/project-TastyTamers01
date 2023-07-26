@@ -140,6 +140,7 @@ function getDish(event) {
 function createGallary(answers) {
   galary.innerHTML = '';
   const galarys = answers.map(answer => {
+
     const image = answer.thumb;
     const title = answer.title;
     const rating = answer.rating;
@@ -150,8 +151,8 @@ function createGallary(answers) {
       'beforeend',
       `<li class="filter-item">
         <img class="filter-img" src="${image}" alt="${title}" />
-        <button class="filter-btn-like">
-          <svg class="filter-svg-like"  value="favorite" width="22" height="22"><use id="${btnId}" href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
+        <button  class="filter-btn-like">
+          <svg class="filter-svg-like"  width="22" height="22"><use id="${btnId}" href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
         </button>
         <div class="filter-info-block">
           <h4 class="filter-img-title">${title}</h4>
@@ -159,19 +160,20 @@ function createGallary(answers) {
           <div class="filter-info-reiting">
             <div class="filter-star-block mark-${ratingStar}">
               <p class="filter-reiting">${rating}</p>
-              <svg class="filter-star star star-1" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-1" width="18" height="18"><use  href="${star}#icon-Star-transparent"></use></svg>
               <svg class="filter-star star star-2" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
               <svg class="filter-star star star-3" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
               <svg class="filter-star star star-4" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
               <svg class="filter-star star star-5" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
             </div>
-            <button type="button" id="${btnId}" class="filter-btn-see" data-modal-open>See recipe</button>
+            <button type="button" value=${btnId}  class="filter-btn-see" data-modal-open>See recipe</button>
           </div>
         </div>
       </li>`   
     );
+   
   });
-
+ 
 }
 
 
@@ -183,40 +185,50 @@ const buttonModal = document.querySelector(".filter-listener")
 
 // console.log(buttonModal)
 
-
+let favorits = [];
 buttonModal.addEventListener('click', event => {
-  if (event.target.id) {
-    openModal(event.target.id)
-    console.log(123)
-  }
+  if (event.target.value) {
+    openModal(event.target.value)
+    }
+    //  event.target.fiil = "red"
+  const idEl = event.target.id
+  fetchLocalStorage(idEl).then((data) => {
+    addFavorite(data)
+  })
   console.log(event.target.id)
-  // addToFavorite(event.target.id)
+ 
     })
+async function fetchLocalStorage(idEl) {
+  const rezult = await axios((`${BASEURL}/${idEl}`))
+  console.log(rezult.data)
+  return rezult.data;
+}
+function addFavorite(data) {
 
-// function addToFavorite(){
-//   const favorites = JSON.parse(localStorage.getItem("favorite"));
-//   if(!favorites) {
-//     const arr = []
-//     arr.push(responseRecipe);
-//     return localStorage.setItem('favorite', JSON.stringify(arr));
-//   }
-//   const inFavorite = favorites.filter(e => {
-//     if(e.id === responseRecipe.id){
-//       return e;
+  localStorage.setItem('favor', JSON.stringify(data))
+  // const favorites = JSON.parse(localStorage.getItem("favorite"));
+  // if(!favorites) {
+  //   const arr = []
+  //   arr.push(responseRecipe);
+  //   return localStorage.setItem('favorite', JSON.stringify(arr));
+  // }
+  // const inFavorite = favorites.filter(e => {
+  //   if(e.id === responseRecipe.id){
+  //     return e;
 
-//     }
-//   })
+  //   }
+  // })
 
-//   console.log(inFavorite);
+  // console.log(inFavorite);
 
-//   if(inFavorite.length === 0) {
-//     const newFavorites = [...favorites];
-//     newFavorites.push(responseRecipe);
-//     return localStorage.setItem('favorite', JSON.stringify(newFavorites))
-//   }
+  // if(inFavorite.length === 0) {
+  //   const newFavorites = [...favorites];
+  //   newFavorites.push(responseRecipe);
+  //   return localStorage.setItem('favorite', JSON.stringify(newFavorites))
+  // }
 
-//   return console.log('Вже є такий рецепт');
-// }
+  // return console.log('Вже є такий рецепт');
+}
 
 
 
