@@ -2,7 +2,8 @@ import TastyTreatsAPI from './API-request/popular-request';
 const getRequest = new TastyTreatsAPI();
 const refs = {
     list: document.querySelector('.popular-recipes-list'),
-    list_mobile: document.querySelector('.popular-list.popular-recipes-mobile'),
+  list_mobile: document.querySelector('.popular-list.popular-recipes-mobile'),
+    modal: document.querySelector("[data-modal]"),
 }
 
 async function fetchPopular() {
@@ -28,3 +29,8 @@ async function fetchPopular() {
 }
 
 fetchPopular()
+
+refs.list.addEventListener('click', ()=> {
+   refs.modal.classList.add("is-hidden");
+  document.body.style.overflowY = 'auto'
+})
