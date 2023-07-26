@@ -8,7 +8,6 @@
   margin-left: auto;
   max-width: 375px;
   margin-top: 58px;
-  padding-left: 20px;
 }
 
 .swiper {
@@ -137,13 +136,6 @@
   background: var(--light-green);
 }
 
-.dark-mode .swiper-pagination-bullet {
-  background: var(--white);
-}
-.dark-mode .swiper-pagination-bullet-active {
-  background: var(--light-green);
-}
-
 @media screen and (min-width: 768px) {
   .swiper {
     max-width: 768px;
@@ -199,8 +191,14 @@
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .swiper-container {
     margin-top: 0;
+  }
+
+  .swiper-horizontal
+    > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+  .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+    left: 43%;
   }
 }
