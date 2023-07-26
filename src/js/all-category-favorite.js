@@ -1,7 +1,10 @@
 
   const renderCardsList = document.querySelector('.hero-fav-render-cards');
   const favoriteBtnList = document.querySelector('.hero-favorite-categories');
-  const heroFavoriteContent = document.querySelector('.hero-favorite-content');
+const heroFavoriteContent = document.querySelector('.hero-favorite-content');
+console.log(renderCardsList)
+console.log(favoriteBtnList)
+console.log(heroFavoriteContent)
 
   
   /* if (renderCardsList.children.length === 0) {
