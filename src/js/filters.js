@@ -8,7 +8,7 @@ import {
   fetchSearchDishTime
 } from './API-request/filter- request';
 import star from '../img_header/svg/heart-star.svg'
-import { pagination } from './pagination';
+// import { pagination } from './pagination';
 import {openModal} from './modal-recipes';
 
 const form = document.querySelector('.filter-form');
@@ -27,7 +27,7 @@ let inputSearch = '';
 let inputTime = '';
 let inputArea = '';
 let inputIngr = '';
-const page = pagination.getCurrentPage()
+// const page = pagination.getCurrentPage()
 
 
 
