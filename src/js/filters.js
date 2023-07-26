@@ -140,6 +140,7 @@ function getDish(event) {
 function createGallary(answers) {
   galary.innerHTML = '';
   const galarys = answers.map(answer => {
+
     const image = answer.thumb;
     const title = answer.title;
     const rating = answer.rating;
@@ -150,8 +151,8 @@ function createGallary(answers) {
       'beforeend',
       `<li class="filter-item">
         <img class="filter-img" src="${image}" alt="${title}" />
-        <button class="filter-btn-like">
-          <svg class="filter-svg-like" value="favorite" width="22" height="22"><use  href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
+        <button  class="filter-btn-like">
+          <svg class="filter-svg-like" width="22" height="22"><use id="${btnId}" href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
         </button>
         <div class="filter-info-block">
           <h4 class="filter-img-title">${title}</h4>
@@ -159,19 +160,20 @@ function createGallary(answers) {
           <div class="filter-info-reiting">
             <div class="filter-star-block mark-${ratingStar}">
               <p class="filter-reiting">${rating}</p>
-              <svg class="filter-star star star-1" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-1" width="18" height="18"><use  href="${star}#icon-Star-transparent"></use></svg>
               <svg class="filter-star star star-2" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
               <svg class="filter-star star star-3" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
               <svg class="filter-star star star-4" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
               <svg class="filter-star star star-5" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
             </div>
-            <button type="button" id="${btnId}" class="filter-btn-see" data-modal-open>See recipe</button>
+            <button type="button" value=${btnId}  class="filter-btn-see" data-modal-open>See recipe</button>
           </div>
         </div>
       </li>`   
     );
+   
   });
-
+ 
 }
 
 
@@ -185,15 +187,56 @@ const buttonModal = document.querySelector(".filter-listener")
 
 
 buttonModal.addEventListener('click', event => {
-  if (event.target.id) {
-    openModal(event.target.id)
-    console.log(123)
-  }
-  console.log(event.target)
-    })
+     if (event.target.value) {
+    openModal(event.target.value)
+    }
+    //  event.target.fiil = "red"
+     const idEl = event.target.id
+      fetchLocalStorage(idEl).then((data) => {
+       addFavorite(data)
+     })
+       
+ 
+})
+async function fetchLocalStorage(idEl) {
+  const rezult = await axios((`${BASEURL}/${idEl}`))
+  
+  return rezult.data;
+}
+
+// buttonModal.style.fill = "darkorange";
+
+function addFavorite(data){
+  const favorites = JSON.parse(localStorage.getItem("favorite")) || [];
+  const inFavorites = favorites.filter(e => {
+    
+    if (e._id === data._id) {
+      
+      return e;
+    }
+  })
+     if (inFavorites.length === 0) {
+    const newFavorites = [...favorites]
+    
+    newFavorites.push(data);
+   
+       
+    return localStorage.setItem('favorite', JSON.stringify(newFavorites));
+     }
+    const filteredFavorite = favorites.filter(e => {
+    if (e._id !== data._id) {
+      return e;
+    }
+   })
+
+  
+  return localStorage.setItem('favorite', JSON.stringify(filteredFavorite));
+}
+
 
 
 export { inputSearch, inputTime, inputArea, inputIngr };
+
 
   
   
@@ -255,3 +298,4 @@ const btnUp = {
 }
 
 btnUp.addEventListener();
+
