@@ -1,1 +1,0 @@
-import"./header-5ce49334.js";const e=document.querySelector(".hero-fav-render-cards"),o=document.querySelector(".hero-favorite-categories"),r=document.querySelector(".hero-favorite-content");console.log(e);console.log(o);console.log(r);
