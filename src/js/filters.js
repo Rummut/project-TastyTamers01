@@ -38,25 +38,7 @@ getAllDish().then((answers) => {
 
 async function getAllDish() {
             try {
-               const response = await axios(`${BASEURL}?title=${inputSearch}&page=${page}&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}&limit=9`)
-                             return response.data.results;
-            }
-          catch {
-                
-            }
-}
-
-
-
-
-getAllDish().then((answers) => {
-     createGallary(answers);
-  })
-
-
-async function getAllDish() {
-            try {
-               const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&limit=15&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}`)
+               const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}&limit=9`)
                              return response.data.results;
             }
           catch {
@@ -156,7 +138,6 @@ function getDish(event) {
 }
 
 function createGallary(answers) {
-  console.log(answers.total)
   galary.innerHTML = '';
   const galarys = answers.map(answer => {
     const image = answer.thumb;
