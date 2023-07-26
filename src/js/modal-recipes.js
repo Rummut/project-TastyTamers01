@@ -130,13 +130,17 @@ function insertCookingRecipe(data) {
 function toggleFavorite() {
   const favorites = JSON.parse(localStorage.getItem("favorite")) || [];
   const inFavorites = favorites.filter(e => {
+   
     if (e._id === responseRecipe._id) {
+      console.log(responseRecipe._id)
       return e;
     }
   })
   if (inFavorites.length === 0) {
     const newFavorites = [...favorites]
+    
     newFavorites.push(responseRecipe);
+    console.log(responseRecipe)
     toggleFavoriteBtn.textContent = 'Remove from favorite'
     return localStorage.setItem('favorite', JSON.stringify(newFavorites));
   }
@@ -200,4 +204,4 @@ function closeModal() {
   refs.modal.classList.add("is-hidden");
   document.body.style.overflowY = 'auto'
 }
-export {openModal, refs};
+export {openModal};
