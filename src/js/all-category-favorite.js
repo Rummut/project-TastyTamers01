@@ -9,7 +9,6 @@
     heroFavoriteContent.style.display = 'block';
   } */
 
-
 function renderCards(cardData) {
 
   const {image, title, description, rating, star} = cardData;
@@ -40,7 +39,6 @@ function renderCards(cardData) {
       </li>`
     )
 } 
-
 
 /* const cardDataJSON = JSON.stringify({
   image: '',
