@@ -102,6 +102,7 @@
 }
 .rating__body {
     position: relative;
+    flex-wrap: wrap;
 }
 .rating__body:before {
     content: "★★★★★";
@@ -143,8 +144,14 @@ color: #05050580;
 }
 .box-recipe{
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 33px;
     align-items: center;
+    word-wrap: break-word;
+    
+      
+      
+      
     
 }
 .recipe-ingriidients {
@@ -163,7 +170,9 @@ color: #05050580;
 }
 .recipe-tags {
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 24px;
+    padding-bottom: 14px;
     color: #050505;
 font-size: 12px;
 font-weight: 500;
@@ -175,6 +184,7 @@ line-height: 14px;
     border-radius: 35px;
     margin-right: 8px;
 }
+
 .cooking-recipes{
 font-size: 14px;
 font-weight: 400;
