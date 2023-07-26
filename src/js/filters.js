@@ -8,7 +8,7 @@ import {
   fetchSearchDishTime
 } from './API-request/filter- request';
 import star from '../img_header/svg/heart-star.svg'
-// import { pagination } from './pagination';
+import { pagination } from './pagination';
 import {openModal} from './modal-recipes';
 
 const form = document.querySelector('.filter-form');
@@ -18,11 +18,7 @@ const searchElArea = document.querySelector('.filter-area');
 const searchElIng = document.querySelector('.filter-ingredients');
 const galary = document.querySelector('.filter-list');
 const btnResetFilter = document.querySelector('.filter-btn-reset');
-
 const btnSearchClear = document.querySelector('.filter-input-btn');
-
-
-// const page = pagination.getCurrentPage()
 
 
 const BASEURL = `https://tasty-treats-backend.p.goit.global/api/recipes`;
@@ -31,6 +27,24 @@ let inputSearch = '';
 let inputTime = '';
 let inputArea = '';
 let inputIngr = '';
+const page = pagination.getCurrentPage()
+
+
+
+getAllDish().then((answers) => {
+     createGallary(answers);
+  })
+
+
+async function getAllDish() {
+            try {
+               const response = await axios(`${BASEURL}?title=${inputSearch}&page=${page}&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}&limit=9`)
+                             return response.data.results;
+            }
+          catch {
+                
+            }
+}
 
 
 
@@ -142,9 +156,9 @@ function getDish(event) {
 }
 
 function createGallary(answers) {
+  console.log(answers.total)
   galary.innerHTML = '';
   const galarys = answers.map(answer => {
-    
     const image = answer.thumb;
     const title = answer.title;
     const rating = answer.rating;

@@ -24,7 +24,7 @@ async function fetchIngredients() {
 async function fetchSearchDishArea(inputArea) {
             try {
                        
-                const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&limit=15&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}`)
+                const response = await axios(`${BASEURL}?title=${inputSearch}&page=${page}&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}&limit=9`)
                          
                 // &category=Beef
             
@@ -39,7 +39,7 @@ async function fetchSearchDishArea(inputArea) {
 async function fetchSearchDishTime(inputTime) {
             try {
                        
-                const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&limit=15&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}`)
+                const response = await axios(`${BASEURL}?title=${inputSearch}&page=${page}&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}&limit=9`)
                          
                 // &category=Beef
             
@@ -55,7 +55,7 @@ async function fetchSearchDishTime(inputTime) {
 async function fetchSearchDishIngrid(inputIngr) {
             try {
                       
-                const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&limit=15&time=${inputTime}&area=${inputArea}&ingredient=${inputIngr}`)
+                const response = await axios(`${BASEURL}?title=${inputSearch}&page=${page}&time=${inputTime}&area=${inputArea}&ingredient=${inputIngr}&limit=9`)
                          
                 // &category=Beef
             
@@ -68,7 +68,7 @@ async function fetchSearchDishIngrid(inputIngr) {
 }
 async function fetchSearchDish(inputSearch) {
             try {
-               const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&limit=15&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}`)
+               const response = await axios(`${BASEURL}?title=${inputSearch}&page=${page}&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}&limit=9`)
                           
                 // &category=Beef
             

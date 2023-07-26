@@ -4,7 +4,7 @@ import 'tui-pagination/dist/tui-pagination.css';
 const container = document.getElementById('tui-pagination-container');
 
 const options = {
-  totalItems: 0,
+  totalItems: 288,
   itemsPerPage: 9,
   visiblePages: window.innerWidth < 768 ? 2 : 3,
   page: 1,
@@ -29,6 +29,6 @@ const options = {
   },
 };
 
-//  const pagination = new Pagination(container, options);
-// export {pagination}
+ const pagination = new Pagination(container, options);
+export {pagination}
 
