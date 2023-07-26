@@ -1,23 +1,16 @@
-// const refs = {
-//   openModalOrder: document.querySelector('[hero-order-btn]'),
-//   openModalOrder: document.querySelector('.header-shopping-link'),
-//   closeModalOrder: document.querySelector('modal-order-close'),
-//   backDropOrder: document.querySelector('.backdrop-order'),
-//   modalOrder: document.querySelector('.modal-order'),
-// };
+(() => {
+  const refs = {
+    openOrderModalBtn: document.querySelector('[data-modal-open]'),
+    // openOrderModalBasket: document.querySelector('[data-modal-open]'),
+    closeModalBtn: document.querySelector('[data-modal-close]'),
+    modal: document.querySelector('[data-modal]'),
+  };
 
-// refs.openModalOrder.addEventListener('click', openModal);
-// refs.closeModalOrder.addEventListener('click', closeModal);
-// refs.backDropOrder.addEventListener('click', closeModal);
+  refs.openOrderModalBtn.addEventListener('click', toggleModal);
+  refs.closeOrderModalBtn.addEventListener('click', toggleModal);
 
-// function openModal() {
-//   refs.modal.classList.remove('is-hidden');
-
-//   document.body.style.overflowY = 'hidden';
-// }
-
-// function closeModal() {
-//   refs.modal.classList.add('is-hidden');
-//   document.body.style.overflowY = 'auto';
-// }
-// export { openModal, refs };
+  function toggleModal() {
+    document.body.classList.toggle('modal-open');
+    refs.modal.classList.toggle('is-hidden');
+  }
+})();
