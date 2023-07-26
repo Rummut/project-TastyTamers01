@@ -1,31 +1,56 @@
 <section class="hero-favorite">
   <div class="container">
     <picture>
-      <source media="(min-width:1280px)" srcset="./img_header/img-hero-favorite/card-plate-desktop-1x.jpeg 1x, ./img_header/img-hero-favorite/card-plate-desktop-2x.jpeg 2x">
-      <source media="(min-width:768px)" srcset="./img_header/img-hero-favorite/card-plate-tablet-1x.jpeg 1x, ./img_header/img-hero-favorite/card-plate-tablet-2x.jpeg 2x">
-      <source srcset="./img_header/img-hero-favorite/card-plate-mobile-1x.jpeg 1x, ./img_header/img-hero-favorite/card-plate-mobile-2x.jpeg 2x">
-      <img class="hero-favorite-img" src="./img_header/img-hero-favorite/card-plate-mobile-1x.jpeg" alt="favorite dish">
+      <source
+        media="(min-width:1280px)"
+        srcset="
+          ./img_header/img-hero-favorite/card-plate-desktop-1x.jpeg 1x,
+          ./img_header/img-hero-favorite/card-plate-desktop-2x.jpeg 2x
+        "
+      />
+      <source
+        media="(min-width:768px)"
+        srcset="
+          ./img_header/img-hero-favorite/card-plate-tablet-1x.jpeg 1x,
+          ./img_header/img-hero-favorite/card-plate-tablet-2x.jpeg 2x
+        "
+      />
+      <source
+        srcset="
+          ./img_header/img-hero-favorite/card-plate-mobile-1x.jpeg 1x,
+          ./img_header/img-hero-favorite/card-plate-mobile-2x.jpeg 2x
+        "
+      />
+      <img
+        class="hero-favorite-img"
+        src="./img_header/img-hero-favorite/card-plate-mobile-1x.jpeg"
+        alt="favorite dish"
+      />
     </picture>
   </div>
 </section>
-  <div class="hero-favorite-cards">
-    <div class="container">
-      <div class="hero-favorite-btn">
-        <ul class="hero-favorite-categories">
-          <li class="hero-fav-categ-list">
-            <button class="hero-fav-categ-btn">All categories</button>
-          </li>
-          <li class="hero-fav-categ-list">
-            <button class="hero-fav-categ-btn">Beef</button>
-          </li>
-        </ul>
-      </div>
-      <ul class="hero-fav-render-cards"></ul>
+<div class="hero-favorite-cards">
+  <div class="container">
+    <div class="hero-favorite-btn">
+      <ul class="hero-favorite-categories">
+        <li class="hero-fav-categ-list">
+          <button class="hero-fav-categ-btn">All categories</button>
+        </li>
+        <li class="hero-fav-categ-list">
+          <button class="hero-fav-categ-btn">Beef</button>
+        </li>
+      </ul>
     </div>
+    <ul class="hero-fav-render-cards filter-list"></ul>
   </div>
-  <div class="hero-favorite-content container">
-    <svg class="hero-favorite-icon" width="68" height="58">
-      <use href="./img_header/svg/favorite-icon.svg#icon-elements"></use>
-    </svg>
-    <p class="hero-favorite-text">It appears that you haven't added any recipes to your favorites yet. To get started, you can add recipes that you like to your favorites for easier access in the future.</p>
-  </div>
+</div>
+<div class="hero-favorite-content container">
+  <svg class="hero-favorite-icon" width="68" height="58">
+    <use href="./img_header/svg/favorite-icon.svg#icon-elements"></use>
+  </svg>
+  <p class="hero-favorite-text">
+    It appears that you haven't added any recipes to your favorites yet. To get
+    started, you can add recipes that you like to your favorites for easier
+    access in the future.
+  </p>
+</div>

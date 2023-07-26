@@ -113,7 +113,7 @@ function insertCookingRecipe(data) {
 function toggleFavorite() {
   const favorites = JSON.parse(localStorage.getItem("favorite")) || [];
   const inFavorites = favorites.filter(e => {
-   
+    console.log(e)
     if (e._id === responseRecipe._id) {
       console.log(responseRecipe._id)
       return e;
