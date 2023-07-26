@@ -121,6 +121,7 @@ function getDish(event) {
       if (data.length !== 0) {
         createGallary(data);
       } else {
+        galary.innerHTML = "";
         galary.insertAdjacentHTML(
           'beforeend',
           `<div class="hero-favorite-content container">
