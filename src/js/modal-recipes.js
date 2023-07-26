@@ -9,7 +9,7 @@ const titleRef = document.querySelector('.recipes-title')
 const tagsMob = document.querySelector('.tags-mobile')
 const tagsDesktop = document.querySelector('.tags-desktop')
 const timeRef = document.querySelector('.time')
-const addFavorite = document.querySelector('#btn-add')
+const toggleFavoriteBtn = document.querySelector('#btn-toggle-favorite')
 const ingridientsRef = document.querySelector('.recipe-ingriidients')
 const cookingRecipes = document.querySelector('.cooking-recipes')
 const ratingRef = document.querySelector('.rating-number')
@@ -25,15 +25,15 @@ let responseRecipe = null;
 // console.log(buttonModal)
      
 
-async function fetchModalRecipe(id){  
-  try{
-    const response =  await axios.get(`${BASE_URL}${id}`)
+async function fetchModalRecipe(id) {
+  try {
+    const response = await axios.get(`${BASE_URL}${id}`)
 
     console.log(response);
 
     return response.data;
 
-  }catch(error){
+  } catch (error) {
     console.log('Sorry, there are no recipes')
 
   }
@@ -49,20 +49,20 @@ function getKeyYouTybe(url) {
 }
 
 function insertVideo(data) {
-  const markUp = `
-   <iframe
+  const markUp = `<iframe
                 width="100%"
                 height="290"
                 src="https://www.youtube.com/embed/${getKeyYouTybe(
-                  data.youtube
-                )}?origin=https://Ben-cod.github.io"
+    data.youtube
+  )}?origin=https://Ben-cod.github.io"
 
-title = "YouTube video player"
-frameborder = "0"
-allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen
-  ></iframe >
-`;
+              title = "YouTube video player"
+              frameborder = "0"
+              allow = "accelerometer; autoplay; clipboard-write; encrypted-media; 
+              gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+                ></iframe >
+              `;
   videoRef.innerHTML = markUp;
 }
 
@@ -71,68 +71,67 @@ allowfullscreen
 
 
 
-  function insertTitle(data){
-   titleRef.innerHTML = data.title
-  }
+function insertTitle(data) {
+  titleRef.innerHTML = data.title
+}
 
-function insertTags(data){
+function insertTags(data) {
   const murkupTags = data.tags.map(tag => {
     return `<li class="recipe-tag">#${tag}</li>`
-  })
+  }).join('')
   tagsMob.innerHTML = murkupTags;
   tagsDesktop.innerHTML = murkupTags;
 }
 
 
-function insertTime(data){
+function insertTime(data) {
   timeRef.innerHTML = `${data.time} min`
 }
 
 
-function insertIngridients(data){
+function insertIngridients(data) {
   const murkupIngridients = data.ingredients.map(ingredient => {
     return `<li class="recipe-ingriidient">
     <p>${ingredient.name}</p>
     <p class="text-grey">${ingredient.measure}</p>
 </li>`
-  } );
+  }).join('');
   ingridientsRef.innerHTML = murkupIngridients
 }
 
-function insertRating(data){
+function insertRating(data) {
   ratingRef.innerHTML = data.rating
 }
 
 
-function insertCookingRecipe(data){
+function insertCookingRecipe(data) {
   cookingRecipes.innerHTML = data.instructions
 }
 
 
 
-function addToFavorite(){
-  const favorites = JSON.parse(localStorage.getItem("favorite"));
-  if(!favorites) {
-    const arr = []
-    arr.push(responseRecipe);
-    return localStorage.setItem('favorite', JSON.stringify(arr));
-  }
-  const inFavorite = favorites.filter(e => {
-    if(e.id === responseRecipe.id){
+function toggleFavorite() {
+  const favorites = JSON.parse(localStorage.getItem("favorite")) || [];
+  const inFavorites = favorites.filter(e => {
+    if (e._id === responseRecipe._id) {
       return e;
-
+    }
+  })
+  if (inFavorites.length === 0) {
+    const newFavorites = [...favorites]
+    newFavorites.push(responseRecipe);
+    toggleFavoriteBtn.textContent = 'Remove from favorite'
+    return localStorage.setItem('favorite', JSON.stringify(newFavorites));
+  }
+  const filteredFavorite = favorites.filter(e => {
+    if (e._id !== responseRecipe._id) {
+      return e;
     }
   })
 
-  console.log(inFavorite);
+  toggleFavoriteBtn.textContent = 'Add to favorite'
 
-  if(inFavorite.length === 0) {
-    const newFavorites = [...favorites];
-    newFavorites.push(responseRecipe);
-    return localStorage.setItem('favorite', JSON.stringify(newFavorites))
-  }
-
-  return console.log('Вже є такий рецепт');
+  return localStorage.setItem('favorite', JSON.stringify(filteredFavorite));
 }
 
 
@@ -146,15 +145,29 @@ const refs = {
   modal: document.querySelector("[data-modal]"),
 };
 
-refs.openModalBtn.addEventListener("click", openModal);
+// refs.openModalBtn.addEventListener("click", openModal);
 refs.closeModalBtn.addEventListener("click", closeModal);
 refs.backDrop.addEventListener("click", closeModal);
-addFavorite.addEventListener('click', addToFavorite)
+toggleFavoriteBtn.addEventListener("click", toggleFavorite);
 
 async function openModal(id) {
   refs.modal.classList.remove("is-hidden");
-   responseRecipe = await fetchModalRecipe('6462a8f74c3d0ddd28898040');
-   console.log(responseRecipe);
+  responseRecipe = await fetchModalRecipe(id);
+  const favorites = JSON.parse(localStorage.getItem('favorite')) || [];
+  document.body.style.overflowY = 'hidden'
+  const inFavorites = favorites.filter(e => {
+    if(e._id === responseRecipe._id){
+      return e;
+    }
+  })
+  if(inFavorites.length > 0){
+    toggleFavoriteBtn.textContent = 'Remove from favorite'
+  }else{
+    toggleFavoriteBtn.textContent = 'Add to favorite'
+  }
+
+
+
   insertVideo(responseRecipe);
   insertTitle(responseRecipe)
   insertTags(responseRecipe)
@@ -166,5 +179,6 @@ async function openModal(id) {
 
 function closeModal() {
   refs.modal.classList.add("is-hidden");
+  document.body.style.overflowY = 'auto'
 }
 export {openModal};
