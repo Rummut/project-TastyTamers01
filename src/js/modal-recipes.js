@@ -49,8 +49,7 @@ function getKeyYouTybe(url) {
 }
 
 function insertVideo(data) {
-  if(!data.youtube){
-    const markUp = `<iframe
+  const markUp = `<iframe
                 width="100%"
                 height="290"
                 src="https://www.youtube.com/embed/${getKeyYouTybe(
@@ -65,8 +64,6 @@ function insertVideo(data) {
                 ></iframe >
               `;
   videoRef.innerHTML = markUp;
-  }
-  
 }
 
 
@@ -81,7 +78,7 @@ function insertTitle(data) {
 function insertTags(data) {
   const murkupTags = data.tags.map(tag => {
     return `<li class="recipe-tag">#${tag}</li>`
-  })
+  }).join('')
   tagsMob.innerHTML = murkupTags;
   tagsDesktop.innerHTML = murkupTags;
 }
@@ -98,7 +95,7 @@ function insertIngridients(data) {
     <p>${ingredient.name}</p>
     <p class="text-grey">${ingredient.measure}</p>
 </li>`
-  });
+  }).join('');
   ingridientsRef.innerHTML = murkupIngridients
 }
 
@@ -148,18 +145,16 @@ const refs = {
   modal: document.querySelector("[data-modal]"),
 };
 
-refs.openModalBtn.addEventListener("click", openModal);
+// refs.openModalBtn.addEventListener("click", openModal);
 refs.closeModalBtn.addEventListener("click", closeModal);
 refs.backDrop.addEventListener("click", closeModal);
 toggleFavoriteBtn.addEventListener("click", toggleFavorite);
 
 async function openModal(id) {
   refs.modal.classList.remove("is-hidden");
-  // 6462a8f74c3d0ddd28897fbc
-  // 6462a8f74c3d0ddd28897fbb
-  responseRecipe = await fetchModalRecipe('6462a8f74c3d0ddd28897fbb');
+  responseRecipe = await fetchModalRecipe(id);
   const favorites = JSON.parse(localStorage.getItem('favorite')) || [];
-
+  document.body.style.overflowY = 'hidden'
   const inFavorites = favorites.filter(e => {
     if(e._id === responseRecipe._id){
       return e;
@@ -184,5 +179,6 @@ async function openModal(id) {
 
 function closeModal() {
   refs.modal.classList.add("is-hidden");
+  document.body.style.overflowY = 'auto'
 }
 export {openModal, refs};
