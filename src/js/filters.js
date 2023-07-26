@@ -84,6 +84,10 @@ btnResetFilter.addEventListener('click', event => {
   inputArea = '';
   inputIngr = '';
   form.reset();
+  galary.innerHTML = ""
+  getAllDish().then((answers) => {
+     createGallary(answers);
+  })
 });
 
 fetchArea()
@@ -179,13 +183,6 @@ function createGallary(answers) {
 
 
 const buttonModal = document.querySelector(".filter-listener")
-// buttonModal.addEventListener('click', event => {
-//   console.log(event.target.id
-//   )
-//     })
-
-// console.log(buttonModal)
-
 
 buttonModal.addEventListener('click', event => {
      if (event.target.value) {
@@ -205,7 +202,6 @@ async function fetchLocalStorage(idEl) {
   return rezult.data;
 }
 
-// buttonModal.style.fill = "darkorange";
 
 function addFavorite(data){
   const favorites = JSON.parse(localStorage.getItem("favorite")) || [];
@@ -236,43 +232,7 @@ function addFavorite(data){
 
 
 
-export { inputSearch, inputTime, inputArea, inputIngr };
-
-
-  
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export { inputSearch, inputTime, inputArea, inputIngr,buttonModal,fetchLocalStorage, addFavorite };
 
   
 const btnUp = {
