@@ -1,5 +1,5 @@
 import './js/all-category.js';
-import './js/all-category-favorite.js';
+// import './js/all-category-favorite.js';
 import './js/popular.js';
 import './js/swiper.js';
 import './js/swiper-api.js';

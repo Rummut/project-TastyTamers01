@@ -99,10 +99,27 @@ function insertIngridients(data) {
   ingridientsRef.innerHTML = murkupIngridients
 }
 
-function insertRating(data) {
-  ratingRef.innerHTML = data.rating
-}
 
+function insertRating(data) {
+  const rating = data.rating;
+  const ratingStar = Math.round(rating); 
+  
+ 
+  let starMarkup = '';
+  for (let i = 1; i <= 5; i++) {
+    const isActive = i <= ratingStar ? 'active' : ''; 
+    starMarkup += `<svg class="filter-star star star-${i} ${isActive}" width="18" height="18">
+    <use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use>
+  </svg>`;
+  }
+
+  const markup = `<div class="filter-star-block mark-${ratingStar}">
+                    <p class="filter-reiting">${rating}</p>
+                    ${starMarkup}
+                  </div>`;
+  
+  ratingRef.innerHTML = markup;
+}
 
 function insertCookingRecipe(data) {
   cookingRecipes.innerHTML = data.instructions
@@ -113,13 +130,17 @@ function insertCookingRecipe(data) {
 function toggleFavorite() {
   const favorites = JSON.parse(localStorage.getItem("favorite")) || [];
   const inFavorites = favorites.filter(e => {
+    console.log(e)
     if (e._id === responseRecipe._id) {
+      console.log(responseRecipe._id)
       return e;
     }
   })
   if (inFavorites.length === 0) {
     const newFavorites = [...favorites]
+    
     newFavorites.push(responseRecipe);
+    console.log(responseRecipe)
     toggleFavoriteBtn.textContent = 'Remove from favorite'
     return localStorage.setItem('favorite', JSON.stringify(newFavorites));
   }
@@ -133,6 +154,7 @@ function toggleFavorite() {
 
   return localStorage.setItem('favorite', JSON.stringify(filteredFavorite));
 }
+
 
 
 
@@ -175,10 +197,11 @@ async function openModal(id) {
   insertIngridients(responseRecipe)
   insertCookingRecipe(responseRecipe)
   insertRating(responseRecipe)
+  
 }
 
 function closeModal() {
   refs.modal.classList.add("is-hidden");
   document.body.style.overflowY = 'auto'
 }
-export {openModal, refs};
+export {openModal};
