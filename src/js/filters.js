@@ -232,7 +232,7 @@ function addFavorite(data){
 
 
 
-export { inputSearch, inputTime, inputArea, inputIngr,buttonModal,fetchLocalStorage, addFavorite, createGallary, galary };
+export { inputSearch, inputTime, inputArea, inputIngr,buttonModal,fetchLocalStorage, addFavorite, createGallary, galary, getAllDish };
 
   
 const btnUp = {

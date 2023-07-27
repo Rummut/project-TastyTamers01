@@ -1,8 +1,9 @@
-// import SmoothScrollbar from 'smooth-scrollbar';
 import { fetchCategories, fetchCategory } from '../js/API-request/all-category';
-import { galary } from './filters'
-import star from '../img_header/svg/heart-star.svg'
+import { galary, createGallary, getAllDish } from './filters'
+
 const allcategories = document.querySelector('.scroll-content-select')
+
+const allCategory = document.querySelector('.button-Allcategories')
 
 let inputCategories = ''
 
@@ -22,57 +23,61 @@ fetchCategories()
     inputCategories = event.currentTarget.value;
     fetchCategory(inputCategories).then((answers) => {
       console.log(answers)
-      createCategories(answers)
+      createGallary(answers)
     })
     
   });
 
+allCategory.addEventListener('click', event => {
+  getAllDish().then((answers) => {
+    createGallary(answers);
+ })
+})
 
-
   
   
   
   
-  function createCategories(answers) {
-    galary.innerHTML = '';
-    console.log(answers)
-    const galarys = answers.map (answer => {
+  // function createCategories(answers) {
+  //   galary.innerHTML = '';
+  //   console.log(answers)
+  //   const galarys = answers.map (answer => {
   
-      console.log(answer)
-      const image = answer.thumb;
-      const title = answer.title;
-      const rating = answer.rating;
-      const description = answer.description;
-      const btnId = answer._id
-      const ratingStar = Math.round(answer.rating);
-      galary.insertAdjacentHTML(
-        'beforeend',
-        `<li class="filter-item">
-          <img class="filter-img" src="${image}" alt="${title}" />
-          <button  class="filter-btn-like">
-            <svg class="filter-svg-like" width="22" height="22"><use id="${btnId}" href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
-          </button>
-          <div class="filter-info-block">
-            <h4 class="filter-img-title">${title}</h4>
-            <p class="filter-img-text">${description}</p>
-            <div class="filter-info-reiting">
-              <div class="filter-star-block mark-${ratingStar}">
-                <p class="filter-reiting">${rating}</p>
-                <svg class="filter-star star star-1" width="18" height="18"><use  href="${star}#icon-Star-transparent"></use></svg>
-                <svg class="filter-star star star-2" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
-                <svg class="filter-star star star-3" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
-                <svg class="filter-star star star-4" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
-                <svg class="filter-star star star-5" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
-              </div>
-              <button type="button" value=${btnId}  class="filter-btn-see" data-modal-open>See recipe</button>
-            </div>
-          </div>
-        </li>`   
-      );
+  //     console.log(answer)
+  //     const image = answer.thumb;
+  //     const title = answer.title;
+  //     const rating = answer.rating;
+  //     const description = answer.description;
+  //     const btnId = answer._id
+  //     const ratingStar = Math.round(answer.rating);
+  //     galary.insertAdjacentHTML(
+  //       'beforeend',
+  //       `<li class="filter-item">
+  //         <img class="filter-img" src="${image}" alt="${title}" />
+  //         <button  class="filter-btn-like">
+  //           <svg class="filter-svg-like" width="22" height="22"><use id="${btnId}" href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
+  //         </button>
+  //         <div class="filter-info-block">
+  //           <h4 class="filter-img-title">${title}</h4>
+  //           <p class="filter-img-text">${description}</p>
+  //           <div class="filter-info-reiting">
+  //             <div class="filter-star-block mark-${ratingStar}">
+  //               <p class="filter-reiting">${rating}</p>
+  //               <svg class="filter-star star star-1" width="18" height="18"><use  href="${star}#icon-Star-transparent"></use></svg>
+  //               <svg class="filter-star star star-2" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
+  //               <svg class="filter-star star star-3" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
+  //               <svg class="filter-star star star-4" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
+  //               <svg class="filter-star star star-5" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
+  //             </div>
+  //             <button type="button" value=${btnId}  class="filter-btn-see" data-modal-open>See recipe</button>
+  //           </div>
+  //         </div>
+  //       </li>`   
+  //     );
      
-    });
+  //   });
    
-  }
+  // }
 
 
 
