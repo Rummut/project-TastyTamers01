@@ -157,7 +157,7 @@
     } */
   }
   @media screen and (min-width: 768px) {
-    .order-form-input {
+     {
       width: 360px;
       height: 48px;
       margin: 8px 0 18px;
