@@ -1,40 +1,30 @@
 import axios from 'axios';
-import star from '../img_header/svg/heart-star.svg'
-// import { buttonModal, fetchLocalStorage, addFavorite } from './filters'
-// import { openModal } from './modal-recipes';
+import star from '../img_header/svg/heart-star.svg';
+//import { buttonModal, fetchLocalStorage, addFavorite } from './filters';
+//import { openModal } from './modal-recipes';
 
 
-  const renderCardsList = document.querySelector('.hero-fav-render-cards');
-  const favoriteBtnList = document.querySelector('.hero-favorite-categories');
+const renderCardsList = document.querySelector('.hero-fav-render-cards');
+const favoriteBtnList = document.querySelector('.hero-favorite-categories');
 const heroFavoriteContent = document.querySelector('.hero-favorite-content');
-console.log(renderCardsList)
-console.log(favoriteBtnList)
-console.log(heroFavoriteContent)
-const favorites = JSON.parse(localStorage.getItem("favorite"))
-
-console.log(favorites)
-
+const favorites = JSON.parse(localStorage.getItem("favorite"));
   
-  /* if (renderCardsList.children.length === 0) {
-    heroFavoriteContent.style.display = 'none';
-  } else {
-    heroFavoriteContent.style.display = 'block';
-  } */
-renderCards(favorites)
+renderCards(favorites);
+favoriteBtn(favorites);
 
 function renderCards(favorites) {
-  if (favorites) {
+  if (favorites && favorites.length > 0) {
   
-
-heroFavoriteContent.style.display = 'none'
+heroFavoriteContent.style.display = 'none';
   renderCardsList.innerHTML = '';
-  const galarys = favorites.map(favorite => {
+
+favorites.forEach(favorite => {
 
     const image = favorite.thumb;
     const title = favorite.title;
     const rating = favorite.rating;
     const description = favorite.description;
-    const btnId = favorite._id
+    const btnId = favorite._id;
     const ratingStar = Math.round(favorite.rating);
     renderCardsList.insertAdjacentHTML(
       'beforeend',
@@ -60,41 +50,36 @@ heroFavoriteContent.style.display = 'none'
         </div>
       </li>`   
     );
-   
+    
   });
   } else {
-    heroFavoriteContent.style.display = 'blok'
+    heroFavoriteContent.style.display = 'column';
+    renderCardsList.innerHTML = '';
   }
- 
+  
 }
 
-// buttonModal.addEventListener('click', event => {
-//      if (event.target.value) {
-//     openModal(event.target.value)
-//     }
-//     //  event.target.fiil = "red"
-//      const idEl = event.target.id
-//       fetchLocalStorage(idEl).then((data) => {
-//        addFavorite(data)
-//      })
-       
- 
-// })
+function favoriteBtn(favorites) {
+  favoriteBtnList.innerHTML = '';
+  if (favorites && favorites.length > 0) {
+favorites.forEach(favorite => {
+    const category = favorite.category;
+    console.log(category);
+  favoriteBtnList.insertAdjacentHTML('beforeend', `<li class="hero-fav-categ-list">
+          <button class="hero-fav-categ-btn">${category}</button>
+        </li>`);
+  });
+  }
+}
 
-
- 
-/* const cardDataJSON = JSON.stringify({
-  image: '',
-  title: '',
-  description: '',
-  rating: '',
-  star: '',
-});
-
-
-localStorage.setItem('cardData', cardDataJSON);
-
-const cardData = JSON.parse(localStorage.getItem('cardData'));
-
-render
-renderCards(cardData); */
+/* .buttonModal
+  .addEventListener('click', event => {
+    if (event.target.value) {
+      openModal(event.target.value);
+    }
+    //event.target.fill = "red"
+    const idEl = event.target.id;
+    fetchLocalStorage(idEl).then(data => {
+      addFavorite(data);
+    });
+  }); */
