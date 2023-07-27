@@ -45,11 +45,11 @@
 //   refs.modalOrder.classList.remove('active');
 // }
 
-  refs.openOrderModalBtn.addEventListener('click', toggleModal);
-  // refs.closeOrderModalBtn.addEventListener('click', toggleModal);
+//   refs.openOrderModalBtn.addEventListener('click', toggleModal);
+//   // refs.closeOrderModalBtn.addEventListener('click', toggleModal);
 
-  function toggleModal() {
-    document.body.classList.toggle('modal-open');
-    refs.modal.classList.toggle('is-hidden');
-  }
-})();
+//   function toggleModal() {
+//     document.body.classList.toggle('modal-open');
+//     refs.modal.classList.toggle('is-hidden');
+//   }
+// })();
