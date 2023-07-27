@@ -11,3 +11,4 @@ import './js/modal-recipes.js';
 import './js/API-request/all-category.js'
 import './js/scrollbar.js'
 import './js/category-search.js'
+
