@@ -232,7 +232,7 @@ function addFavorite(data){
 
 
 
-export { inputSearch, inputTime, inputArea, inputIngr,buttonModal,fetchLocalStorage, addFavorite };
+export { inputSearch, inputTime, inputArea, inputIngr,buttonModal,fetchLocalStorage, addFavorite, createGallary, galary, getAllDish };
 
   
 const btnUp = {
@@ -260,3 +260,21 @@ const btnUp = {
 
 btnUp.addEventListener();
 
+// async function displayDataForPage(pageNumber) {
+//   try {
+//     const response = await axios(`${BASEURL}?title=${inputSearch}&page=${pageNumber}&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}&limit=9`);
+//     const data = response.data.results;
+//     createGallary(data); // Update the displayed data using your existing createGallary function
+//   } catch (error) {
+//     console.error('Error fetching data:', error);
+//   }
+// }
+
+// Handle the 'afterMove' event of the tui-pagination to fetch and display data for the selected page
+// pagination.on('afterMove', event => {
+//   const currentPage = event.page;
+//   displayDataForPage(currentPage);
+// });
+
+// Display data for the initial page (page 1)
+// displayDataForPage(1);

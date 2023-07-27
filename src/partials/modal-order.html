@@ -1,61 +1,88 @@
-<div class="modal-order-wrapper">
-  <div class="backdrop-order is-hidden" data-order>
-    <div class="modal-order">
-      <button type="button" class="modal-close-btn" data-order-close>
-        <svg class="modal-close-btn-icon" width="20" height="20">
-          <use href="./img_header/icons.svg#icon-close"></use>
-        </svg>
-      </button>
-      <p class="modal-title">Order now</p> 
-      </p>
-      <form class="modal-form form">
-        <div class="form-group">
-          <input
-            type="text"
-            class="form-input"
-            placeholder="Name"
-            name="fullname"
-            required
-            pattern="[a-zA-Zа-яА-Я]+"
-            maxlength="20"
-          />
-        </div>
+<!-- <div class="backdrop-order">
+  <div id="modal-order" class="modal-order">
+    <button type="button" class="order-modal-close-btn">
+      <svg class="order-icon-close" width="20" height="20">
+        <use href="./img_header/icons.svg#icon-close"></use>
+      </svg>
+    </button>
+    <div class="wrap-recipe">
+      <form action="#" class="modal-form-order" autocomplete="on">
+        <strong class="contact-modal-title">Order now</strong>
 
-        <div class="form-group">
-          <input
-            type="email"
-            id="email"
-            class="form-input"
-            placeholder="Enter your email"
-            name="email"
-            required
-          />
-        </div>
+        <span class="contact-field-wrapper">
+          <label class="input-box">
+            <input
+              type="text"
+              class="input-field input-field-name input-js"
+              name="name"
+              required
+            />
+            <span class="order-input-label">Name</span>
+            <svg class="input-warning-icon" width="14" height="14">
+              <use class="error" href="./images/sprite.svg#icon-error"></use>
+              <use
+                class="correct"
+                href="./images/sprite.svg#icon-correct"
+              ></use>
+            </svg>
+          </label>
 
-       
-        <div class="form-group">
-          <input
-            type="tel"
-            class="form-input"
-            placeholder="Phone number"
-            name="phone"
-            pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}"
-            required
-            title="333-22-22"
-          />
+          <label class="input-box">
+            <input
+              type="tel"
+              class="input-field input-field-tel input-js"
+              name="tel"
+              required
+              pattern="+[0-9]{12}"
+              placeholder="+38 073 0000000"
+            />
+            <span class="order-input-label">Phone number</span>
+            <svg class="input-warning-icon" width="14" height="14">
+              <use class="error" href="./images/sprite.svg#icon-error"></use>
+              <use
+                class="correct"
+                href="./images/sprite.svg#icon-correct"
+              ></use>
+            </svg>
+          </label>
 
-          
-        </div>
+          <label class="input-box">
+            <input
+              type="email"
+              class="input-field input-field-tel input-js"
+              name="email"
+              required
+              pattern="[^@\s]+@[^@\s]+"
+            />
+            <span class="order-input-label">Email</span>
+            <svg class="input-warning-icon" width="14" height="14">
+              <use class="error" href="./images/sprite.svg#icon-error"></use>
+              <use
+                class="correct"
+                href="./images/sprite.svg#icon-correct"
+              ></use>
+            </svg>
+          </label>
 
-        <div class="form-group">
-          <textarea
-            name="Enter text"
-            class="form-textarea"
-            placeholder="Enter text"
-          ></textarea>
-        </div>
-        <button type="submit" class="form-btn btn">Send</button>
+          <label class="input-box">
+            <textarea
+              class="input-field input-field-textarea input-js"
+              name="comment"
+              rows="4"
+            ></textarea>
+            <span class="order-input-label">Comment</span>
+            <svg class="input-warning-icon" width="14" height="14">
+              <use class="error" href="./images/sprite.svg#icon-error"></use>
+              <use
+                class="correct"
+                href="./images/sprite.svg#icon-correct"
+              ></use>
+            </svg>
+          </label>
+        </span>
+
+        <button type="submit" class="order-btn" data-modal="2">Send</button>
       </form>
     </div>
   </div>
-</div>
+</div> -->

@@ -1,5 +1,5 @@
-/* ================Conteiner================== */
-.category-container {
+/* ================Container================== */
+.categories-container {
   height: 198px;
   overflow: hidden;
 }
@@ -7,6 +7,7 @@
 .container-allcategories {
   width: 326px;
   margin-bottom: 40px;
+  padding-left: 100px;
 }
 
 /* ================Button================== */
