@@ -1,4 +1,4 @@
-/* :root {
+/* /* :root {
   --primary-text-CH-color: #050505;
   --primary-text-CH-color-08: rgba(5, 5, 5, 0.8);
   --primary-text-CH-color-05: rgba(5, 5, 5, 0.5);
@@ -212,7 +212,7 @@
     font-size: 14px;
     line-height: 1.21429;
   }
-}
+} */
 .input-field {
   border: 1px solid var(--primary-text-CH-color-02);
   color: var(--primary-text-color);
