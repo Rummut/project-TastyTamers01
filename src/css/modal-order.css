@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --primary-text-CH-color: #050505;
   --primary-text-CH-color-08: rgba(5, 5, 5, 0.8);
   --primary-text-CH-color-05: rgba(5, 5, 5, 0.5);
@@ -155,9 +155,9 @@
     &:active {
       border: 1px solid var(--light-green);
     } */
-  }
+  /* }
   @media screen and (min-width: 768px) {
-     {
+    .order-form-input {
       width: 360px;
       height: 48px;
       margin: 8px 0 18px;
@@ -257,4 +257,4 @@
   .contact-field-wrapper {
     gap: 44px;
   }
-}
+} */
