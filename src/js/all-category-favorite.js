@@ -7,21 +7,18 @@ import star from '../img_header/svg/heart-star.svg';
 const renderCardsList = document.querySelector('.hero-fav-render-cards');
 const favoriteBtnList = document.querySelector('.hero-favorite-categories');
 const heroFavoriteContent = document.querySelector('.hero-favorite-content');
-console.log(renderCardsList)
-console.log(favoriteBtnList)
-console.log(heroFavoriteContent)
-const favorites = JSON.parse(localStorage.getItem("favorite"))
-
-console.log(favorites)
+const favorites = JSON.parse(localStorage.getItem("favorite"));
   
-renderCards(favorites)
+renderCards(favorites);
+favoriteBtn(favorites);
 
 function renderCards(favorites) {
-  if (favorites) {
+  if (favorites && favorites.length > 0) {
   
-heroFavoriteContent.style.display = 'none'
+heroFavoriteContent.style.display = 'none';
   renderCardsList.innerHTML = '';
-  const galarys = favorites.map(favorite => {
+
+favorites.forEach(favorite => {
 
     const image = favorite.thumb;
     const title = favorite.title;
@@ -56,24 +53,23 @@ heroFavoriteContent.style.display = 'none'
     
   });
   } else {
-    heroFavoriteContent.style.display = 'block'
+    heroFavoriteContent.style.display = 'column';
+    renderCardsList.innerHTML = '';
   }
   
 }
 
-favoriteBtn(favorites);
-
-function favoriteBtn(category) {
+function favoriteBtn(favorites) {
   favoriteBtnList.innerHTML = '';
-  if (category) {
-const galaryBtn = favorites.map(favorite => {
+  if (favorites && favorites.length > 0) {
+favorites.forEach(favorite => {
     const category = favorite.category;
-    console.log(category)
+    console.log(category);
   favoriteBtnList.insertAdjacentHTML('beforeend', `<li class="hero-fav-categ-list">
           <button class="hero-fav-categ-btn">${category}</button>
-        </li>`)
+        </li>`);
+  });
   }
-)}
 }
 
 /* .buttonModal
