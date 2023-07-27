@@ -29,6 +29,6 @@ const options = {
   },
 };
 
-//  const pagination = new Pagination(container, options);
+// const pagination = new Pagination(container, options);
 // export {pagination}
 
