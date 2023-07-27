@@ -45,10 +45,14 @@ function closeModalClose() {
   refs.modalOrder.classList.remove('active');
 }
 
-refs.openOrderModalBtn.addEventListener('click', toggleModal);
-refs.closeOrderModalBtn.addEventListener('click', toggleModal);
+function clickBackdropClick(e) {
+  if (e.currentTarget === e.target) {
+    closeModalClose();
+  }
+}
 
-function toggleModal() {
-  document.body.classList.toggle('modal-open');
-  refs.modal.classList.toggle('is-hidden');
+function onEscPress(e) {
+  if (e.code === 'Escape') {
+    closeModalClose();
+  }
 }
