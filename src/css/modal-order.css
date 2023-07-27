@@ -176,7 +176,6 @@
     border: 1px solid var(--light-green);
   }
 }
-
 .order-input-label {
   color: var(--primary-text-CH-color-05);
   transition: color var(--transition-set);
@@ -193,10 +192,9 @@
   .order-modal-title {
     margin-bottom: 28px;
   }
-
   .modal-order {
     padding: 40px;
-    width: 440px;
+    width: 410px;
   }
 
   /* .modal-form-order {

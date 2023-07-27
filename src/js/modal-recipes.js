@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-
+import star from '../img_header/svg/heart-star.svg'
 
 const BASE_URL = `https://tasty-treats-backend.p.goit.global/api/recipes/`
 
@@ -17,12 +17,7 @@ const ratingRef = document.querySelector('.rating-number')
 
 let responseRecipe = null;
 
-// const buttonModal = document.querySelector(".filter-listener")
-// buttonModal.addEventListener('click', event => {
-//   console.log(event.target.id
-//   )
-//     })
-// console.log(buttonModal)
+
      
 
 async function fetchModalRecipe(id) {
@@ -103,22 +98,17 @@ function insertIngridients(data) {
 function insertRating(data) {
   const rating = data.rating;
   const ratingStar = Math.round(rating); 
+  ratingRef.innerHTML = ''
   
- 
-  let starMarkup = '';
-  for (let i = 1; i <= 5; i++) {
-    const isActive = i <= ratingStar ? 'active' : ''; 
-    starMarkup += `<svg class="filter-star star star-${i} ${isActive}" width="18" height="18">
-    <use href="../img_header/svg/heart-star.svg#icon-Star-transparent"></use>
-  </svg>`;
-  }
-
-  const markup = `<div class="filter-star-block mark-${ratingStar}">
-                    <p class="filter-reiting">${rating}</p>
-                    ${starMarkup}
-                  </div>`;
+  const stars = ratingRef.insertAdjacentHTML('beforeend',`<div class="filter-star-block mark-${ratingStar}">
+              <p class="recipe-reiting">${rating}</p>
+              <svg class="filter-star star star-1" width="18" height="18"><use  href="${star}#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-2" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-3" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-4" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
+              <svg class="filter-star star star-5" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
+            </div>`)
   
-  ratingRef.innerHTML = markup;
 }
 
 function insertCookingRecipe(data) {
@@ -158,7 +148,7 @@ function toggleFavorite() {
 
 
 
-// Modal open
+
 
 const refs = {
   openModalBtn: document.querySelector("[data-modal-open]"),
