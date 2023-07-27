@@ -101,7 +101,7 @@ function insertRating(data) {
   ratingRef.innerHTML = ''
   
   const stars = ratingRef.insertAdjacentHTML('beforeend',`<div class="filter-star-block mark-${ratingStar}">
-              <p class="filter-reiting">${rating}</p>
+              <p class="recipe-reiting">${rating}</p>
               <svg class="filter-star star star-1" width="18" height="18"><use  href="${star}#icon-Star-transparent"></use></svg>
               <svg class="filter-star star star-2" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
               <svg class="filter-star star star-3" width="18" height="18"><use href="${star}#icon-Star-transparent"></use></svg>
