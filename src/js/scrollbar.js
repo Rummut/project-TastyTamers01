@@ -24,9 +24,7 @@ fetchCategories()
       console.log(answers)
       createCategories(answers)
     })
-    // fetchSearchDishArea(inputArea).then(data => {
-    //   createGallary(data);
-    // });
+    
   });
 
 
