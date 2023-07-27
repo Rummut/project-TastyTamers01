@@ -60,19 +60,19 @@ heroFavoriteContent.style.display = 'none'
         </div>
       </li>`   
     );
-   
+    
   });
   } else {
-    heroFavoriteContent.style.display = 'blok'
+    heroFavoriteContent.style.display = 'block'
   }
- 
+  
 }
 
 // buttonModal.addEventListener('click', event => {
 //      if (event.target.value) {
 //     openModal(event.target.value)
 //     }
-//     //  event.target.fiil = "red"
+//     //  event.target.fill = "red"
 //      const idEl = event.target.id
 //       fetchLocalStorage(idEl).then((data) => {
 //        addFavorite(data)
