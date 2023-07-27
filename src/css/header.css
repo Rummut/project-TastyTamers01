@@ -31,6 +31,13 @@ body {
   line-height: 18px;
   letter-spacing: -0.64px;
   text-decoration: none;
+  display: inline-block;
+  transition-duration: defaultDuration;
+  transition-property: transform;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .header-logo-color {
@@ -57,6 +64,13 @@ body {
 .header-shopping-icon {
   fill: transparent;
   stroke: var(--black);
+  display: inline-block;
+  transition-duration: defaultDuration;
+  transition-property: transform;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .header-burger-menu-icon {
@@ -243,6 +257,13 @@ body {
     font-weight: 500;
     text-decoration: none;
     color: var(--black);
+    display: inline-block;
+    transition-duration: defaultDuration;
+    transition-property: transform;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   .header-nav-list-item {

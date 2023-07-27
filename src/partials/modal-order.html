@@ -16,8 +16,6 @@
               class="input-field input-field-name input-js"
               name="name"
               required
-              pattern="[A-Za-z]{1,32}"
-              placeholder="Your name"
             />
             <span class="order-input-label">Name</span>
             <svg class="input-warning-icon" width="14" height="14">
@@ -35,8 +33,8 @@
               class="input-field input-field-tel input-js"
               name="tel"
               required
-              pattern="[0-9]{10}"
-              placeholder="Your telephone "
+              pattern="+[0-9]{12}"
+              placeholder="+38 073 0000000"
             />
             <span class="order-input-label">Phone number</span>
             <svg class="input-warning-icon" width="14" height="14">
@@ -55,7 +53,6 @@
               name="email"
               required
               pattern="[^@\s]+@[^@\s]+"
-              placeholder="Your email "
             />
             <span class="order-input-label">Email</span>
             <svg class="input-warning-icon" width="14" height="14">
