@@ -185,14 +185,17 @@ function createGallary(answers) {
 const buttonModal = document.querySelector(".filter-listener")
 
 buttonModal.addEventListener('click', event => {
+  
      if (event.target.value) {
     openModal(event.target.value)
-    }
-    //  event.target.fiil = "red"
-     const idEl = event.target.id
+     } else {
+       
+       const idEl = event.target.id
       fetchLocalStorage(idEl).then((data) => {
        addFavorite(data)
-     })
+     })}
+
+     
        
  
 })
