@@ -91,6 +91,14 @@
 .rating-number {
   margin-right: 6px;
 }
+.recipe-reiting{
+    color: black;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.28;
+  margin-right: 4px;
+}
+
 /* .filter-star-block {
     display: flex;
     align-items: center;
