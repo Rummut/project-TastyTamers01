@@ -1,4 +1,8 @@
 /* -----Filter block----- */
+.filters{
+  width: 335px;
+}
+
 .filter-form {
   display: flex;
   flex-wrap: wrap;
@@ -114,7 +118,7 @@
 .filter-btn-block {
   display: flex;
   justify-content: end;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .filter-btn-reset {
@@ -280,6 +284,9 @@
 /* ---------------------- */
 
 @media screen and (min-width: 768px) {
+  .filters {
+      width: 496px;
+    }
   .filter-form {
     gap: 16px;
     margin-bottom: 14px;
@@ -331,13 +338,16 @@
 }
 
 @media screen and (min-width: 1280px) {
+  .filters {
+    width: 780px;
+  }
   .filter-form {
     width: 780px;
     flex-wrap: nowrap;
   }
 
   .filter-list {
-    gap: 32px 16px;
+    gap: 32px 14px;
   }
 
   .filter-item {
@@ -375,7 +385,7 @@
   z-index: 500;
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 50px;
   width: 40px;
   height: 40px;
   border-radius: 50px;
