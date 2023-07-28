@@ -114,7 +114,7 @@
 .filter-btn-block {
   display: flex;
   justify-content: end;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .filter-btn-reset {
@@ -375,7 +375,7 @@
   z-index: 500;
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 50px;
   width: 40px;
   height: 40px;
   border-radius: 50px;
