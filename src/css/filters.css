@@ -1,5 +1,5 @@
 /* -----Filter block----- */
-.filters{
+.filters {
   width: 335px;
 }
 
@@ -64,8 +64,8 @@
   fill: var(--light-green);
 }
 
-.filter-input:focus + .filter-input-svg,
-.filter-input:hover + .filter-input-svg {
+.filter-input:focus+.filter-input-svg,
+.filter-input:hover+.filter-input-svg {
   fill: var(--light-green);
 }
 
@@ -122,18 +122,20 @@
 }
 
 .filter-btn-reset {
+  display: flex;
   background-color: transparent;
   border: none;
   padding: 0;
-  margin-right: 4px;
+  cursor: pointer;
 }
 
 .filter-btn-reset:hover .filter-btn-svg,
 .filter-btn-reset:focus .filter-btn-svg {
-  transform: scale(1.3);
+  transform: scale(1.2);
 }
 
 .filter-btn-svg {
+  margin-right: 4px;
   stroke: var(--light-green);
   transition: transform var(--basic-transition);
 }
@@ -152,11 +154,9 @@
   width: 335px;
   height: 335px;
   border-radius: 8px;
-  background-image: linear-gradient(
-    1deg,
-    rgba(5, 5, 5, 0.6) 0%,
-    rgba(5, 5, 5, 0) 100%
-  );
+  background-image: linear-gradient(1deg,
+      rgba(5, 5, 5, 0.6) 0%,
+      rgba(5, 5, 5, 0) 100%);
 }
 
 .filter-img {
@@ -194,6 +194,11 @@
   fill: var(--white);
   opacity: 1;
 }
+
+.filter-btn-like:active .filter-svg-like {
+  fill: var(--white);
+}
+
 
 .filter-info-block {
   margin-top: auto;
@@ -285,8 +290,9 @@
 
 @media screen and (min-width: 768px) {
   .filters {
-      width: 496px;
-    }
+    width: 496px;
+  }
+
   .filter-form {
     gap: 16px;
     margin-bottom: 14px;
@@ -341,6 +347,7 @@
   .filters {
     width: 780px;
   }
+
   .filter-form {
     width: 780px;
     flex-wrap: nowrap;
