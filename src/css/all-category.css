@@ -3,8 +3,8 @@
   overflow: hidden;
 }
 
-.container-allcategories {
-}
+/* .container-allcategories {
+} */
 
 /* ================Button================== */
 .button-category {
@@ -19,7 +19,7 @@
   display: block;
   column-gap: 18px;
   width: 100%;
-  padding: 0;  
+  padding: 0;
 }
 
 .button-category:not(:first-child) {
@@ -50,7 +50,7 @@ button.isUse {
   border-style: solid;
   border: 1px solid #05050580;
   cursor: pointer;
-  margin-bottom: 48px;
+  margin-bottom: 24px;
   color: inherit;
   background-color: inherit;
   border-color: inherit;
@@ -64,6 +64,33 @@ button.isUse {
   color: var(--modal-white);
 }
 
+.scroll-content-select {
+  width: 330px;
+  height: 198px;
+  color: rgba(5, 5, 5, 0.30);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.28;
+  border: none;
+}
+
+.scroll-content-select option:not(:last-child) {
+  margin-bottom: 18px;
+}
+
+.scroll-content-select :hover,
+.scroll-content-select :focus {
+  border: none;
+}
+
+.scroll-content-select option:hover,
+.scroll-content-select option:focus {
+  color: var(--light-green);
+  background-color: white;
+}
+
 /* ================Media================== */
 @media screen and (max-width: 767px) {
   .container-allcategories {
@@ -72,20 +99,41 @@ button.isUse {
 }
 
 @media screen and (min-width: 768px) {
-  .categories-container {
-  }
   .button-Allcategories {
     margin-bottom: 30px;
   }
-  .container-allcategories {
-  margin-top: 28px;
+
+  .scroll-content-select {
+    width: 176px;
+    height: 416px;
+    font-size: 16px;
+    line-height: 20px;
   }
-}
-@media screen and (min-width: 1280px) {
-  .categories-container {
+
+  .scroll-content-select option:not(:last-child) {
+    margin-bottom: 24px;
   }
+
+  .button-Allcategories {
+    margin-bottom: 30px;
+  }
+
   .container-allcategories {
-    
+    margin-top: 25px;
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .button-Allcategories {
+    margin-bottom: 56px;
+  }
+
+  .scroll-content-select {
+    width: 235px;
+  }
+
+  /* .categories-container {
+  }
+  .container-allcategories {
+  } */
+}

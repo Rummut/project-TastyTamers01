@@ -2,11 +2,13 @@ import axios from 'axios';
 import {
   fetchArea,
   fetchIngredients,
-  
+  getAllPagin,
   
   fetchSearchDish,
   
 } from './API-request/filter- request';
+import heart from '../img_header/svg/heart-star.svg'
+import { pagination } from './pagination';
 import star from '../img_header/svg/heart-star.svg'
 // import { pagination } from './pagination';
 import {openModal} from './modal-recipes';
@@ -31,9 +33,7 @@ let inputIngr = '';
 
 
 
-fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then((answers) => {
-     createGallary(answers);
-  })
+fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
 
 
 // async function getAllDish() {
@@ -52,27 +52,22 @@ fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then((answers) => 
 searchEl.addEventListener('input', debounce(getDish, 300));
 
 searchElArea.addEventListener('change', event => {
-  
+  // pagination.on('afterMove', getAllPagin)
   inputArea = event.currentTarget.value;
-    fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then(data => {
-    createGallary(data);
-  });
+    fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
 });
 
 searchElIng.addEventListener('change', event => {
   inputIngr = event.currentTarget.value;
-
- fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then(data => {
-    createGallary(data);
-  });
+  // pagination.off('afterMove', getAllPagin)
+pagination.on('afterMove', getAllPagin)
+ fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
 });
 
 searchElTime.addEventListener('change', event => {
   inputTime = Number(event.target.value)
-  
-  fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then(data => {
-     createGallary(data);
-   })
+  // pagination.on('afterMove', getAllPagin)
+  fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
     
  })
  btnSearchClear.addEventListener('click', (event) =>{
@@ -82,7 +77,7 @@ searchElTime.addEventListener('change', event => {
   
    }) 
 
-btnResetFilter.addEventListener('click', resetGallary());
+btnResetFilter.addEventListener('click', resetGallary);
 
 function resetGallary() {
   inputSearch = '';
@@ -91,9 +86,7 @@ function resetGallary() {
   inputIngr = '';
   form.reset();
   galary.innerHTML = ""
-  fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then((answers) => {
-     createGallary(answers);
-  })
+  fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
 }
 
 
@@ -109,6 +102,7 @@ fetchArea()
 
 fetchIngredients()
   .then(ingredients => {
+    
     ingredients.map(ingredient => {
       const option = `<option value = "${ingredient._id}">${ingredient.name}</option>`;
       searchElIng.insertAdjacentHTML('beforeend', option);
@@ -127,7 +121,7 @@ function debounce(fn, wait) {
 function getDish(event) {
   inputSearch = event.target.value.trim();
   btnSearchClear.style.display = "flex"
-
+pagination.off('afterMove', getAllPagin)
   fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
     .then(data => {
       if (data.length !== 0) {
@@ -138,7 +132,7 @@ function getDish(event) {
           'beforeend',
           `<div class="hero-favorite-content container">
   <svg class="hero-favorite-icon" width="68" height="58">
-    <use href="../img_header/svg/favorite-icon.svg#icon-elements"></use>
+    <use href="./img_header/svg/favorite-icon.svg#icon-elements"></use>
   </svg>
   <p class="hero-favorite-text">
     Sorry! We didn't find anything.
@@ -151,6 +145,7 @@ function getDish(event) {
 }
 
 function createGallary(answers) {
+  console.log(answers)
   galary.innerHTML = '';
   const galarys = answers.map(answer => {
 
@@ -165,7 +160,7 @@ function createGallary(answers) {
       `<li class="filter-item">
         <img class="filter-img" src="${image}" alt="${title}" />
         <button  class="filter-btn-like">
-          <svg class="filter-svg-like" width="22" height="22"><use id="${btnId}" href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
+          <svg class="filter-svg-like" width="22" height="22"><use id="${btnId}" href="${heart}#icon-heart-transparent"></use></svg>
         </button>
         <div class="filter-info-block">
           <h4 class="filter-img-title">${title}</h4>
@@ -196,15 +191,16 @@ buttonModal.addEventListener('click', event => {
   
      if (event.target.value) {
     openModal(event.target.value)
-     } else {
-       
-       const idEl = event.target.id
+  } if (event.target.id) {
+    const idEl = event.target.id
       fetchLocalStorage(idEl).then((data) => {
        addFavorite(data)
-     })}
-
-     
-       
+      })
+  }
+  else {
+    return
+  }
+      
  
 })
 async function fetchLocalStorage(idEl) {
@@ -226,7 +222,9 @@ function addFavorite(data){
      if (inFavorites.length === 0) {
     const newFavorites = [...favorites]
     
-    newFavorites.push(data);
+       newFavorites.push(data);
+       console.log(newFavorites)
+       
    
        
     return localStorage.setItem('favorite', JSON.stringify(newFavorites));

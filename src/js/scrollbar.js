@@ -27,8 +27,6 @@ fetchCategories()
   });
 
 allCategory.addEventListener('click', event => {
-  fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then((answers) => {
-    resetGallary()
-    createGallary(answers);
- })
+  resetGallary()
+  fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
 })
