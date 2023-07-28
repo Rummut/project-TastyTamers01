@@ -32,6 +32,7 @@ let inputIngr = '';
 
 
 fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then((answers) => {
+  console.log(answers)
      createGallary(answers);
   })
 
@@ -62,8 +63,8 @@ searchElArea.addEventListener('change', event => {
 searchElIng.addEventListener('change', event => {
   inputIngr = event.currentTarget.value;
 
- fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then(data => {
-    createGallary(data);
+  fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then(data => {
+       createGallary(data);
   });
 });
 

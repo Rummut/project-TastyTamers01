@@ -72,7 +72,7 @@ async function fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr) {
                           
                 // &category=Beef
             
-               
+               console.log(response.data)
               return response.data.results;
             }
           catch {
