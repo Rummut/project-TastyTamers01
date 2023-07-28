@@ -1,4 +1,8 @@
 /* -----Filter block----- */
+.filters{
+  width: 335px;
+}
+
 .filter-form {
   display: flex;
   flex-wrap: wrap;
@@ -281,7 +285,7 @@
 
 @media screen and (min-width: 768px) {
   .filters {
-      max-width: 496px;
+      width: 496px;
     }
   .filter-form {
     gap: 16px;
@@ -335,7 +339,7 @@
 
 @media screen and (min-width: 1280px) {
   .filters {
-    max-width: 780px;
+    width: 780px;
   }
   .filter-form {
     width: 780px;
