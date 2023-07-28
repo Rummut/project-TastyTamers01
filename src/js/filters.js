@@ -2,10 +2,10 @@ import axios from 'axios';
 import {
   fetchArea,
   fetchIngredients,
-  fetchSearchDishArea,
-  fetchSearchDishIngrid,
+  
+  
   fetchSearchDish,
-  fetchSearchDishTime
+  
 } from './API-request/filter- request';
 import star from '../img_header/svg/heart-star.svg'
 // import { pagination } from './pagination';
@@ -31,26 +31,30 @@ let inputIngr = '';
 
 
 
-getAllDish().then((answers) => {
+fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then((answers) => {
      createGallary(answers);
   })
 
 
-async function getAllDish() {
-            try {
-               const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}&limit=9`)
-                             return response.data.results;
-            }
-          catch {
+// async function getAllDish() {
+//             try {
+//                const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}&limit=9`)
+//                              return response.data.results;
+//             }
+//           catch {
                 
-            }
-}
+//             }
+// }
+
+
+
 
 searchEl.addEventListener('input', debounce(getDish, 300));
 
 searchElArea.addEventListener('change', event => {
+  
   inputArea = event.currentTarget.value;
-  fetchSearchDishArea(inputArea).then(data => {
+    fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then(data => {
     createGallary(data);
   });
 });
@@ -58,7 +62,7 @@ searchElArea.addEventListener('change', event => {
 searchElIng.addEventListener('change', event => {
   inputIngr = event.currentTarget.value;
 
-  fetchSearchDishIngrid(inputIngr).then(data => {
+ fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then(data => {
     createGallary(data);
   });
 });
@@ -66,7 +70,7 @@ searchElIng.addEventListener('change', event => {
 searchElTime.addEventListener('change', event => {
   inputTime = Number(event.target.value)
   
-  fetchSearchDishTime(inputTime).then(data => {
+  fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then(data => {
      createGallary(data);
    })
     
@@ -78,17 +82,21 @@ searchElTime.addEventListener('change', event => {
   
    }) 
 
-btnResetFilter.addEventListener('click', event => {
+btnResetFilter.addEventListener('click', resetGallary());
+
+function resetGallary() {
   inputSearch = '';
   inputTime = '';
   inputArea = '';
   inputIngr = '';
   form.reset();
   galary.innerHTML = ""
-  getAllDish().then((answers) => {
+  fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then((answers) => {
      createGallary(answers);
   })
-});
+}
+
+
 
 fetchArea()
   .then(areas => {
@@ -120,7 +128,7 @@ function getDish(event) {
   inputSearch = event.target.value.trim();
   btnSearchClear.style.display = "flex"
 
-  fetchSearchDish(inputSearch)
+  fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
     .then(data => {
       if (data.length !== 0) {
         createGallary(data);
@@ -185,14 +193,17 @@ function createGallary(answers) {
 const buttonModal = document.querySelector(".filter-listener")
 
 buttonModal.addEventListener('click', event => {
+  
      if (event.target.value) {
     openModal(event.target.value)
-    }
-    //  event.target.fiil = "red"
-     const idEl = event.target.id
+     } else {
+       
+       const idEl = event.target.id
       fetchLocalStorage(idEl).then((data) => {
        addFavorite(data)
-     })
+     })}
+
+     
        
  
 })
@@ -232,7 +243,7 @@ function addFavorite(data){
 
 
 
-export { inputSearch, inputTime, inputArea, inputIngr,buttonModal,fetchLocalStorage, addFavorite, createGallary, galary, getAllDish };
+export { inputSearch, inputTime, inputArea, inputIngr,buttonModal,fetchLocalStorage, addFavorite, createGallary, galary, fetchSearchDish, resetGallary };
 
   
 const btnUp = {

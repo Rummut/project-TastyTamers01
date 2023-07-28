@@ -1,5 +1,5 @@
 import { fetchCategories, fetchCategory } from '../js/API-request/all-category';
-import { galary, createGallary, getAllDish } from './filters'
+import {inputSearch, inputTime, inputArea, inputIngr, createGallary, fetchSearchDish,resetGallary } from './filters'
 
 const allcategories = document.querySelector('.scroll-content-select')
 const allCategory = document.querySelector('.button-Allcategories')
@@ -27,7 +27,8 @@ fetchCategories()
   });
 
 allCategory.addEventListener('click', event => {
-  getAllDish().then((answers) => {
+  fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then((answers) => {
+    resetGallary()
     createGallary(answers);
  })
 })

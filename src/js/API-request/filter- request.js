@@ -21,52 +21,52 @@ async function fetchIngredients() {
         }
         catch { }
 }
-async function fetchSearchDishArea(inputArea) {
-            try {
+// async function fetchSearchDishArea(inputSearch, inputTime, inputArea, inputIngr) {
+//             try {
                        
-                const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}&limit=9`)
+//                 const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}&limit=9`)
                          
-                // &category=Beef
+//                 // &category=Beef
             
                 
-              return  response.data.results;
-            }
-          catch {
+//               return  response.data.results;
+//             }
+//           catch {
                 
-            }
-}
+//             }
+// }
      
-async function fetchSearchDishTime(inputTime) {
-            try {
+// async function fetchSearchDishTime(inputTime) {
+//             try {
                        
-                const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}&limit=9`)
+//                 const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}&limit=9`)
                          
-                // &category=Beef
+//                 // &category=Beef
             
                 
-              return  response.data.results;
-            }
-          catch {
+//               return  response.data.results;
+//             }
+//           catch {
                 
-            }
-}
+//             }
+// }
   
 
-async function fetchSearchDishIngrid(inputIngr) {
-            try {
+// async function fetchSearchDishIngrid(inputIngr) {
+//             try {
                       
-                const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&time=${inputTime}&area=${inputArea}&ingredient=${inputIngr}&limit=9`)
+//                 const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&time=${inputTime}&area=${inputArea}&ingredient=${inputIngr}&limit=9`)
                          
-                // &category=Beef
+//                 // &category=Beef
             
                 
-              return  response.data.results;
-            }
-          catch {
+//               return  response.data.results;
+//             }
+//           catch {
                 
-            }
-}
-async function fetchSearchDish(inputSearch) {
+//             }
+// }
+async function fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr) {
             try {
                const response = await axios(`${BASEURL}?title=${inputSearch}&page=1&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}&limit=9`)
                           
@@ -80,4 +80,4 @@ async function fetchSearchDish(inputSearch) {
             }
 }
 
-export {fetchArea, fetchIngredients, fetchSearchDishArea, fetchSearchDishIngrid, fetchSearchDish, fetchSearchDishTime};
+export {fetchArea, fetchIngredients, fetchSearchDish};

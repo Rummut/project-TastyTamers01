@@ -1,7 +1,17 @@
+.container-all-category-popular {
+    display: block;
+}
+
+
 @media screen and (min-width: 768px) {
     .container-all-category-popular {
-        display: flex;
+        display: block;
     }
+
+        .container-section-common {
+            display: flex;
+            gap: 32px;
+        }
 }
 @media screen and (min-width: 1280px) {
 }
