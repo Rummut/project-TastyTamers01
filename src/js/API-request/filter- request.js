@@ -19,7 +19,9 @@ const responseArea = await axios ( `https://tasty-treats-backend.p.goit.global/a
 async function fetchIngredients() {
     try {
         const responseIngredients = await axios ( `https://tasty-treats-backend.p.goit.global/api/ingredients`)
-                return responseIngredients.data
+      console.log(responseIngredients.data)
+      return responseIngredients.data
+      
         }
         catch { }
 }
