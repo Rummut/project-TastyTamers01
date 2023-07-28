@@ -280,6 +280,9 @@
 /* ---------------------- */
 
 @media screen and (min-width: 768px) {
+  .filters {
+      max-width: 496px;
+    }
   .filter-form {
     gap: 16px;
     margin-bottom: 14px;
@@ -331,13 +334,16 @@
 }
 
 @media screen and (min-width: 1280px) {
+  .filters {
+    max-width: 780px;
+  }
   .filter-form {
     width: 780px;
     flex-wrap: nowrap;
   }
 
   .filter-list {
-    gap: 32px 16px;
+    gap: 32px 14px;
   }
 
   .filter-item {
