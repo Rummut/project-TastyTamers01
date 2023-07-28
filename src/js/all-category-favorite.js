@@ -15,13 +15,7 @@ let filterCategori = []
 function filtrBtn(event) {
   filterCategori =[]
     console.log(event.target.id)
-//   const btnFil = favorites.map(card => {
-//     if (card.category === event.target.id) {
-//       console.log(1234)
-//     filterCategori = (...)
-//   }
-// })
- 
+
   const btnFiltr = favorites.filter(e => {
     if (e.category === event.target.id) {
       console.log(123)
