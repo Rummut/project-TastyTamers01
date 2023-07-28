@@ -1,6 +1,7 @@
 import axios from "axios";
  import { pagination } from '../pagination';
 import {inputSearch, inputTime, inputArea, inputIngr, createGallary} from "../filters"
+import { after } from "lodash";
 
 const BASEURL = `https://tasty-treats-backend.p.goit.global/api/recipes`
 
@@ -67,11 +68,24 @@ async function fetchIngredients() {
                 
 //             }
 // }
+// let currentPage = ''
 const page = pagination.getCurrentPage()
 async function fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr) {
-            try {
-               const {data:{results, totalPages}} = await axios(`${BASEURL}?title=${inputSearch}&page=${page}&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}&limit=9`)
-                     console.log(totalPages)     
+            // currentPage = ""
+  try {
+               const {data:{results, totalPages}} = await axios(`${BASEURL}?title=${inputSearch}&page=${page}&time=${inputTime}&area=${inputArea}&ingredient=${inputIngr}&limit=9`)
+               pagination.reset(totalPages)   
+               createGallary(results);
+              
+            }
+          catch {
+                
+            }
+}
+async function getAllPagin(event) {
+           const currentPage = event.page
+  try {
+               const {data:{results}} = await axios(`${BASEURL}?title=${inputSearch}&page=${currentPage}&time=${inputTime}&area=${inputArea}&ingredient=${inputIngr}&limit=9`)  
                createGallary(results);
               
             }
@@ -80,4 +94,6 @@ async function fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr) {
             }
 }
 
-export {fetchArea, fetchIngredients, fetchSearchDish, createGallary};
+pagination.on('afterMove', getAllPagin)
+
+export {fetchArea, fetchIngredients, fetchSearchDish, createGallary, getAllPagin};

@@ -2,11 +2,12 @@ import axios from 'axios';
 import {
   fetchArea,
   fetchIngredients,
-  
+  getAllPagin,
   
   fetchSearchDish,
   
 } from './API-request/filter- request';
+import { pagination } from './pagination';
 import star from '../img_header/svg/heart-star.svg'
 // import { pagination } from './pagination';
 import {openModal} from './modal-recipes';
@@ -50,20 +51,21 @@ fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
 searchEl.addEventListener('input', debounce(getDish, 300));
 
 searchElArea.addEventListener('change', event => {
-  
+  // pagination.on('afterMove', getAllPagin)
   inputArea = event.currentTarget.value;
     fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
 });
 
 searchElIng.addEventListener('change', event => {
   inputIngr = event.currentTarget.value;
-
+  // pagination.off('afterMove', getAllPagin)
+pagination.on('afterMove', getAllPagin)
  fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
 });
 
 searchElTime.addEventListener('change', event => {
   inputTime = Number(event.target.value)
-  
+  // pagination.on('afterMove', getAllPagin)
   fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
     
  })
@@ -117,7 +119,7 @@ function debounce(fn, wait) {
 function getDish(event) {
   inputSearch = event.target.value.trim();
   btnSearchClear.style.display = "flex"
-
+pagination.off('afterMove', getAllPagin)
   fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
     .then(data => {
       if (data.length !== 0) {
