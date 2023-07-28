@@ -1,13 +1,9 @@
 /* ================Container================== */
 .categories-container {
-  height: 198px;
   overflow: hidden;
 }
 
 .container-allcategories {
-  width: 326px;
-  margin-bottom: 40px;
-  padding-left: 100px;
 }
 
 /* ================Button================== */
@@ -83,17 +79,14 @@ button.isUse {
     margin-bottom: 30px;
   }
   .container-allcategories {
-    width: 176px;
-    margin-top: 26px;
-    margin-bottom: 64px;   
+   
   }
 }
 @media screen and (min-width: 1280px) {
   .categories-container {
-    height: 416px;
   }
   .container-allcategories {
-    width: 235px;
+    
   }
 }
 
