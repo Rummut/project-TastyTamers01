@@ -2,12 +2,13 @@ import axios from 'axios';
 import {
   fetchArea,
   fetchIngredients,
-  
+  getAllPagin,
   
   fetchSearchDish,
   
 } from './API-request/filter- request';
 import heart from '../img_header/svg/heart-star.svg'
+import { pagination } from './pagination';
 import star from '../img_header/svg/heart-star.svg'
 // import { pagination } from './pagination';
 import {openModal} from './modal-recipes';
@@ -32,9 +33,7 @@ let inputIngr = '';
 
 
 
-fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then((answers) => {
-     createGallary(answers);
-  })
+fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
 
 
 // async function getAllDish() {
@@ -53,27 +52,22 @@ fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then((answers) => 
 searchEl.addEventListener('input', debounce(getDish, 300));
 
 searchElArea.addEventListener('change', event => {
-  
+  // pagination.on('afterMove', getAllPagin)
   inputArea = event.currentTarget.value;
-    fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then(data => {
-    createGallary(data);
-  });
+    fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
 });
 
 searchElIng.addEventListener('change', event => {
   inputIngr = event.currentTarget.value;
-
- fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then(data => {
-    createGallary(data);
-  });
+  // pagination.off('afterMove', getAllPagin)
+pagination.on('afterMove', getAllPagin)
+ fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
 });
 
 searchElTime.addEventListener('change', event => {
   inputTime = Number(event.target.value)
-  
-  fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then(data => {
-     createGallary(data);
-   })
+  // pagination.on('afterMove', getAllPagin)
+  fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
     
  })
  btnSearchClear.addEventListener('click', (event) =>{
@@ -83,7 +77,7 @@ searchElTime.addEventListener('change', event => {
   
    }) 
 
-btnResetFilter.addEventListener('click', resetGallary());
+btnResetFilter.addEventListener('click', resetGallary);
 
 function resetGallary() {
   inputSearch = '';
@@ -92,9 +86,7 @@ function resetGallary() {
   inputIngr = '';
   form.reset();
   galary.innerHTML = ""
-  fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then((answers) => {
-     createGallary(answers);
-  })
+  fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
 }
 
 
@@ -128,7 +120,7 @@ function debounce(fn, wait) {
 function getDish(event) {
   inputSearch = event.target.value.trim();
   btnSearchClear.style.display = "flex"
-
+pagination.off('afterMove', getAllPagin)
   fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
     .then(data => {
       if (data.length !== 0) {
@@ -152,6 +144,7 @@ function getDish(event) {
 }
 
 function createGallary(answers) {
+  console.log(answers)
   galary.innerHTML = '';
   const galarys = answers.map(answer => {
 

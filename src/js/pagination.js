@@ -1,10 +1,10 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
-const container = document.getElementById('tui-pagination-container');
+const container = document.getElementById('pagination');
 
 const options = {
-  totalItems: 288,
+  totalItems: 0,
   itemsPerPage: 9,
   visiblePages: window.innerWidth < 768 ? 2 : 3,
   page: 1,
@@ -29,6 +29,6 @@ const options = {
   },
 };
 
-// const pagination = new Pagination(container, options);
-// export {pagination}
+const pagination = new Pagination(container, options);
+export {pagination}
 
