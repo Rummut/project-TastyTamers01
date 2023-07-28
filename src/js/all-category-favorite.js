@@ -1,7 +1,8 @@
 import axios from 'axios';
 import star from '../img_header/svg/heart-star.svg';
-//import { buttonModal, fetchLocalStorage, addFavorite } from './filters';
-//import { openModal } from './modal-recipes';
+// import { buttonModal } from './filters';
+// import { openModal } from './modal-recipes';
+
 
 
 const renderCardsList = document.querySelector('.hero-fav-render-cards');
@@ -24,7 +25,8 @@ favorites.forEach(favorite => {
     const title = favorite.title;
     const rating = favorite.rating;
     const description = favorite.description;
-    const btnId = favorite._id;
+  const btnId = favorite._id;
+  console.log(btnId)
     const ratingStar = Math.round(favorite.rating);
     renderCardsList.insertAdjacentHTML(
       'beforeend',
@@ -72,14 +74,55 @@ favorites.forEach(favorite => {
   }
 }
 
-/* .buttonModal
-  .addEventListener('click', event => {
-    if (event.target.value) {
-      openModal(event.target.value);
-    }
-    //event.target.fill = "red"
-    const idEl = event.target.id;
-    fetchLocalStorage(idEl).then(data => {
-      addFavorite(data);
-    });
-  }); */
+
+
+
+// buttonModal.addEventListener('click', event => {
+  
+//      if (event.target.value) {
+//     openModal(event.target.value)
+//   } if (event.target.id) {
+//     const idEl = event.target.id
+//       fetchLocalStorage(idEl).then((data) => {
+//        addFavorite(data)
+//       })
+//   }
+//   else {
+//     return
+//   }
+      
+ 
+// })
+// async function fetchLocalStorage(idEl) {
+//   const rezult = await axios((`${BASEURL}/${idEl}`))
+  
+//   return rezult.data;
+// }
+
+
+// function addFavorite(data){
+//   const favorites = JSON.parse(localStorage.getItem("favorite")) || [];
+//   const inFavorites = favorites.filter(e => {
+    
+//     if (e._id === data._id) {
+      
+//       return e;
+//     }
+//   })
+//      if (inFavorites.length === 0) {
+//     const newFavorites = [...favorites]
+    
+//     newFavorites.push(data);
+   
+       
+//     return localStorage.setItem('favorite', JSON.stringify(newFavorites));
+//      }
+//     const filteredFavorite = favorites.filter(e => {
+//     if (e._id !== data._id) {
+//       return e;
+//     }
+//    })
+
+  
+//   return localStorage.setItem('favorite', JSON.stringify(filteredFavorite));
+// }

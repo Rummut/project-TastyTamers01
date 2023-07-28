@@ -100,6 +100,7 @@ fetchArea()
 
 fetchIngredients()
   .then(ingredients => {
+    
     ingredients.map(ingredient => {
       const option = `<option value = "${ingredient._id}">${ingredient.name}</option>`;
       searchElIng.insertAdjacentHTML('beforeend', option);
@@ -188,15 +189,16 @@ buttonModal.addEventListener('click', event => {
   
      if (event.target.value) {
     openModal(event.target.value)
-     } else {
-       
-       const idEl = event.target.id
+  } if (event.target.id) {
+    const idEl = event.target.id
       fetchLocalStorage(idEl).then((data) => {
        addFavorite(data)
-     })}
-
-     
-       
+      })
+  }
+  else {
+    return
+  }
+      
  
 })
 async function fetchLocalStorage(idEl) {
@@ -218,7 +220,9 @@ function addFavorite(data){
      if (inFavorites.length === 0) {
     const newFavorites = [...favorites]
     
-    newFavorites.push(data);
+       newFavorites.push(data);
+       console.log(newFavorites)
+       
    
        
     return localStorage.setItem('favorite', JSON.stringify(newFavorites));

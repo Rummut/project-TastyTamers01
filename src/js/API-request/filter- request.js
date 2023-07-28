@@ -72,8 +72,8 @@ async function fetchIngredients() {
 const page = pagination.getCurrentPage()
 async function fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr) {
             try {
-               const {data:{results, totalPages}} = await axios(`${BASEURL}?title=${inputSearch}&page=${page}&time=${inputTime}&area=${inputArea}&ingredients=${inputIngr}&limit=9`)
-                     console.log(totalPages)     
+               const {data:{results, totalPages}} = await axios(`${BASEURL}?title=${inputSearch}&page=${page}&time=${inputTime}&area=${inputArea}&ingredient=${inputIngr}&limit=9`)
+                     console.log(inputIngr)     
                createGallary(results);
               
             }
