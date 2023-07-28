@@ -7,6 +7,7 @@ import {
   fetchSearchDish,
   
 } from './API-request/filter- request';
+import heart from '../img_header/svg/heart-star.svg'
 import { pagination } from './pagination';
 import star from '../img_header/svg/heart-star.svg'
 // import { pagination } from './pagination';
@@ -130,7 +131,7 @@ pagination.off('afterMove', getAllPagin)
           'beforeend',
           `<div class="hero-favorite-content container">
   <svg class="hero-favorite-icon" width="68" height="58">
-    <use href="../img_header/svg/favorite-icon.svg#icon-elements"></use>
+    <use href="./img_header/svg/favorite-icon.svg#icon-elements"></use>
   </svg>
   <p class="hero-favorite-text">
     Sorry! We didn't find anything.
@@ -158,7 +159,7 @@ function createGallary(answers) {
       `<li class="filter-item">
         <img class="filter-img" src="${image}" alt="${title}" />
         <button  class="filter-btn-like">
-          <svg class="filter-svg-like" width="22" height="22"><use id="${btnId}" href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
+          <svg class="filter-svg-like" width="22" height="22"><use id="${btnId}" href="${heart}#icon-heart-transparent"></use></svg>
         </button>
         <div class="filter-info-block">
           <h4 class="filter-img-title">${title}</h4>
