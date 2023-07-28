@@ -62,8 +62,10 @@ searchElArea.addEventListener('change', event => {
 
 searchElIng.addEventListener('change', event => {
   inputIngr = event.currentTarget.value;
+  console.log(event.currentTarget)
 
   fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then(data => {
+    console.log(data)
        createGallary(data);
   });
 });
@@ -83,9 +85,10 @@ searchElTime.addEventListener('change', event => {
   
    }) 
 
-btnResetFilter.addEventListener('click', resetGallary());
+btnResetFilter.addEventListener('click', resetGallary);
 
-function resetGallary() {
+function resetGallary(event) {
+  
   inputSearch = '';
   inputTime = '';
   inputArea = '';

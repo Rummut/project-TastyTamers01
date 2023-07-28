@@ -30,7 +30,7 @@ fetchCategories()
 
 allCategory.addEventListener('click', event => {
   fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr).then((answers) => {
-    resetGallary()
+    // resetGallary()
     createGallary(answers);
  })
 })
