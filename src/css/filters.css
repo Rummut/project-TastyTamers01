@@ -135,7 +135,7 @@
 }
 
 .filter-btn-svg {
-  margin-right: 4px;
+  margin-right: 5px;
   stroke: var(--light-green);
   transition: transform var(--basic-transition);
 }
