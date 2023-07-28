@@ -1,4 +1,5 @@
 import axios from 'axios';
+import heart from '../img_header/svg/heart-star.svg'
 import star from '../img_header/svg/heart-star.svg';
 // import { buttonModal } from './filters';
 // import { openModal } from './modal-recipes';
@@ -91,7 +92,7 @@ favorites.forEach(favorite => {
       `<li class="filter-item">
         <img class="filter-img" src="${image}" alt="${title}" />
         <button  class="filter-btn-like">
-          <svg class="filter-svg-like" width="22" height="22"><use id="${btnId}" href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
+          <svg class="filter-svg-like" width="22" height="22"><use id="${btnId}" href="${heart}#icon-heart-transparent"></use></svg>
         </button>
         <div class="filter-info-block">
           <h4 class="filter-img-title">${title}</h4>
