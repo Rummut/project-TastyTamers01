@@ -1,7 +1,7 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
-const container = document.getElementById('tui-pagination-container');
+const container = document.getElementById('pagination');
 
 const options = {
   totalItems: 0,

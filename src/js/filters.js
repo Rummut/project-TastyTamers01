@@ -2,11 +2,13 @@ import axios from 'axios';
 import {
   fetchArea,
   fetchIngredients,
-  
+  getAllPagin,
   
   fetchSearchDish,
   
 } from './API-request/filter- request';
+import heart from '../img_header/svg/heart-star.svg'
+import { pagination } from './pagination';
 import star from '../img_header/svg/heart-star.svg'
 // import { pagination } from './pagination';
 import {openModal} from './modal-recipes';
@@ -50,21 +52,21 @@ fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
 searchEl.addEventListener('input', debounce(getDish, 300));
 
 searchElArea.addEventListener('change', event => {
-  
+  // pagination.on('afterMove', getAllPagin)
   inputArea = event.currentTarget.value;
     fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
 });
 
 searchElIng.addEventListener('change', event => {
   inputIngr = event.currentTarget.value;
-  console.log(event.currentTarget)
-
+  // pagination.off('afterMove', getAllPagin)
+pagination.on('afterMove', getAllPagin)
  fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
 });
 
 searchElTime.addEventListener('change', event => {
   inputTime = Number(event.target.value)
-  
+  // pagination.on('afterMove', getAllPagin)
   fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
     
  })
@@ -119,7 +121,7 @@ function debounce(fn, wait) {
 function getDish(event) {
   inputSearch = event.target.value.trim();
   btnSearchClear.style.display = "flex"
-
+pagination.off('afterMove', getAllPagin)
   fetchSearchDish(inputSearch, inputTime, inputArea, inputIngr)
     .then(data => {
       if (data.length !== 0) {
@@ -130,7 +132,7 @@ function getDish(event) {
           'beforeend',
           `<div class="hero-favorite-content container">
   <svg class="hero-favorite-icon" width="68" height="58">
-    <use href="../img_header/svg/favorite-icon.svg#icon-elements"></use>
+    <use href="./img_header/svg/favorite-icon.svg#icon-elements"></use>
   </svg>
   <p class="hero-favorite-text">
     Sorry! We didn't find anything.
@@ -158,7 +160,7 @@ function createGallary(answers) {
       `<li class="filter-item">
         <img class="filter-img" src="${image}" alt="${title}" />
         <button  class="filter-btn-like">
-          <svg class="filter-svg-like" width="22" height="22"><use id="${btnId}" href="./img_header/svg/heart-star.svg#icon-heart-transparent"></use></svg>
+          <svg class="filter-svg-like" width="22" height="22"><use id="${btnId}" href="${heart}#icon-heart-transparent"></use></svg>
         </button>
         <div class="filter-info-block">
           <h4 class="filter-img-title">${title}</h4>
