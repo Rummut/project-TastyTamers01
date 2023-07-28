@@ -24,7 +24,6 @@ fetchCategories()
       console.log(answers)
       createGallary(answers)
     })
-    
   });
 
 allCategory.addEventListener('click', event => {
