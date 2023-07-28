@@ -122,12 +122,19 @@ favorites.forEach(favorite => {
 
 function favoriteBtn(favorites) {
   favoriteBtnList.innerHTML = '';
+
   if (favorites && favorites.length > 0) {
-favorites.forEach(favorite => {
-    const category = favorite.category;
-    console.log(category);
+    console.log(favorites)
+    const originBtn = favorites.flatMap(favor => favor.category);
+    const uniqueBtn = originBtn.filter(
+  (oneCateg, index, array) => array.indexOf(oneCateg) === index
+)
+      console.log(uniqueBtn)
+  
+uniqueBtn.forEach(btn => {
+   
   favoriteBtnList.insertAdjacentHTML('beforeend', `<li class="hero-fav-categ-list">
-          <button class="hero-fav-categ-btn" id=${category}>${category}</button>
+          <button class="hero-fav-categ-btn" id=${btn}>${btn}</button>
         </li>`);
   });
   }
