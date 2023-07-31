@@ -24,13 +24,28 @@ window.matchMedia('(min-width: 768px)').addEventListener('change', e => {
   bodyScrollLock.enableBodyScroll(document.body);
 });
 
-var currentPath = window.location.pathname;
-var navItems = document.querySelectorAll('.header-nav-link');
+// const currentPath = window.location.href ;
 
-navItems.forEach(function (item) {
-  if (item.getAttribute('href').replace('.', '') === currentPath) {
-    item.classList.add('current');
-  } else {
-    item.classList.remove('current');
-  }
-});
+
+const navItemsHome =document.querySelector(".home")
+const navItemsFavorite = document.querySelector('.favorites');
+
+navItemsHome.addEventListener("click", handleClickBtnHome) 
+navItemsFavorite.addEventListener("click", handleClickBtnFavorite)
+
+function handleClickBtnHome() {
+navItemsHome.classList.add("current");
+}
+
+function handleClickBtnFavorite() {
+  navItemsFavorite.classList.add("current");
+  navItemsHome.classList.remove("current");
+}
+
+// navItemsHome.forEach(function (item) {
+//   if (currentPath.includes("index")) {
+    // item.classList.add('current');
+//   } else {
+//     item.classList.remove('current');
+//   }
+// });
