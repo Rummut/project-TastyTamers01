@@ -193,7 +193,8 @@ buttonModal.addEventListener('click', event => {
     openModal(event.target.value)
   } if (event.target.id) {
     const idEl = event.target.id
-      fetchLocalStorage(idEl).then((data) => {
+    event.target.classList.toggle('heart')
+         fetchLocalStorage(idEl).then((data) => {
        addFavorite(data)
       })
   }

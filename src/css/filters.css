@@ -64,8 +64,8 @@
   fill: var(--light-green);
 }
 
-.filter-input:focus+.filter-input-svg,
-.filter-input:hover+.filter-input-svg {
+.filter-input:focus + .filter-input-svg,
+.filter-input:hover + .filter-input-svg {
   fill: var(--light-green);
 }
 
@@ -154,9 +154,11 @@
   width: 335px;
   height: 335px;
   border-radius: 8px;
-  background-image: linear-gradient(1deg,
-      rgba(5, 5, 5, 0.6) 0%,
-      rgba(5, 5, 5, 0) 100%);
+  background-image: linear-gradient(
+    1deg,
+    rgba(5, 5, 5, 0.6) 0%,
+    rgba(5, 5, 5, 0) 100%
+  );
 }
 
 .filter-img {
@@ -198,7 +200,6 @@
 .filter-btn-like:active .filter-svg-like {
   fill: var(--white);
 }
-
 
 .filter-info-block {
   margin-top: auto;
@@ -415,7 +416,10 @@
   opacity: 0;
   transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.heart {
+  fill: var(--white);
+  opacity: 1;
+}
 .scroll-up-img {
   width: 10px;
   height: 10px;
